@@ -3,8 +3,8 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-	<title>GIT Tree Storage Tool</title>
-	<meta name="description" content="Home of the GIT Tree Storage Tool and Friends" />
+	<title>GIT - Tree History Storage Tool</title>
+	<meta name="description" content="Home of the GIT Tree History Storage Tool and Friends" />
 	<meta name="author" content="Petr Baudis" />
 	<meta name="rcsid" content="$Id$" />
 	<meta http-equiv="reply-to" content="pasky@suse.cz" />
@@ -17,6 +17,9 @@
   This is so retro:
 
   $Log$
+  Revision 1.3  2005/08/05 11:10:06  pasky
+  Add StGIT clone command.
+
   Revision 1.2  2005/08/05 09:25:42  pasky
   Typo+grammar fixes.
 
@@ -96,15 +99,17 @@ capabilities, not dependent on network access to a central server.</p>
 	>http://www.kernel.org/pub/software/scm/git/</a>.</li>
 
 	<li>Via <em>GIT</em> itself:
-	<pre>
-	git clone http://www.kernel.org/pub/scm/git/git.git/ LOCALDIR
-	</pre>
-	</li>
-
-	<li>Via <em>Cogito</em>:
-	<pre>
-	cg-clone http://www.kernel.org/pub/scm/git/git.git
-	</pre>
+	<table border="1">
+	<tr><td>Core GIT</td><td>
+	<kbd>git clone http://www.kernel.org/pub/scm/git/git.git LOCALDIR</kbd>
+	</td></tr>
+	<tr><td>Cogito</td><td>
+	<kbd>cg-clone http://www.kernel.org/pub/scm/git/git.git</kbd>
+	</td></tr>
+	<tr><td>StGIT</td><td>
+	<kbd>stg clone http://www.kernel.org/pub/scm/git/git.git LOCALDIR</kbd>
+	</td></tr>
+	</table>
 	</li>
 
 	<li>Alternatively, using the commands above with a
