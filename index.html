@@ -17,6 +17,9 @@
   This is so retro:
 
   $Log$
+  Revision 1.10  2005/11/12 15:06:36  pasky
+  Typo fixes and stuff like that.
+
   Revision 1.9  2005/11/12 14:45:52  pasky
   Don't advertise rsync anymore.
 
@@ -60,23 +63,23 @@ projects with speed and efficiency, and the release of the 2.6.12 (and later)
 versions of the Linux kernel as well as more and more other projects switching
 to it would indicate that it does this task well.</p>
 
-<p>GIT falls into the category of distributed source code management tools,
-similar to Arch or Darcs (or, in the commercial world, BitKeeper).  Every GIT
-working directory is a full-fledged repository with full revision tracking
-capabilities, not dependent on network access to a central server.</p>
+<p>GIT falls in the category of distributed source code management tools,
+similar to e.g. GNU Arch or Monotone (or, in the commercial world, BitKeeper).
+Every GIT working directory is a full-fledged repository with full revision
+tracking capabilities, not dependent on network access to a central server.</p>
 
 <p>Highlights:</p>
 
 <ul>
 	<li>Speed of use, both for the project maintainer, and the end-users, is a key development principle.</li>
+
+	<li>The history is stored as a directed acyclic graph, making long-lived branches and repeated merging simple.</li>
   
 	<li>Two, interchangeable, on-disk formats are used:
 	<ul>
 		<li>An efficient, <em>packed</em> format that saves space and network bandwidth.</li>
 		<li>An <em>unpacked</em> format, optimized for fast writes and incremental work.</li>
 	</ul></li>
-
-	<li>The history is stored as a directed acyclic graph, making long-lived branches and repeated merging simple.</li>
 
 	<li>The <em>Core GIT</em> project considers itself to provide low-level "plumbing"
 	and common ground facility for other projects,
@@ -186,20 +189,21 @@ for GIT repositories.</dd>
 
 <h2>Documentation</h2>
 
-<p>The GIT distribution contain a tutorial in the
+<p>The GIT distribution contains a tutorial in the
 <a href="http://www.kernel.org/pub/software/scm/git/docs/">Documentation subdirectory</a>.
 Additionally, the
 <a href="http://linux.yyz.us/git-howto.html">Kernel-Hacker's GIT Tutorial</a>
-may be useful.  (Thanks to Jeff Garzik for that document.)</p>
+by Jeff Garzik may be useful.</p>
 
 
 <h2>Development</h2>
 
 <p>GIT was initially written by Linus Torvalds with help of a group of
-hackers around the 'net. It is currently maintained by Junio C Hamano.</p>
+hackers 'round the net. It is currently maintained by Junio C Hamano.</p>
 
-<p>The GIT development takes place on the GIT mailing list.  To subscribe, send an
-email with just "subscribe git" in the body to majordomo@vger.kernel.org.
+<p>The GIT development takes place on the GIT mailing list.
+To subscribe, send an email with just "subscribe git" in the body
+to majordomo@vger.kernel.org.
 Mailing list archives are available at
 <a href="http://marc.theaimsgroup.com/?l=git">http://marc.theaimsgroup.com/?l=git</a>.</p>
 
