@@ -17,6 +17,9 @@
   This is so retro:
 
   $Log$
+  Revision 1.11  2005/11/12 20:46:03  pasky
+  Split the Core GIT porcelain from the plumbing.
+
   Revision 1.10  2005/11/12 15:06:36  pasky
   Typo fixes and stuff like that.
 
@@ -81,10 +84,11 @@ tracking capabilities, not dependent on network access to a central server.</p>
 		<li>An <em>unpacked</em> format, optimized for fast writes and incremental work.</li>
 	</ul></li>
 
-	<li>The <em>Core GIT</em> project considers itself to provide low-level "plumbing"
-	and common ground facility for other projects,
-	as well as to serve to arbitrate for compatibility between them.
-	The projects built on top of the core GIT are referred to as "porcelain".
+	<li>The <em>GIT</em> project itself considers itself to provide
+	low-level "plumbing" infrastructure
+	and common ground facility for other projects.
+	The projects built on top of GIT are referred to as "porcelain".
+	<a href="#coregit">Core GIT</a>,
 	<a href="#cogito">Cogito</a>,
 	<a href="#stgit">StGIT</a>,
 	<a href="#hgct">(h)gct</a>,
@@ -92,11 +96,12 @@ tracking capabilities, not dependent on network access to a central server.</p>
 	<a href="#qgit">qgit</a>,
 	and
 	<a href="#gitweb">gitweb</a>
-	are all building upon the core GIT
-	tools, and provide an easy to use interface to various pieces of
-	its functionality.</li>
+	are all building upon the lowlevel GIT tools,
+	and provide user-friendly interface to various pieces of its functionality.
+	They are all compatible at the repository level, since that is what
+	the lowlevel GIT tools manage.</li>
 
-	<li>Some other projects have taken the concepts from the core GIT project
+	<li>Some other projects have taken the concepts from the GIT project
 	and are either porting an existing toolset to use the GIT tools,
 	or reimplementing the concepts internally,
 	to benefit from the performance improvements.
@@ -120,7 +125,7 @@ tracking capabilities, not dependent on network access to a central server.</p>
 
 	<li>Via <em>GIT</em> itself:
 	<table border="1">
-	<tr><td>Core GIT</td><td>
+	<tr><td>GIT</td><td>
 	<kbd>git clone http://www.kernel.org/pub/scm/git/git.git LOCALDIR</kbd>
 	</td></tr>
 	<tr><td>Cogito</td><td>
@@ -146,6 +151,13 @@ tracking capabilities, not dependent on network access to a central server.</p>
 <h3>SCM Interface layers</h3>
 
 <dl>
+
+<dt id="coregit">Core GIT</dt>
+<dd>
+<a href="http://www.kernel.org/pub/software/scm/git/">Core GIT</a>
+is a set of script on the top of GIT, providing version control system
+interface, distributed along the GIT itself. It is quite powerful, but
+rather unfriendly.</dd>
 
 <dt id="cogito">Cogito</dt>
 <dd>
