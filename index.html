@@ -17,6 +17,9 @@
   This is so retro:
 
   $Log$
+  Revision 1.12  2005/11/13 01:08:35  pasky
+  Advertise GIT instead of HTTP for cloning GIT
+
   Revision 1.11  2005/11/12 20:46:03  pasky
   Split the Core GIT porcelain from the plumbing.
 
@@ -126,16 +129,21 @@ tracking capabilities, not dependent on network access to a central server.</p>
 	<li>Via <em>GIT</em> itself:
 	<table border="1">
 	<tr><td>GIT</td><td>
-	<kbd>git clone http://www.kernel.org/pub/scm/git/git.git LOCALDIR</kbd>
+	<kbd>git clone git://git.kernel.org/pub/scm/git/git.git LOCALDIR</kbd>
 	</td></tr>
 	<tr><td>Cogito</td><td>
-	<kbd>cg-clone http://www.kernel.org/pub/scm/git/git.git</kbd>
+	<kbd>cg-clone git://git.kernel.org/pub/scm/git/git.git</kbd>
 	</td></tr>
 	<tr><td>StGIT</td><td>
-	<kbd>stg clone http://www.kernel.org/pub/scm/git/git.git LOCALDIR</kbd>
+	<kbd>stg clone git://git.kernel.org/pub/scm/git/git.git LOCALDIR</kbd>
 	</td></tr>
 	</table>
 	</li>
+
+	<li>Alternatively, e.g. if you are behind a restrictive firewall
+	or a proxy, replace the <tt>git://</tt> part of the URL with
+	<tt>http://</tt>, which is significantly slower, but will work
+	everywhere.</li>
 
 	<!-- rsync is deprecated and already slower than other stuff
 	<li>Alternatively, using the commands above with a
