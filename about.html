@@ -30,25 +30,52 @@
 	</span>
 </td></tr></table>
 
-<h1>Git - Fast Version Control System</h1>
+<h1>About</h1>
 
-<p>Git is popular version control system
-designed to handle very large projects with speed and efficiency;
-it is used mainly for various open source projects,
-most notably the Linux kernel.</p>
+<p>Git is distributed version control system focused on
+speed, effectivity and real-world usability on large projects.
+Its highlights include:</p>
 
-<p>Git falls in the category of distributed source code management tools,
-similar to e.g. GNU Arch or Monotone (or BitKeeper in the commercial world).
-Every Git working directory is a full-fledged repository with full revision
-tracking capabilities, not dependent on network access or a central server.</p>
+<ul>
+	<li>Speed of use both for the project maintainers and the end-users
+	is a key development principle.</li>
 
-<p>Git is an <a href="http://www.opensource.org/">Open Source</a> project covered by
-the <a href="http://www.gnu.org/licenses/gpl.txt">GNU General Public License</a>.
-It was originally written by Linus Torvalds and is currently maintained by
-<a href="mailto:junkio@cox.net">Junio C Hamano</a>.</p>
+	<li>Long-lived branches and repeated merging between them is simple
+	and easy (the history is stored as a directed acyclic graph).</li>
 
-<p>To learn more about Git, check the <a href="about.html">about page</a>.
-See the <a href="download.html">download page</a> if you want to download Git.</p>
+	<li>Two, interchangeable, on-disk formats are used:
+	<ul>
+		<li>An efficient, <em>packed</em> format that saves space and network bandwidth.</li>
+		<li>An <em>unpacked</em> format, optimized for fast writes and incremental work.</li>
+	</ul></li>
+
+	<li>Git is very flexible and can be used for directory contents tracking
+	besides conventional version control.</li>
+
+	<li>The <em>Git</em> project itself considers itself to provide
+	the low-level "plumbing" infrastructure
+	and common ground facility for other projects.
+	The projects built on top of Git are referred to as "porcelain".
+	<a href="#coregit">Core Git</a>,
+	<a href="#cogito">Cogito</a>,
+	<a href="#stgit">StGIT</a>,
+	<a href="#hgct">(h)gct</a>,
+	<a href="#gitk">gitk</a>,
+	<a href="#qgit">qgit</a>,
+	and
+	<a href="#gitweb">gitweb</a>
+	are all building upon the lowlevel Git tools,
+	and provide user-friendly interface to various pieces of its functionality.
+	They are all compatible at the repository level, since that is what
+	the lowlevel Git tools manage.</li>
+
+	<li>Some other projects have taken the concepts from the Git project
+	and are either porting an existing toolset to use the Git tools,
+	or reimplementing the concepts internally,
+	to benefit from the performance improvements.
+	This includes e.g.
+	<a href="http://darcs.net/DarcsWiki/DarcsGit">Darcs-git</a>.</li>
+</ul>
 
 
 <hr />
