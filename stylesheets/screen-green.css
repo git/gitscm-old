@@ -1,0 +1,26 @@
+/* This is the default green 'skin' for the screen media type. */
+/* Copyleft (c) 2002-2004 Jonas Fonseca <fonseca@diku.dk> */
+
+body	{ background: #fff; color: #494115; }
+a	{ color: #494115; background: transparent; }
+h2, h3	{ border-bottom: 2px dotted #494115; }
+pre	{ color: #494115; background: #cdc8a5; border: 1px solid #000; }
+
+.header, div.footer
+{
+	border-left: none;
+	border-right: none;
+	border-top: 2px solid #494115;
+	border-bottom: 2px solid #494115;
+	color: #494115; 
+	background: #cdc8a5 url(header-footer-background-green.png);
+}
+
+.footer a:visited,
+.header a:visited	{ color: #494115; background: transparent; }
+
+table.releases,
+table.bugmail		{ border: 2px solid #494115; }
+
+table.bugmail th,
+tr.odd td		{ color: #494115; background: #cdc8a5; }
