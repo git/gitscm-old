@@ -73,7 +73,7 @@ table.releases td,
 table.bugmail th,
 table.bugmail td,
 table.example td,
-table.example	{ border: none; }
+table.example	{ border: none; padding-left: 0.2em; padding-right: 0.2em; }
 
 .bugmail th	{ text-align: center; }
 
