@@ -36,46 +36,77 @@
 speed, effectivity and real-world usability on large projects.
 Its highlights include:</p>
 
+<!-- Heavily inspired by Wikipedia -->
+
 <ul>
-	<li>Speed of use both for the project maintainers and the end-users
-	is a key development principle.</li>
 
-	<li>Long-lived branches and repeated merging between them is simple
-	and easy (the history is stored as a directed acyclic graph).</li>
+<li>
+<b>Strong support for non-linear development.</b>
+Git supports rapid and convenient branching and merging,
+and includes powerful tools for visualizing
+and navigating a non-linear development history.
+</li>
 
-	<li>Two, interchangeable, on-disk formats are used:
-	<ul>
-		<li>An efficient, <em>packed</em> format that saves space and network bandwidth.</li>
-		<li>An <em>unpacked</em> format, optimized for fast writes and incremental work.</li>
-	</ul></li>
+<li>
+<b>Distributed development.</b>
+Like BitKeeper and SVK, Git gives each developer
+a local copy of the entire development history,
+and changes are copied from one such repository to another.
+These changes are imported as additional development branches,
+and can be merged in the same way as a locally developed branch.
+Repositories can be easily accessed via the efficient Git protocol
+(optionally wrapped in ssh) or simply using HTTP - you can publish
+your repository anywhere without <em>any</em> special webserver
+configuration required.
+</li>
 
-	<li>Git is very flexible and can be used for directory contents tracking
-	besides conventional version control.</li>
+<li>
+<b>Efficient handling of large projects.</b>
+Git is very fast and scales well
+even when working with large projects and long histories.
+It is commonly an order of magnitude faster
+than most other revision control systems,
+and several orders of magnitude faster on some operations.
+It also uses an extremely efficient packed format
+for long-term revision storage
+that currently tops any other open source version control system.
+</li>
 
-	<li>The <em>Git</em> project itself considers itself to provide
-	the low-level "plumbing" infrastructure
-	and common ground facility for other projects.
-	The projects built on top of Git are referred to as "porcelain".
-	<a href="#coregit">Core Git</a>,
-	<a href="#cogito">Cogito</a>,
-	<a href="#stgit">StGIT</a>,
-	<a href="#hgct">(h)gct</a>,
-	<a href="#gitk">gitk</a>,
-	<a href="#qgit">qgit</a>,
-	and
-	<a href="#gitweb">gitweb</a>
-	are all building upon the lowlevel Git tools,
-	and provide user-friendly interface to various pieces of its functionality.
-	They are all compatible at the repository level, since that is what
-	the lowlevel Git tools manage.</li>
+<li>
+<b>Cryptographic authentication of history.</b>
+The Git history is stored in such a way
+that the name of a particular revision (a "commit" in Git terms)
+depends upon the complete development history leading up to that commit.
+Once it is published, it is not possible to change the old versions
+without it being noticed. Also, tags can be cryptographically signed.
+</li>
 
-	<li>Some other projects have taken the concepts from the Git project
-	and are either porting an existing toolset to use the Git tools,
-	or reimplementing the concepts internally,
-	to benefit from the performance improvements.
-	This includes e.g.
-	<a href="http://darcs.net/DarcsWiki/DarcsGit">Darcs-git</a>.</li>
+<li>
+<b>Toolkit design.</b>
+Following the Unix tradition,
+Git is a collection of many small tools written in C,
+and a number of scripts that provide convenient wrappers.
+It is easy to chain the components together to do other clever things.
+</li>
+
 </ul>
+
+<hr />
+
+<p>Besides providing a version control system,
+the Git project provides a generic low-level toolkit
+for tree history storage and directory content management.
+Traditionally, the toolkit is called the <em>plumbing</em>.
+Several other projects (so-called <em>porcelains</em>)
+offer compatible version control interfaces - see the
+<a href="tools.html">related tools</a> page.</p>
+
+<p>Some other projects have taken the concepts from the Git project
+and are either porting an existing toolset to use the Git tools,
+or reimplementing the concepts internally,
+to benefit from the performance improvements.
+This includes e.g.
+<a href="http://darcs.net/DarcsWiki/DarcsGit">Darcs-git</a>.</li>
 
 
 <hr />
