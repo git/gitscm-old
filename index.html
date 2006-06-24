@@ -24,11 +24,10 @@
 	<span class="hide">:</span>
 	<span class="menu">
 		<a href="index.html">Home</a> |
-		<a href="about.html">About</a> |
-		<a href="community.html">Community</a> |
-		<a href="documentation.html">Documentation</a> |
-		<a href="download.html">Download</a> |
-		<a href="tools.html">Related Tools</a>
+		<a href="http://www.kernel.org/pub/software/scm/git/docs/">Documentation</a> |
+		<a href="http://git.or.cz/gitwiki">Wiki</a> |
+		<a href="http://www.kernel.org/pub/software/scm/git/">Download Site</a> |
+		<a href="http://www.kernel.org/git/?p=git/git.git;a=summary">Git's Gitweb</a>
 	</span>
 </td></tr></table>
 
@@ -49,17 +48,291 @@ the <a href="http://www.gnu.org/licenses/gpl.txt">GNU General Public License</a>
 It was originally written by Linus Torvalds and is currently maintained by
 Junio C Hamano.</p>
 
-<div align="center"><table class="releases"><tr><td>
-<p>The latest stable Git release is
-<a href="http://kernel.org/pub/software/scm/git/git-1.4.0.tar.bz2">v1.4.0</a>,
-published on
-2006-06-10.
-</p>
-</td></tr></table></div>
+<div align="center"><table class="releases">
+	<tr>
+		<td>[2006-06-10]</td>
+		<td>The latest stable Git release is v1.4.0:</td>
+		<td><a href="http://kernel.org/pub/software/scm/git/git-1.4.0.tar.bz2">tar.bz2</a>
+		<a href="http://kernel.org/pub/software/scm/git/git-1.4.0.tar.bz2.sign">(sign)</a></td>
+		<td><a href="http://kernel.org/pub/software/scm/git/git-1.4.0.tar.gz">tar.gz</a>
+		<a href="http://kernel.org/pub/software/scm/git/git-1.4.0.tar.gz.sign">(sign)</a></td>
+        </tr><tr class="odd" align="center">
+                <td colspan="4"><a href="http://kernel.org/pub/software/scm/git/">More versions</a></td>
+        </tr>
+</table></div>
 
-<p>To learn more about Git, check the <a href="about.html">about page</a>.
-Plenty of information about Git is available at the <a href="http://git.or.cz/gitwiki/">Git wiki</a>.
-See the <a href="download.html">download page</a> if you are interested in downloading Git.</p>
+
+<hr />
+
+<ul>
+	<li><a href="#about">About Git</a></li>
+	<li><a href="#documentation">Git Documentation</a></li>
+	<li><a href="#download">Getting Git</a></li>
+	<li><a href="#tools">Related Tools</a></li>
+	<li><a href="#community">Community and Development</a></li>
+</ul>
+
+
+<hr />
+
+<h2 id="about">About Git</h2>
+
+<p>Git is distributed version control system focused on
+speed, effectivity and real-world usability on large projects.
+Its highlights include:</p>
+
+<!-- Heavily inspired by Wikipedia -->
+
+<ul>
+
+<li>
+<b>Strong support for non-linear development.</b>
+Git supports rapid and convenient branching and merging,
+and includes powerful tools for visualizing
+and navigating a non-linear development history.
+</li>
+
+<li>
+<b>Distributed development.</b>
+Like BitKeeper and SVK, Git gives each developer
+a local copy of the entire development history,
+and changes are copied from one such repository to another.
+These changes are imported as additional development branches,
+and can be merged in the same way as a locally developed branch.
+Repositories can be easily accessed via the efficient Git protocol
+(optionally wrapped in ssh) or simply using HTTP - you can publish
+your repository anywhere without <em>any</em> special webserver
+configuration required.
+</li>
+
+<li>
+<b>Efficient handling of large projects.</b>
+Git is very fast and scales well
+even when working with large projects and long histories.
+It is commonly an order of magnitude faster
+than most other revision control systems,
+and several orders of magnitude faster on some operations.
+It also uses an extremely efficient packed format
+for long-term revision storage
+that currently tops any other open source version control system.
+</li>
+
+<li>
+<b>Cryptographic authentication of history.</b>
+The Git history is stored in such a way
+that the name of a particular revision (a "commit" in Git terms)
+depends upon the complete development history leading up to that commit.
+Once it is published, it is not possible to change the old versions
+without it being noticed. Also, tags can be cryptographically signed.
+</li>
+
+<li>
+<b>Toolkit design.</b>
+Following the Unix tradition,
+Git is a collection of many small tools written in C,
+and a number of scripts that provide convenient wrappers.
+It is easy to chain the components together to do other clever things.
+</li>
+
+</ul>
+
+<p>Besides providing a version control system,
+the Git project provides a generic low-level toolkit
+for tree history storage and directory content management.
+Traditionally, the toolkit is called the <em>plumbing</em>.
+Several other projects (so-called <em>porcelains</em>)
+offer compatible version control interfaces - see the
+<a href="#tools">related tools</a> list.</p>
+
+<p>Some other projects have taken the concepts from the Git project
+and are either porting an existing toolset to use the Git tools,
+or reimplementing the concepts internally,
+to benefit from the performance improvements.
+This includes e.g.
+<a href="http://darcs.net/DarcsWiki/DarcsGit">Darcs-git</a>.</li>
+
+
+<hr />
+
+<h2 id="documentation">Git Documentation</h2>
+
+<p>You can find all the documentation bundled with the Git source code
+in the <code>Documentation/</code> subdirectory. In addition, you can
+also <a href="http://www.kernel.org/pub/software/scm/git/docs/">read the web version</a>
+(corresponding to the latest Git development version).</p>
+
+<p>For a quick start, the
+<a href="http://www.kernel.org/pub/software/scm/git/docs/tutorial.html">tutorial</a>
+covers the basics. See the
+<a href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday Git</a>
+handbook for a useful minimum set of commands
+depending on your style of Git usage.
+Additionally, the
+<a href="http://linux.yyz.us/git-howto.html">Kernel Hacker's Git Tutorial</a>
+by Jeff Garzik may be useful.</p>
+
+<p>For a large and continuously growing resource of information
+about Git, you can refer to the <a href="http://git.or.cz/gitwiki">Git Wiki</a>
+- you are welcome to contribute!</p>
+
+
+<hr />
+
+<h2 id="download">Getting Git</h2>
+
+<p>The general download location for Git releases is
+<a href="http://www.kernel.org/pub/software/scm/git/">http://www.kernel.org/pub/software/scm/git/</a>.
+You can also use one of many <a href="http://www.kernel.org/mirrors/">kernel.org mirrors</a>.</p>
+
+<h3>Binaries</h3>
+
+<p>For people who prefer precompiled packages, these are available:</p>
+
+<table class="bugmail">
+
+<tr>
+<td colspan="2">RPMs</td>
+<td><a href="http://kernel.org/pub/software/scm/git/RPMS/">http://kernel.org/pub/software/scm/git/RPMS/</a></td>
+</tr>
+
+<tr class="odd">
+<td rowspan="3">Debs</td>
+<td>Stable</td>
+<td><a href="http://www.backports.org/debian/pool/main/g/git-core/">http://www.backports.org/debian/pool/main/g/git-core/</a></dd></td>
+</tr>
+<tr>
+<td>Testing</td>
+<td><a href="http://packages.debian.org/testing/devel/git-core">http://packages.debian.org/testing/devel/git-core</a></td>
+</tr>
+<tr class="odd">
+<td>Unstable</td>
+<td><a href="http://packages.debian.org/unstable/devel/git-core">http://packages.debian.org/unstable/devel/git-core</a></td>
+</tr>
+</td>
+
+</table>
+
+<h3>Development snapshots</h3>
+
+<p>Daily snapshots of the main Git development branch are available at
+<a href="http://www.codemonkey.org.uk/projects/git-snapshots/git/"
+>http://www.codemonkey.org.uk/projects/git-snapshots/git/</a>
+(thanks to Dave Jones).</p>
+
+<h3>Git over git</h3>
+
+<p>If you already have Git installed, you can get the latest
+development version via Git itself:
+<pre>git clone git://git.kernel.org/pub/scm/git/git.git</pre>
+</p>
+
+<p>If you have problems connecting (Git uses port 9418),
+you can try to access the repository over the HTTP protocol:
+<pre>git clone http://git.kernel.org/pub/scm/git/git.git</pre>
+(this method is considerably slower but works even behind
+firewalls and such).
+</p>
+
+<p>You can also always browse the current contents
+of the git repository on web using the kernel.org
+<a href="http://kernel.org/git/?p=git/git.git;a=summary">gitweb interface</a>.</p>
+
+
+<hr />
+
+<h2 id="tools">Related Tools</h2>
+
+<p>Git is a true UNIX tool in the sense that it consists of many commands
+that do one thing well. It has been designed from the start to be easily
+wrapped in other tools and frontends. Currently, there are several
+interfaces offering more comfortable Git usage, and also graphical
+interfaces for browsing the history and more.</p>
+
+<p>Traditionally, the low-level part of Git is called <em>plumbing</em>
+and the interfaces and frontends are called <em>porcelains</em>.
+Git itself comes with a default porcelain bundled and that is actually
+what you will normally mean when you say you use Git. However, there
+are several alternative porcelains which might offer considerably more
+user friendly interface or extend Git to perform some specialied tasks.</p>
+
+<h3>Version Control Interface layers</h3>
+
+<dl>
+
+<dt id="cogito">Cogito</dt>
+<dd>
+<a href="http://www.kernel.org/pub/software/scm/cogito/">Cogito</a>
+is the most popular version control system on top of Git.
+It aims at seamless user interface and ease of use, providing
+generally smoother user experience than the "raw" Git interface
+and indeed also many other version control systems.</dd>
+
+<dt id="stgit">StGIT</dt>
+<dd><a href="http://www.procode.org/stgit/">Stacked Git</a> provides
+a <em>Quilt</em>-like patch management functionality in the Git environment.
+You can easily manage your patches in the scope of Git until they get
+merged upstream.</dd>
+
+<dt id="pg">Patchy Git (pg)</dt>
+<dd><a href="http://www.spearce.org/category/projects/scm/pg/">Patchy Git</a>
+aims to help the user manage a set of patches on top of the current branch.
+pg is somewhat like Quilt or StGIT,
+but it does have a slightly different feature set.</dd>
+
+<dt id="hgct">(h)gct</dt>
+<dd><a href="http://www.cyd.liu.se/~freku045/gct/">(h)gct</a> is
+a GUI enabled commit tool. It has support for both Git and Mercurial.</dd>
+
+</dl>
+
+<h3>History Visualization</h3>
+
+<dl>
+
+<dt id="qgit">qgit</dt>
+<dd><a href="http://sourceforge.net/projects/qgit">qgit</a> is a QT
+GUI for browsing history of Git repositories, similar to <em>gitk</em>
+(a simple GUI in TCL/TK distributed with stock Git)
+but with more features.</dd>
+
+<dt id="gitweb">gitweb</dt>
+<dd><a href="ftp://ftp.kernel.org/pub/software/scm/gitweb/">gitweb</a>
+provides full-fledged <a href="http://www.kernel.org/git/">web interface</a>
+for Git repositories.</dd>
+
+</dl>
+
+
+<hr />
+
+<h2 id="community">Community and Development</h2>
+
+<p>Git was initially written by Linus Torvalds
+with help of a group of hackers 'round the net.
+It is currently maintained by
+Junio C Hamano.</p>
+
+<p>The user discussion and development of Git, Cogito and other tools related to Git
+takes place on the Git mailing list - everyone is welcome to post to
+<a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a>.
+To <a href="mailto:majordomo@vger.kernel.org?body=subscribe%20git">subscribe</a>
+to the list, send an email with just "subscribe git" in the body to
+majordomo@vger.kernel.org.
+The mailing list archives are available at
+<a href="http://marc.theaimsgroup.com/?l=git">http://marc.theaimsgroup.com/?l=git</a>.</p>
+
+<p>You can also visit the IRC channel dedicated to Git -
+meet us at <a href="irc://irc.freenode.net/#git">#git at FreeNode</a>.</p>
+
+<p>This website itself is tracked in Git as well -
+you can
+<a href="http://pasky.or.cz/gitweb.cgi?p=git-homepage.git;a=summary">browse its development history</a>
+or even clone it from http://pasky.or.cz/~xpasky/git-homepage.git.
+The site is covered by GPLv2
+and maintained by <a href="mailto:pasky@suse.cz">Petr Baudis</a>
+who always takes patches eagerly. ;-)
+The web is based on a design by <a href="mailto:fonseca@diku.dk">Jonas Fonseca</a>
+for the <a href="http://elinks.cz">ELinks homepage</a>.</p>
 
 
 <hr />
