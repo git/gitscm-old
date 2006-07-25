@@ -69,24 +69,30 @@ ul li, dl, p	{ text-align: justify; }
 
 div.title	{ font-weight: bold; }
 
+table.releases th,
 table.releases td,
 table.bugmail th,
-table.bugmail td,
-table.example td,
-table.example	{ border: none; padding-left: 0.2em; padding-right: 0.2em; }
+table.bugmail td	{ border: none; padding-left: 0.2em; padding-right: 0.2em; }
+table.ccmd td	{ border: 1px; padding-left: 2em; padding-right: 2em; }
 
+.releases th	{ text-align: center; font-weight: bold; }
 .bugmail th	{ text-align: center; }
 
-table		{ margin-left: 4em; margin-right: 4em;
+table		{ margin-left: 1em; margin-right: 1em;
 		  border: none; }
 
-table.code, table.code tr, table.code td
+table.code, table.code tr, table.code td,
 {
 	margin: 0em;
 	padding: 0em;
 	border: none;
 	width: 100%;
 }
+
+table.ccmd	{ width: 80%; }
+table.ccmd, code.g { font-family: monospace; }
+table.ccmd td.g	{ width: 40%; }
+table.ccmd td.g, code.g { font-weight: bold; }
 
 table[frame=hsides]
 		{ border: 1px solid #000; }

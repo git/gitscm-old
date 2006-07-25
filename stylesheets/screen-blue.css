@@ -18,7 +18,11 @@ div.footer a:visited,
 .header a:visited	{ color: #124; background: transparent; }
 
 table.releases,
+table.ccmd,
 table.bugmail		{ border: 2px solid #124; }
 
 table.bugmail th,
+table.releases th,
 tr.odd td		{ background: #8ab; color: #124; }
+
+table.ccmd td.g		{ background: #bde; color: #124; }

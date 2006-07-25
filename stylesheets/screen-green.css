@@ -20,7 +20,11 @@ pre	{ color: #494115; background: #cdc8a5; border: 1px solid #000; }
 .header a:visited	{ color: #494115; background: transparent; }
 
 table.releases,
+table.ccmd,
 table.bugmail		{ border: 2px solid #494115; }
 
 table.bugmail th,
+table.releases th,
 tr.odd td		{ color: #494115; background: #cdc8a5; }
+
+table.ccmd td.g		{ color: #494115; background: #ede8bd; }

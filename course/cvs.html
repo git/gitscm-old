@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Git - Fast Version Control System</title>
+	<meta name="description" content="Home of the Git Version Control System and Friends" />
+	<meta name="author" content="Petr Baudis" />
+	<meta http-equiv="reply-to" content="pasky@suse.cz" />
+	<meta http-equiv="content-language" content="en" />
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<link type="text/css" rel="stylesheet" media="screen" href="../stylesheets/screen.css" />
+	<link type="text/css" title="Default" rel="stylesheet" media="screen" href="../stylesheets/screen-default.css" />
+	<link type="text/css" title="Gitweb Gray" rel="alternate stylesheet" media="screen" href="../stylesheets/screen-gitweb-gray.css" />
+	<link type="text/css" title="Blue" rel="alternate stylesheet" media="screen" href="../stylesheets/screen-blue.css" />
+	<link type="text/css" title="Green" rel="alternate stylesheet" media="screen" href="../stylesheets/screen-green.css" />
+	<link rel="icon" href="favicon.png" type="image/png" />
+</head>
+
+<body>
+
+<table border="1" summary="Navigation links" class="header" width="100%"><tr><td>
+	<a href="../index.html" id="top"><img src="../git-logo.png" width="72" height="27" alt="Git"
+		style="border-width:0px;"/></a>
+	<span class="hide">:</span>
+	<span class="menu">
+		<a href="../index.html">Home</a> |
+		<a href="http://www.kernel.org/pub/software/scm/git/docs/">Documentation</a> |
+		<a href="http://git.or.cz/gitwiki">Wiki</a> |
+		<a href="http://www.kernel.org/pub/software/scm/git/">Download Site</a> |
+		<a href="http://www.kernel.org/git/?p=git/git.git;a=summary">Git's Gitweb</a>
+	</span>
+</td></tr></table>
+
+<h1>Git - CVS Crash Course</h1>
+
+<p>Welcome to the Git version control system! Here we will briefly
+introduce to Git usage based on your current CVS knowledge. You will
+need the latest Git and Cogito packages installed; Cogito is a user
+interface for Git which extends it for easier use, while you can still
+use directly Git for more advanced operations. There is also
+<a href="http://www.kernel.org/pub/software/scm/git/docs/cvs-migration.html">a
+more technical CVS to Git migration HOWTO</a> in the Git documentation
+which uses Git commands only, but covers only some specific differences.</p>
+
+<ul>
+	<li><a href="#read">How to Read Me</a></li>
+	<li><a href="#know">Things You Should Know</a></li>
+	<li><a href="#own">Your Very Own</a></li>
+	<li><a href="#branch">Tagging and Branching</a></li>
+	<li><a href="#remote">Going Remote</a></li>
+</ul>
+
+<div align="center"><table class="relnotes" style="border: 1px">
+<tr><td>
+<p style="margin: 0em 0.4em">If you are just after tracking someone else's project,
+this is to get you started quickly:</p>
+<p/>
+<div align="center">
+<table class="ccmd" style="margin:0em"><tr><td class="g">cg clone <em>url</em><br />cg update</td><td>cvs&nbsp;-d<em>root</em>&nbsp;checkout&nbsp;<em>module</em><br />cvs update -dP</td></tr></table>
+</div>
+</td></tr>
+</table></div>
+
+
+<hr />
+
+<h2 id="read">How to Read Me</h2>
+
+<p>In those small tables, at the left we always list the Cogito/Git commands
+for the task, while at the right the corresponding CVS commands you would use
+for the job are listed.  If you are in hurry, just skimming over them should
+give you a good idea about the Cogito usage basics.</p>
+
+<p>Before running any command the first time, it's recommended that you
+at least quickly skim through its manual page. Many of the commands have
+very useful and interesting features (that we won't list here) and sometimes
+there are some extra notes you might want to know. There's a quick usage
+help available for the Cogito commands if you pass them the <code>--help</code>
+switch.</p>
+
+
+<h2 id="know">Things You Should Know</h2>
+
+<p>There is couple of important concepts it is good to know when
+starting with Git. If you are in hurry though, you can skip this
+section and only get back to it when you get seriously confused;
+it should be possible to pick up with just using your intuition.</p>
+
+<p>With CVS, for each project there is a single repository at some
+detached central place where all the history is and which you checkout
+and commit into. Git works differently, each copy of the project tree
+(we call that the <em>working copy</em>) carries its own repository
+around (in the <code>.git</code> subdirectory in the project tree root).
+You can alos have a so-called <em>bare repository</em> which is not
+attached to a working copy; that is useful especially when you want
+to publish your repository. We will get to that.</p>
+
+<p>CVS has the repositories partitioned to <em>modules</em>;
+there is no such thing in Git, you just create several separate
+repositories.</p>
+
+<p>CVS identifies revisions with the RCS ids - few numbers delimited
+with dots. That is impractical in distributed systems like Git. Git
+identifies revisions with SHA1 ids, which are long 128bit numbers
+written in hex. It may look scary at first, but in practice it is
+not a big hurdle - you can refer to the latest revision by <code>HEAD</code>
+and its parent as <code>HEAD^</code> (you can go on adding carrets),
+cut'n'paste helps a lot and you can write only the few leading digits
+of a revision - as long as it is unique, Git will guess the rest.
+(You can do even more advanced stuff with revision specifiers, see the
+<a href="http://www.kernel.org/pub/software/scm/git/docs/git-rev-parse.html">git-rev-parse manpage</a> for details.)</p>
+
+<p>Each commit has an <em>author</em> and a <em>committer</em> fields,
+which record who and when <em>created</em> the change and who <em>committed</em> it
+(Git is designed to work well with patches coming by mail - in that case,
+the author and the committer will be different). Git will try to guess
+your realname and email, but especially with email it is likely to get it wrong.
+You can check it using <code class="g">git-var -l</code>; see
+<a href="http://www.kernel.org/pub/software/scm/cogito/docs/cg-commit.html">cg-commit manpage</a>
+on various ways of overriding it.</p>
+
+<p>The Cogito commands are in the form <code>cg command</code>,
+the Git commands take the form of <code>git command</code>.
+In both cases, you can interchangeably use the <code>cg-command</code>
+and <code>git-command</code> form as well.</p>
+
+<p>Cogito can produce colourful output with some commands; since
+some people hate colors way more than the rest likes them, by default
+the colors are turned off. If you would like to have colors in your
+output, create <code>~/.cgrc</code> and put this inside:
+<pre>
+cg-diff -c
+cg-help -c
+cg-log -c
+</pre>
+The format and purpose is the same as of the <code>~/.cvsrc</code>
+file; you can add other commands and switches there later if you wish
+(my tip is <code>-f</code> for <code>cg-log</code>).</p>
+
+<p>Also, you may find it convenient to watch your repository using
+the <code class="g">gitk</code> repository as you go.</p>
+
+
+<h2 id="own">Your Very Own</h2>
+
+<p>For the first introduction, let's make your project tracked by Git
+and see how we get around to do daily development in it. Let's
+<code>cd</code> to the directory with your project and initialize
+a brand new Git repository with it:</p>
+
+<table class="ccmd"><tr><td class="g">cg init</td>
+<td>cvs -d<em>repo</em> init<br/>cvs import <em>FOO BAR</em></td></tr></table>
+
+<p>As we already mentioned, there are no modules; due to superior
+branching support in Git. There is no vendor branch in Git either
+(we will cover how to do vendor tracking in Git at a later time in
+the <a href="stgit.html">StGit Crash Course</a> - TBD). Thus there
+is no need for two separate commands and <code>cg init</code>
+will both initialize the repository and create the initial import.
+</p>
+
+<p>Now your tree is officially tracked by Git. You can explore the
+<code class="g">.git</code> subdirectory a bit if you want, or don't if you
+don't care. Do some random changes to your tree now - poke into few
+files or such. Let's check what we've done:</p>
+
+<table class="ccmd"><tr><td class="g">cg diff</td><td>cvs diff -u | less</td></tr></table>
+
+<p>That's it. This is one of the more powerful commands; just like
+with CVS, you can pass <code>-r</code>s, limit the diff to specific
+directories or files and so on. Git embeds special information in
+the diffs about adds, removals and mode changes:</p>
+
+<table class="ccmd"><tr><td class="g">cg patch</td><td>patch -p0</td></tr></table>
+
+<p>That will apply the patch while telling Git about and performing
+those "meta-changes".</p>
+
+<p>There is a more conscise changes representation available:</p>
+
+<table class="ccmd"><tr><td class="g">cg status</td><td>(cvs update)</td></tr></table>
+
+<p><code>cg status</code> will not update your working copy, though,
+only show the conscise changes summary as well as list any files
+that you haven't either ignored or told Git about. In addition,
+it will also show some cryptic line at the top (with "<code>master</code>"
+inside) - ignore it for now, we'll learn more about it later.</p>
+
+<p>While we are at the status command, over time plenty of the
+"? lines" will get in there, denoting files not tracked by Git.
+Wait a moment if you want to add them, run <code class="g">cg clean</code>
+if you want to get rid all of them, or add them to the <code class="g">.gitignore</code>
+file if you want to keep them around untracked (works the same as <code>.cvsignore</code>).
+
+<p>Another thing <code>cvs update</code> would do is restoring
+files you've accidentally removed. The command for that in Cogito
+is <code class="g">cg restore</code>; you can restore everything, just
+specified files, force it to overwrite missing files.
+
+<p>So, just like in CVS, you need to tell Git when you add or
+remove any files. Additionaly, you can tell it when you <em>move</em>
+files around:</p>
+
+<table class="ccmd"><tr>
+<td class="g">cg add <em>file</em><br />cg rm <em>file</em><br />cg mv <em>file</em></td>
+<td>cvs add <em>file</em><br />cvs remove</td></tr></table>
+
+<p>Cogito is more promising than CVS here; especially, you can
+remove files that are yet present in the working directory
+(<code>cg rm</code> can remove them for you if you pass it
+the <code>-f</code> switch) - saves a lot of annoyance when
+removing files matching to a wildcard.  You can also recursively
+add/remove whole directories and so on; Cogito's cool!</p>
+
+<p>So, it's about time we committed our changes. Big surprise
+about the command:</p>
+
+<table class="ccmd"><tr><td class="g">cg commit</td><td>cvs commit</td></tr></table>
+
+<p>As with CVS, you can limit the commit only to specified files
+and so on. Few words on the commit message: it is <em>customary</em>
+to have a short commit summary as the first line of the message,
+because various tools listing commits frequently show only the
+first line of the message You can specify the commit message
+using the <code>-m</code> parameter as you are used, but there're
+two differences - the text gets autoformatted to paragraphs and
+you can pass several <code>-m</code> arguments and they will create
+separate paragraphs in the commit message:</p>
+
+<pre>
+cg commit -m"Short one-line description" -m"And here can come \
+your longer description of the commit, and it gets split out \
+and reflown to wrapped paragraphs just right."
+</pre>
+
+<p>If you don't pass any <code>-m</code> parameter or pass
+the <code>-e</code> parameter, your favorite <code>$EDITOR</code>
+will get run and you can compose your commit message there,
+just as with CVS. In addition, the list of files to be committed
+is shown and you can actually delete lines with the files you don't
+want to commit and they won't be. You can also adjust the authorship
+information in the editor.</p>
+
+<p>And as a bonus, if you pass it the <code>-p</code> parameter
+it will show the whole patch being committed in the editor
+so that you can do a quick last-time review. And you can manually
+modify the patch and your changes will get propagated to the
+commit (and your working tree).</p>
+
+<p>By the way, if you screwed up committing, there's not much you
+can do with CVS, except using some enigmatic <code>cvs admin</code>
+subcommands.  Git does better - you can amend your latest commit
+(re-edit the metadata as well as update the tree) using
+<code class="g">cg commit --amend</code>, or toss your latest
+commit away completely using <code class="g">cg admin-uncommit</code>.</p>
+
+<p>Now that we have committed some stuff, you might want to review
+your history:</p>
+
+<table class="ccmd"><tr><td class="g">cg log<br />cg seek <em>rev</em><br />git blame <em>file</em></td><td>cvs log<br />cvs checkout -r <em>tag</em><br />cvs annotate <em>file</em></td></tr></table>
+
+<p>The log command works quite similar in CVS and Git; again,
+<code>cg log</code> is quite powerful, please look through
+its options to see some of stuff it can do.</p>
+
+<p>To move your tree to some older revision, use the seek command
+(and pass it no arguments to go back to your latest revision_.
+Note that this is only for "temporary excursions" - if you want to
+just reset your history and make a given commit your new head, think
+again and if you are sure, <code class="g">cg switch -f -r <em>newrev</em> master</code>
+(this will be perhaps made simpler in the future, we will review
+the switch command in more detail in the future).</p>
+
+<p>Git now has an annotation command akin to CVS', but there are
+big chances that you probably want to something different! Usually,
+when using annotate you are looking for origin of some piece of
+code, and the so-called <em>pickaxe</em> of Git is much more comfortable
+tool for that job (<a href="http://www.kernel.org/pub/software/scm/git/docs/cvs-migration.html">detailed discussion</a>;
+you may want to use <code>cg log -S <em>string</em></code> instead
+of <code>git log -S<em>string</em></code>, tho').</p>
+
+
+<h2 id="branch">Tagging and branching</h2>
+
+<p>CVS can mark certain checkpoints in history with tags. Git
+obviously can do that to, but not only are Git tags <em>much</em>
+faster to make (and actually reliable), but quite more powerful.
+The Git tag can have an arbitrary description attached (the first
+line is special as in the commit case), some people actually store
+the whole release announcements in the tag descriptions. The identity
+of the person who tagged is stored (again following the same rules
+as identity of the committer). You usually tag commits but if you
+want, you can tag files (or trees, but that's a bit lowlevel) as well.
+And the tag can be cryptographically PGP signed to verify the identity
+(by Git's nature of working, that signature also confirms the validity
+of the associated revision, its ihstory and tree). So, let's do it:</p>
+
+<table class="ccmd"><tr><td class="g">cg tag <em>name</em></td><td>cvs tag <em>name</em></td></tr></table>
+
+<p>To list tags in CVS, you run <code>cvs log</code> on some random
+file; kinda weird if you think about it, isn't it? In Git, you can
+find out using <code class="g">cg tag-ls</code> and show details
+(author, description, PGP signature verification, ...) using
+<code class="g">cg tag-show</code>.</p>
+
+<p>Like CVS, Git can do branches, but Git's branches are again
+much faster and cheaper; in fact, Git encourages you to branch often
+and use branches extensively during regular development (with so-called
+<em>topic branches</em> dedicated to development of a particular feature).
+In CVS, you create a branch tag; in Git, there is a special command for
+working with branches (although funnily enough, there is certain architectural
+similarity between branchs/tags relation in CVS and Git).</p>
+
+<table class="ccmd"><tr><td class="g">cg switch -r HEAD <em>branch</em><br />cg switch <em>branch</em></td><td>cvs tag -b <em>branch</em><br />cvs checkout -r <em>branch</em>name</td></tr></table>
+
+<p>The first command creates a branch, the second command switches
+your tree to a certain branch. You can pass other <code>-r</code>
+argument to switch than HEAD to base your new branch on a different
+revision than the latest one.</p>
+
+<p>You can list your branches conveniently using the aforementioned
+<code>cg-status</code> command - the cryptic listing at the top is just
+the listing of branches. The current one is denoted by an "arrow".</p>
+
+<p>Git supports merging between branches much better than CVS - history
+of both branches is preserved over the merges and repeated merges
+of the same branches are supported out-of-the-box. Make sure you are on
+one of the to-be-merged branches and merge the other one now:</p>
+
+<table class="ccmd"><tr><td class="g">cg merge <em>branch</em></td><td>cvs update -j <em>branch</em></td></tr></table>
+
+<p>If changes were made on only one of the branches since the last merge,
+they are simply replayed on your other branch (so-called <em>fast-forward merge</em>).
+If changes were made on both branches, they are merged intelligently
+(so-called <em>three-way merge</em>): if any changes conflicted, <code>cg merge</code>
+will report them and let you resolve them, updating the rest of the tree
+already to the result state; you can <code>cg commit</code> when you resolve
+the conflicts. If no changes conflicted, <code>cg commit</code> is invoked
+automatically, letting you edit the commit message (or you can do
+<code class="g">cg merge -n <em>branch</em></code> to review the merge
+result and then do the commit yourself).</p>
+
+<p>Sometimes, you <em>do</em> want to throw away the history of one of the
+branches, e.g. when you did a fine-tracked development of a topic and
+now want to squash it to a single conceptual change commit - just pass
+merge the <code class="g">--squash</code> switch. Also, sometimes you may want to
+join together two unrelated branches (coming from different projects;
+hold on, we'll get to that in a minute): <code class="g">-j</code> will take care
+of that.</p>
+
+<p>Aside of merging, sometimes you want to just pick one commit from
+a different branch. We have already mentioned the command <code>cg patch</code>.
+It can apply patches, but also autocommit them and extract them from given
+commits. <code class="g">cg patch -C <em>rev</em></code> combines both
+functionality and will <em>cherry pick</em> a given commit to your branch.</p>
+
+
+<h2 id="remote">Going Remote</h2>
+
+<p>So far, we have neglected that Git is a <em>distributed</em> version
+control system. It is time for us to set the record straight - let's grab
+some stuff from remote sites.</p>
+
+<p>If you are working on someone else's project, you usually want to <em>clone</em>
+its repository instead of starting your own. We've already mentioned that at the top
+of this document:</p>
+
+<table class="ccmd"><tr><td class="g">cg clone <em>url</em></td><td>cvs&nbsp;-d<em>root</em>&nbsp;checkout&nbsp;<em>module</em></td></tr></table>
+
+<p>Now you have got your <code>master</code> branch as when initializing
+a new repository, but in addition you got an <code>origin</code> remote
+branch. <em>Remote branch</em>, you ask? Well, so far we have worked
+only with local branches. Remote branches are a mirror image of branches
+in remote repositories and you don't ever switch to them directly or write
+to them. Let me repeat - you never mess with remote branches. If you want
+to switch to a remote branch, you need to create a corresponding local
+branch which will "track" the remote branch. In clone's default setup,
+the master local branch tracks the origin remote branch, which represents
+the remote repository.</p>
+
+<p>You can add more remote branches, to a cloned repository as well as just
+an initialized one, using <code class="g">cg branch-add <em>branch</em> <em>url</em></code>.
+<code class="g">cg branch-ls</code> lists all the branches.</p>
+
+<p>Now, how to get any new changes from a remote repository to your
+local branch? You fetch them: <code class="g">cg fetch <em>branch</em></code>.
+At this point they are in your local branch and you can examine them using
+<code>cg log -r <em>branch</em></code> (<code>cg log -r HEAD..<em>branch</em></code>
+to see just the changes you don't have in your branch), diff them, and obviously, merge them - just do
+<code>cg merge <em>branch</em></code>. Note that if you don't specify a branch
+for fetch or merge, it will conveniently default to origin.</p>
+
+<p>Since you frequently just fetch + merge, there is a command to automate that:</p>
+
+<table class="ccmd"><tr><td class="g">cg update <em>branch</em></td><td>cvs update -dP</td></tr></table>
+
+<p>Again, it will default to origin if no branch was specified. It is recommended
+to use update instead of fetch + merge since it does the first thing even if
+the remote branch' history got altered (which is also a reason why altering
+history is discouraged at the moment you publish it).</p>
+
+<p>So we can get updates from the remote side (<em>pull</em> changes).
+Can we do the opposite as well? <em>Push</em> our changes? Yes!
+We do <code class="g">cg push <em>branch</em></code> which will push
+our current branch to the given remote branch - note that this works
+generally only over SSH (or HTTP but with special webserver setup).
+It is highly recommended to setup a SSH key and an SSH agent mechanism
+so that you don't have to type in a password all the time.</p>
+
+<p>One important thing is that you should push only to remote branches
+that are not currently checked out on the other side (for the same
+reasons you never switch to a remote branch locally)! Otherwise the
+working copy at the remote branch will get out of date and confusion
+will ensue. The best way to avoid that is to push only to remote
+repositories with no working copy at all - so called <em>bare</em>
+repositories which are commonly used for public access or developers'
+meeting point - just for exchange of history where a checked out copy
+would be a waste of space anyway. You can create such a repository
+using <code class="g">cg admin-setuprepo <em>path</em></code> - you
+can add additional options to make it shared for a UNIX group of users.</p>
+
+<p>Git can work with the same workflow as CVS, with a group of developers
+using a single repository for exchange of their work - the only change
+is that their changes aren't submitted automatically but they have
+to push (however, you can setup a post-commit hook that will push for you
+every time you commit; that loses the flexibility to fix up a screwed
+commit, though). The developers have to have either an entry in htaccess
+(for HTTP DAV) or a UNIX account (for SSH) - you can restrict their
+shell account only to Git pushing/fetching by using the
+<code class="g">git-shell</code> login shell.</p>
+
+<p>You can also exchange patches by mail. Git has very good support
+for patches incoming by mail. You can apply them by feeding mailboxes
+with patch mails to <code class="g">cg patch -m</code>. If you
+want to <em>send</em> patches (or a third-party changes to an upstream
+repository with no commit access in general), it is best to use
+the <strong>StGIT</strong> tool - see
+the <a href="stgit.html">StGIT Crash Course</a> - TBD).</p>
+
+<p>If you have any question or problem which is not obvious from
+the documentation, please contact us at the <strong>Git mailing list</strong>
+at <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a>.
+We hope you enjoy using Git and Cogito!</p>
+
+
+
+<hr />
+
+<div class="footer">
+	<span class="menu">
+		This page is maintained by Petr Baudis. Please email me
+		at <a href="mailto:pasky@suse.cz">pasky@suse.cz</a>
+		with patches, suggestions and comments.
+	</span>
+</div>
+
+</body>
+</html>
