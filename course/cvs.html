@@ -111,7 +111,7 @@ of a revision - as long as it is unique, Git will guess the rest.
 (You can do even more advanced stuff with revision specifiers, see the
 <a href="http://www.kernel.org/pub/software/scm/git/docs/git-rev-parse.html">git-rev-parse manpage</a> for details.)</p>
 
-<p>Each commit has an <em>author</em> and a <em>committer</em> fields,
+<p>Each commit has an <em>author</em> and a <em>committer</em> field,
 which record who and when <em>created</em> the change and who <em>committed</em> it
 (Git is designed to work well with patches coming by mail - in that case,
 the author and the committer will be different). Git will try to guess
@@ -262,7 +262,7 @@ your history:</p>
 
 <p>The log command works quite similar in CVS and Git; again,
 <code>cg log</code> is quite powerful, please look through
-its options to see some of stuff it can do.</p>
+its options to see some of the stuff it can do.</p>
 
 <p>To move your tree to some older revision, use the seek command
 (and pass it no arguments to go back to your latest revision_.
@@ -273,8 +273,8 @@ again and if you are sure, <code class="g">cg switch -f -r <em>newrev</em> maste
 the switch command in more detail in the future).</p>
 
 <p>Git now has an annotation command akin to CVS', but there are
-big chances that you probably want to something different! Usually,
-when using annotate you are looking for origin of some piece of
+big chances that you probably want to do something different! Usually,
+when using annotate you are looking for the origin of some piece of
 code, and the so-called <em>pickaxe</em> of Git is much more comfortable
 tool for that job (<a href="http://www.kernel.org/pub/software/scm/git/docs/cvs-migration.html">detailed discussion</a>;
 you may want to use <code>cg log -S <em>string</em></code> instead
@@ -283,7 +283,7 @@ of <code>git log -S<em>string</em></code>, tho').</p>
 
 <h2 id="branch">Tagging and branching</h2>
 
-<p>CVS can mark certain checkpoints in history with tags. Git
+<p>CVS marks certain checkpoints in history with tags. Git
 obviously can do that to, but not only are Git tags <em>much</em>
 faster to make (and actually reliable), but quite more powerful.
 The Git tag can have an arbitrary description attached (the first

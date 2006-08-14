@@ -112,7 +112,7 @@ of a revision - as long as it is unique, Git will guess the rest.
 (You can do even more advanced stuff with revision specifiers, see the
 <a href="http://www.kernel.org/pub/software/scm/git/docs/git-rev-parse.html">git-rev-parse manpage</a> for details.)</p>
 
-<p>Each commit has an <em>author</em> and a <em>committer</em> fields,
+<p>Each commit has an <em>author</em> and a <em>committer</em> field,
 which record who and when <em>created</em> the change and who <em>committed</em> it
 (Git is designed to work well with patches coming by mail - in that case,
 the author and the committer will be different). Git will try to guess
@@ -197,11 +197,11 @@ specified files, force it to overwrite missing files.
 remove any files:</p>
 
 <table class="ccmd"><tr>
-<td class="g">cg add <em>file</em><br />cg rm <em>file</em><br />cg mv <em>file</em></td>
+<td class="g">cg add <em>file</em><br />cg rm -f <em>file</em><br />cg mv <em>file</em></td>
 <td>svn add <em>file</em><br />svn rm <em>file</em><br />svn mv <em>file</em></td></tr></table>
 
 <p>Cogito is more promising than SVN here; especially, you can
-remove files that are yet present in the working directory
+keep files that are yet present in the working directory
 (<code>cg rm</code> can remove them for you if you pass it
 the <code>-f</code> switch) - saves a lot of annoyance when
 removing files matching to a wildcard.  You can also recursively
@@ -256,7 +256,7 @@ your history:</p>
 
 <p>The log command works quite similar in SVN and Git; again,
 <code>cg log</code> is quite powerful, please look through
-its options to see some of stuff it can do.</p>
+its options to see some of the stuff it can do.</p>
 
 <p>To move your tree to some older revision, use the seek command
 (and pass it no arguments to go back to your latest revision_.
@@ -267,8 +267,8 @@ again and if you are sure, <code class="g">cg switch -f -r <em>newrev</em> maste
 the switch command in more detail in the future).</p>
 
 <p>Git now has an annotation command akin to Subversion's, but there are
-big chances that you probably want to something different! Usually,
-when using annotate you are looking for origin of some piece of
+big chances that you probably want to do something different! Usually,
+when using annotate you are looking for the origin of some piece of
 code, and the so-called <em>pickaxe</em> of Git is much more comfortable
 tool for that job (<a href="http://www.kernel.org/pub/software/scm/git/docs/cvs-migration.html">detailed discussion</a>;
 you may want to use <code>cg log -S <em>string</em></code> instead
@@ -277,8 +277,8 @@ of <code>git log -S<em>string</em></code>, tho').</p>
 
 <h2 id="branch">Tagging and branching</h2>
 
-<p>Subversion can mark certain checkpoints in history with tags. Git
-obviously can do that to, but Git tas are quite more powerful.
+<p>Subversion marks certain checkpoints in history through copies, the copy is
+usually placed in a directory named tags.  Git tags are quite more powerful.
 The Git tag can have an arbitrary description attached (the first
 line is special as in the commit case), some people actually store
 the whole release announcements in the tag descriptions. The identity
@@ -289,9 +289,9 @@ And the tag can be cryptographically PGP signed to verify the identity
 (by Git's nature of working, that signature also confirms the validity
 of the associated revision, its history and tree). So, let's do it:</p>
 
-<table class="ccmd"><tr><td class="g">cg tag <em>name</em></td><td>svn copy <em>somethingscaryinvolvingname</em></td></tr></table>
+<table class="ccmd"><tr><td class="g">cg tag <em>name</em></td><td>svn copy http://example.com/svn/trunk http://example.com/svn/tags/<em>name</em></td></tr></table>
 
-<p>To list tags in Subversion, you run <code>svn whoknowswhat</code>.
+<p>To list tags in Subversion, you could run <code>svn list http://example.com/svn/tags</code>.
 In Git, you can find out using <code class="g">cg tag-ls</code> and show details
 (author, description, PGP signature verification, ...) using
 <code class="g">cg tag-show</code>.</p>
@@ -300,7 +300,7 @@ In Git, you can find out using <code class="g">cg tag-ls</code> and show details
 you basically copy your project to a subdirectory. In Git, you tell it,
 well, to create a branch.</p>
 
-<table class="ccmd"><tr><td class="g">cg switch -r HEAD <em>branch</em><br />cg switch <em>branch</em></td><td>svn copy <em>somethingscaryinvolvingbranch</em><br />svn switch <em>somethingscaryinvolvingbranch</em></td></tr></table>
+<table class="ccmd"><tr><td class="g">cg switch -r HEAD <em>branch</em><br />cg switch <em>branch</em></td><td>svn copy http://example.com/svn/trunk http://example.com/svn/branches/<em>branch</em><br />svn switch http://example.com/svn/branches/<em>branch</em></td></tr></table>
 
 <p>The first command creates a branch, the second command switches
 your tree to a certain branch. You can pass other <code>-r</code>
@@ -316,7 +316,10 @@ of both branches is preserved over the merges and repeated merges
 of the same branches are supported out-of-the-box. Make sure you are on
 one of the to-be-merged branches and merge the other one now:</p>
 
-<table class="ccmd"><tr><td class="g">cg merge <em>branch</em></td><td>svn merge <em>somethingscaryinvolvingbranch</em></td></tr></table>
+<table class="ccmd"><tr><td class="g">cg merge
+<em>branch</em></td><td><em>(assuming the branch was created in revision 20 and
+you are inside a working copy of trunk)</em><br>svn merge -r 20:HEAD
+http://example.com/svn/branches/<em>branch</em></td></tr></table>
 
 <p>If changes were made on only one of the branches since the last merge,
 they are simply replayed on your other branch (so-called <em>fast-forward merge</em>).
