@@ -313,11 +313,11 @@ In CVS, you create a branch tag; in Git, there is a special command for
 working with branches (although funnily enough, there is certain architectural
 similarity between branchs/tags relation in CVS and Git).</p>
 
-<table class="ccmd"><tr><td class="g">cg switch -r HEAD <em>branch</em><br />cg switch <em>branch</em></td><td>cvs tag -b <em>branch</em><br />cvs checkout -r <em>branch</em>name</td></tr></table>
+<table class="ccmd"><tr><td class="g">cg switch -c <em>branch</em><br />cg switch <em>branch</em></td><td>cvs tag -b <em>branch</em><br />cvs checkout -r <em>branch</em>name</td></tr></table>
 
 <p>The first command creates a branch, the second command switches
-your tree to a certain branch. You can pass other <code>-r</code>
-argument to switch than HEAD to base your new branch on a different
+your tree to a certain branch. You can pass an <code>-r</code>
+argument to switch to base your new branch on a different
 revision than the latest one.</p>
 
 <p>You can list your branches conveniently using the aforementioned

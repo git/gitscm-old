@@ -301,11 +301,11 @@ In Git, you can find out using <code class="g">cg tag-ls</code> and show details
 you basically copy your project to a subdirectory. In Git, you tell it,
 well, to create a branch.</p>
 
-<table class="ccmd"><tr><td class="g">cg switch -r HEAD <em>branch</em><br />cg switch <em>branch</em></td><td>svn copy http://example.com/svn/trunk http://example.com/svn/branches/<em>branch</em><br />svn switch http://example.com/svn/branches/<em>branch</em></td></tr></table>
+<table class="ccmd"><tr><td class="g">cg switch -c <em>branch</em><br />cg switch <em>branch</em></td><td>svn copy http://example.com/svn/trunk http://example.com/svn/branches/<em>branch</em><br />svn switch http://example.com/svn/branches/<em>branch</em></td></tr></table>
 
 <p>The first command creates a branch, the second command switches
-your tree to a certain branch. You can pass other <code>-r</code>
-argument to switch than HEAD to base your new branch on a different
+your tree to a certain branch. You can pass an <code>-r</code>
+argument to switch to base your new branch on a different
 revision than the latest one.</p>
 
 <p>You can list your branches conveniently using the aforementioned
