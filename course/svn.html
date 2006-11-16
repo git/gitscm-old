@@ -137,8 +137,8 @@ cg-diff -c
 cg-help -c
 cg-log -c
 </pre>
-The format and purpose is the same as of the <code>~/.svnrc</code>
-file; you can add other commands and switches there later if you wish
+The format and purpose is the same as of the <code>~/.cvsrc</code>
+file from CVS; you can add other commands and switches there later if you wish
 (my tip is <code>-f</code> for <code>cg-log</code>).</p>
 
 <p>Also, you may find it convenient to watch your repository using
@@ -188,7 +188,8 @@ inside) - ignore it for now, we'll learn more about it later.</p>
 "? lines" will get in there, denoting files not tracked by Git.
 Wait a moment if you want to add them, run <code class="g">cg clean</code>
 if you want to get rid all of them, or add them to the <code class="g">.gitignore</code>
-file if you want to keep them around untracked (works the same as <code>.svnignore</code>).
+file if you want to keep them around untracked (works the same as the <code>svn:ignore</code>
+property in SVN).
 
 <p>Somewhat out of order, one thing <code>svn update</code> would do is restoring
 files you've accidentally removed. The command for that in Cogito
