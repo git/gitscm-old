@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 export PATH=/home/pasky/bin:$PATH
 
 cd /home/pasky/WWW/git
