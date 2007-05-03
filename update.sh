@@ -12,7 +12,7 @@ time=$(git cat-file tag $ver | sed -n 's/^tagger.*> //p' | cut -d ' ' -f 1)
 export -n GIT_DIR
 
 verno=$(echo $ver | sed s/^v//)
-date=$(date +%F -d "1970-01-01 0:0 + $time seconds")
+date=$(date +%F -d "1970-01-01 0:0 +0000 + $time seconds")
 
 oldver=$(sed -n 's/.*@VNUM@-->\([^<]*\)<.*/\1/p' index.html)
 [ "$oldver" = "$ver" ] && exit
