@@ -42,16 +42,18 @@ interface for Git which extends it for easier use, while you can still
 use directly Git for more advanced operations; you can also perform all of the
 below using Git commands, but the core Git interface is more elaborate and complicated.
 There is also a potentially useful
-<a href="http://www.kernel.org/pub/software/scm/git/docs/cvs-migration.html">more
-technical CVS to Git migration HOWTO</a> in the Git documentation
-which uses Git commands only, but covers only some specific differences.</p>
+<a href="http://www.kernel.org/pub/software/scm/git/docs/tutorial.html">
+tutorial</a> in the Git documentation.</p>
 
 <ul>
 	<li><a href="#read">How to Read Me</a></li>
 	<li><a href="#know">Things You Should Know</a></li>
-	<li><a href="#own">Your Very Own</a></li>
+	<li><a href="#commit">Commiting</a></li>
+	<li><a href="#browse">Browsing</a></li>
 	<li><a href="#branch">Tagging and Branching</a></li>
+	<li><a href="#merge">Merging</a></li>
 	<li><a href="#remote">Going Remote</a></li>
+	<li><a href="#share">Sharing the Work</a></li>
 </ul>
 
 <div align="center"><table class="relnotes" style="border: 1px">
@@ -64,9 +66,6 @@ this is to get you started quickly:</p>
 </div>
 </td></tr>
 </table></div>
-
-
-<p align="center"><strong>Warning! This tutorial has been just converted from the CVS tutorial by someone not really knowing that much about Subversion usage. Someone please review it and mail me at pasky@suse.cz Thanks!</strong></p>
 
 
 <hr />
@@ -93,42 +92,76 @@ starting with Git. If you are in hurry though, you can skip this
 section and only get back to it when you get seriously confused;
 it should be possible to pick up with just using your intuition.</p>
 
-<p>With Subversion, for each project there is a single repository at some
+<ul>
+
+<li>
+<b>Repositories.</b>
+With Subversion, for each project there is a single repository at some
 detached central place where all the history is and which you checkout
 and commit into. Git works differently, each copy of the project tree
 (we call that the <em>working copy</em>) carries its own repository
 around (in the <code>.git</code> subdirectory in the project tree root).
+So you can have local and remote branches.
 You can also have a so-called <em>bare repository</em> which is not
 attached to a working copy; that is useful especially when you want
-to publish your repository. We will get to that.</p>
+to publish your repository. We will get to that.
+</li>
 
-<p>Subversion identifies revisions with ids of decimal numbers growing
+<li>
+<b>URL.</b>
+In Subversion the <em>URL</em> identifies the location of the repository
+and the path inside the repository, so you organize the layout of the
+repository and its meaning. Normally you would have <code>trunk/</code>,
+<code>branches/</code> and <code>tags/</code> directories. In Git
+the <em>URL</em> is just the location of the repository, and it always
+contains branches and tags. One of the branches is the default (normally named
+master).
+</li>
+
+<li>
+<b>Revisions.</b>
+Subversion identifies revisions with ids of decimal numbers growing
 monotonically which are typically small (although they can get quickly
 to hundreds of thousands for large projects).  That is impractical in distributed systems like Git. Git
 identifies revisions with SHA1 ids, which are long 128bit numbers
 written in hex. It may look scary at first, but in practice it is
-not a big hurdle - you can refer to the latest revision by <code>HEAD</code>
-and its parent as <code>HEAD^</code> (you can go on adding carrets),
+not a big hurdle - you can refer to the latest revision by <code>HEAD</code>,
+its parent as <code>HEAD^</code> and its parent as <code>HEAD^^ = HEAD~2</code>
+(you can go on adding carrets),
 cut'n'paste helps a lot and you can write only the few leading digits
 of a revision - as long as it is unique, Git will guess the rest.
 (You can do even more advanced stuff with revision specifiers, see the
-<a href="http://www.kernel.org/pub/software/scm/git/docs/git-rev-parse.html">git-rev-parse manpage</a> for details.)</p>
+<a href="http://www.kernel.org/pub/software/scm/git/docs/git-rev-parse.html">git-rev-parse manpage</a> for details.)
+</li>
 
-<p>Each commit has an <em>author</em> and a <em>committer</em> field,
+<li>
+<b>Commits.</b>
+Each commit has an <em>author</em> and a <em>committer</em> field,
 which record who and when <em>created</em> the change and who <em>committed</em> it
 (Git is designed to work well with patches coming by mail - in that case,
 the author and the committer will be different). Git will try to guess
 your realname and email, but especially with email it is likely to get it wrong.
 You can check it using <code class="g">git-var -l</code>; see
 <a href="http://www.kernel.org/pub/software/scm/cogito/docs/cg-commit.1.html">cg-commit manpage</a>
-on various ways of overriding it.</p>
+on various ways of overriding it, or:
 
-<p>The Cogito commands are in the form <code>cg command</code>,
+<pre>
+git config --global user.name "Your Name Comes Here"
+git config --global user.email you@yourdomain.example.com
+</pre>
+</li>
+
+<li>
+<b>Commands.</b>
+The Cogito commands are in the form <code>cg command</code>,
 the Git commands take the form of <code>git command</code>.
 In both cases, you can interchangeably use the <code>cg-command</code>
 and <code>git-command</code> form as well.</p>
+</li>
 
-<p>Cogito can produce colourful output with some commands; since
+<li>
+<b>Colours.</b>
+Cogito can produce colourful output with some commands; since
 some people hate colors way more than the rest likes them, by default
 the colors are turned off. If you would like to have colors in your
 output, create <code>~/.cgrc</code> and put this inside:
@@ -139,13 +172,18 @@ cg-log -c
 </pre>
 The format and purpose is the same as of the <code>~/.cvsrc</code>
 file from CVS; you can add other commands and switches there later if you wish
-(my tip is <code>-f</code> for <code>cg-log</code>).</p>
+(my tip is <code>-f</code> for <code>cg-log</code>).
+</li>
 
-<p>Also, you may find it convenient to watch your repository using
-the <code class="g">gitk</code> repository as you go.</p>
+<li>
+<b>Visualize.</b>
+You may find it convenient to watch your repository using
+the <code class="g">gitk</code> repository as you go.
+</li>
 
+</ul>
 
-<h2 id="own">Your Very Own</h2>
+<h2 id="commit">Commiting</h2>
 
 <p>For the first introduction, let's make your project tracked by Git
 and see how we get around to do daily development in it. Let's
@@ -167,7 +205,14 @@ files or such. Let's check what we've done:</p>
 
 <p>That's it. This is one of the more powerful commands; just like
 with SVN, you can pass <code>-r</code>s, limit the diff to specific
-directories or files and so on. Git embeds special information in
+directories or files and so on:</p>
+
+<table class="ccmd"><tr>
+    <td class="g">cg diff -r<em>rev</em> <em>path</em></td>
+    <td>svn diff -r<em>rev</em> <em>path</em></td>
+</tr></table>
+
+<p>Git embeds special information in
 the diffs about adds, removals and mode changes:</p>
 
 <table class="ccmd"><tr><td class="g">cg patch</td><td>patch -p0</td></tr></table>
@@ -191,10 +236,15 @@ if you want to get rid all of them, or add them to the <code class="g">.gitignor
 file if you want to keep them around untracked (works the same as the <code>svn:ignore</code>
 property in SVN).
 
-<p>Somewhat out of order, one thing <code>svn update</code> would do is restoring
-files you've accidentally removed. The command for that in Cogito
-is <code class="g">cg restore</code>; you can restore everything, just
-specified files, force it to overwrite missing files.
+<p>To restore a file from the last revision:</p>
+
+<table class="ccmd"><tr>
+    <td class="g">cg restore <em>path</em></td>
+    <td>svn revert <em>path</em></td>
+</tr></table>
+
+<p>You can restore everything or just specified files,
+force it to overwrite missing files.</p>
 
 <p>So, just like in SVN, you need to tell Git when you add, move or
 remove any files:</p>
@@ -210,7 +260,7 @@ the <code>-f</code> switch) - saves a lot of annoyance when
 removing files matching to a wildcard.  You can also recursively
 add/remove whole directories and so on; Cogito's cool!</p>
 
-<p>So, it's about time we committed our changes. Big surprise
+<p>So, it's about time we commit our changes. Big surprise
 about the command:</p>
 
 <table class="ccmd"><tr><td class="g">cg commit</td><td>svn commit</td></tr></table>
@@ -252,6 +302,8 @@ subcommands.  Git does better - you can amend your latest commit
 <code class="g">cg commit --amend</code>, or toss your latest
 commit away completely using <code class="g">cg admin-uncommit</code>.</p>
 
+<h2 id="browse">Browsing</h2>
+
 <p>Now that we have committed some stuff, you might want to review
 your history:</p>
 
@@ -269,13 +321,13 @@ again and if you are sure, <code class="g">cg switch -f -r <em>newrev</em> maste
 (this will be perhaps made simpler in the future, we will review
 the switch command in more detail in the future).</p>
 
-<p>Git now has an annotation command akin to Subversion's, but there are
+<p>The blame command is more powerful as it can detect lines
+movement, even with file copies and renames. But there are
 big chances that you probably want to do something different! Usually,
 when using annotate you are looking for the origin of some piece of
 code, and the so-called <em>pickaxe</em> of Git is much more comfortable
-tool for that job (<a href="http://www.kernel.org/pub/software/scm/git/docs/cvs-migration.html">detailed discussion</a>;
-you may want to use <code>cg log -S <em>string</em></code> instead
-of <code>git log -S<em>string</em></code>, tho').</p>
+tool for that job (<code>git log -S<em>string</em></code> shows the
+commits which add or remove any file data matching <em>string</em>).</p>
 
 
 <h2 id="branch">Tagging and branching</h2>
@@ -294,10 +346,13 @@ of the associated revision, its history and tree). So, let's do it:</p>
 
 <table class="ccmd"><tr><td class="g">cg tag <em>name</em></td><td>svn copy http://example.com/svn/trunk http://example.com/svn/tags/<em>name</em></td></tr></table>
 
-<p>To list tags in Subversion, you could run <code>svn list http://example.com/svn/tags</code>.
-In Git, you can find out using <code class="g">cg tag-ls</code> and show details
-(author, description, PGP signature verification, ...) using
-<code class="g">cg tag-show</code>.</p>
+<p>To list tags and to see the details:</p>
+
+<table class="ccmd"><tr>
+    <td class="g">cg tag-ls<br />cg tag-show <em>tag</em></td>
+    <td>svn&nbsp;list&nbsp;http://example.com/svn/<em>tags/</em>
+    <br />svn&nbsp;log --limit&nbsp;1&nbsp;http://example.com/svn/tags/<em>tag</em></td>
+</tr></table>
 
 <p>Like Subversion, Git can do branches (surprise surprise!). In Subversion,
 you basically copy your project to a subdirectory. In Git, you tell it,
@@ -313,6 +368,8 @@ revision than the latest one.</p>
 <p>You can list your branches conveniently using the aforementioned
 <code>cg-status</code> command - the cryptic listing at the top is just
 the listing of branches. The current one is denoted by an "arrow".</p>
+
+<h2 id="merge">Merging</h2>
 
 <p>Git supports merging between branches much better than Subversion - history
 of both branches is preserved over the merges and repeated merges
@@ -387,12 +444,17 @@ for fetch or merge, it will conveniently default to origin.</p>
 
 <p>Since you frequently just fetch + merge, there is a command to automate that:</p>
 
-<table class="ccmd"><tr><td class="g">cg update <em>branch</em></td><td>svn update</td></tr></table>
+<table class="ccmd"><tr>
+    <td class="g">cg update</td>
+    <td>svn update</td>
+</tr></table>
 
 <p>Again, it will default to origin if no branch was specified. It is recommended
 to use update instead of fetch + merge since it does the first thing even if
 the remote branch' history got altered (which is also a reason why altering
 history is discouraged at the moment you publish it).</p>
+
+<h2 id="share">Sharing the Work</h2>
 
 <p>So we can get updates from the remote side (<em>pull</em> changes).
 Can we do the opposite as well? <em>Push</em> our changes? Yes!
