@@ -27,5 +27,5 @@ s/\(@TARLINK@-->.*git-\).*\(\.tar\)/\1'$verno'\2/
 echo
 cat index.html
 echo
-cg commit -m"Automated update: [$date] $oldver -> $ver"
+cg commit -m"Automated update: [$date] $oldver -> $ver" index.html
 cg push origin
