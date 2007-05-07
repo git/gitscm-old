@@ -39,18 +39,15 @@ is intended for conveniently maintaining a patch series on top of
 a Git repository. You can reorder, push and pop patches, merge them
 together and mail them out individually or as a patch series.</p>
 
-<p>It is assumed that you know basics of Git and Cogito at this
+<p>It is assumed that you know basics of Git at this
 point, but you can actually get around by just knowing how to clone
 the repository and add/remove files from the working copy:</p>
 
 <pre>
-cg clone <em>url</em>
-cg add <em>file</em>
-cg rm <em>file</em>
+  git clone <em>url</em>
+  git add <em>file</em>
+  git rm <em>file</em></td>
 </pre>
-
-<p>You can get a detailed intro to Git and Cogito <a href="cvs.html">for CVS
-users here</a>.</p>
 
 <p>Before running any command the first time, it's recommended that you
 at least quickly skim through its manual page. Many of the commands have
@@ -86,19 +83,9 @@ show the current (or any) patch.</p>
 
 <p>If you want to update your patches to be against the latest
 version of a remote branch, use the <code class="g">stg pull</code>
-command. It uses the Git pull instead of Cogito pull though, which
-you may find inconvenient - in that case, you can do what pull
-basically does "manually":</p>
-
-<pre>
-stg pop -a
-cg update
-stg push -a
-</pre>
-
-<p>That will pop all the patches, then update your current
+command. It will essentially merely pop all the patches, then update your current
 branch (which probably has no local changes by then) to the upstream
-revision, then push your patches back on top of the new base.
+revision using <code class="g">git pull</code>, then push your patches back on top of the new base.
 Conflicts may occur - then you need to resolve them and tell
 StGit using the <code class="g">stg resolved</code> command
 (you may find the <code>-a</code> flag useful) and then update
@@ -116,7 +103,7 @@ output.</p>
 <p>If you have any question or problem which is not obvious from
 the documentation, please contact us at the <strong>Git mailing list</strong>
 at <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a>.
-We hope you enjoy using Git and Cogito!</p>
+We hope you enjoy using Git!</p>
 
 
 
