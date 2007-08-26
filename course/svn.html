@@ -35,7 +35,7 @@
 <h1>Git - SVN Crash Course</h1>
 
 <p>Welcome to the Git version control system! Here we will briefly
-introduce to Git usage based on your current Subversion knowledge. You will
+introduce you to Git usage based on your current Subversion knowledge. You will
 need the latest <a href="http://git.or.cz/">Git</a> installed;
 There is also a potentially useful
 <a href="http://www.kernel.org/pub/software/scm/git/docs/tutorial.html">
@@ -55,7 +55,7 @@ tutorial</a> in the Git documentation.</p>
 <div align="center"><table class="relnotes" style="border: 1px">
 <tr><td>
 <p style="margin: 0em 0.4em">If you are just after tracking someone else's project,
-this is to get you started quickly:</p>
+this get you started quickly:</p>
 <p/>
 <div align="center">
 <table class="ccmd" style="margin:0em"><tr>
@@ -86,7 +86,7 @@ switch.</p>
 
 <h2 id="know">Things You Should Know</h2>
 
-<p>There is couple of important concepts it is good to know when
+<p>There are couple important concepts it is good to know when
 starting with Git. If you are in hurry though, you can skip this
 section and only get back to it when you get seriously confused;
 it should be possible to pick up with just using your intuition.</p>
@@ -123,7 +123,7 @@ Subversion identifies revisions with ids of decimal numbers growing
 monotonically which are typically small (although they can get quickly
 to hundreds of thousands for large projects).  That is impractical in distributed systems like Git. Git
 identifies revisions with SHA1 ids, which are long 160-bit numbers
-written in hex. It may look scary at first, but in practice it is
+written in hexadecimal. It may look scary at first, but in practice it is
 not a big hurdle - you can refer to the latest revision by <code>HEAD</code>,
 its parent as <code>HEAD^</code> and its parent as <code>HEAD^^ = HEAD~2</code>
 (you can go on adding carrets),
@@ -156,8 +156,8 @@ form as well.
 </li>
 
 <li>
-<b>Colours.</b>
-Git can produce colourful output with some commands; since
+<b>Colors.</b>
+Git can produce colorful output with some commands; since
 some people hate colors way more than the rest likes them, by default
 the colors are turned off. If you would like to have colors in your
 output:
@@ -222,21 +222,21 @@ the diffs about adds, removals and mode changes:</p>
 <p>That will apply the patch while telling Git about and performing
 those "meta-changes".</p>
 
-<p>There is a more conscise changes representation available:</p>
+<p>There is a more concise representation of changes available:</p>
 
 <table class="ccmd"><tr>
     <td class="g">git status</td>
     <td>svn status</td>
 </tr></table>
 
-<p>This will show the conscise changes summary as well as list any files
+<p>This will show the concise changes summary as well as list any files
 that you haven't either ignored or told Git about. In addition,
-it will also show at the top in which branch you are.</p>
+it will also show at the top which branch you are in.</p>
 
 <p>While we are at the status command, over time plenty of the
 "Untracked files" will get in there, denoting files not tracked by Git.
 Wait a moment if you want to add them, run <code class="g">git clean</code>
-if you want to get rid all of them, or add them to the <code class="g">.gitignore</code>
+if you want to get rid of all of them, or add them to the <code class="g">.gitignore</code>
 file if you want to keep them around untracked (works the same as the <code>svn:ignore</code>
 property in SVN).
 
@@ -271,7 +271,7 @@ about the command:</p>
 
 <p>to commit all the changes or, as with Subversion,
 you can limit the commit only to specified files
-and so on. Few words on the commit message: it is <em>customary</em>
+and so on. A few words on the commit message: it is <em>customary</em>
 to have a short commit summary as the first line of the message,
 because various tools listing commits frequently show only the
 first line of the message.  You can specify the commit message
@@ -291,7 +291,7 @@ so that you can do a quick last-time review.</p>
 
 <p>By the way, if you screwed up committing, there's not much you
 can do with Subversion, except using some enigmatic <code>svnadmin</code>
-subcommands.  Git does better - you can amend your latest commit
+subcommands.  Git does it better - you can amend your latest commit
 (re-edit the metadata as well as update the tree) using
 <code class="g">git commit --amend</code>, or toss your latest
 commit away completely using <code class="g">git reset HEAD^</code>,
@@ -311,9 +311,9 @@ your history:</p>
 <code>git log</code> is quite powerful, please look through
 its options to see some of the stuff it can do.</p>
 
-<p>The blame command is more powerful as it can detect lines
-movement, even with file copies and renames. But there are
-big chances that you probably want to do something different! Usually,
+<p>The blame command is more powerful as it can detect the movement of lines,
+even with file copies and renames. But there is a
+big chance that you probably want to do something different! Usually,
 when using annotate you are looking for the origin of some piece of
 code, and the so-called <em>pickaxe</em> of Git is much more comfortable
 tool for that job (<code>git log -S<em>string</em></code> shows the
@@ -335,13 +335,13 @@ a commit with:</p>
 <h2 id="branch">Tagging and branching</h2>
 
 <p>Subversion marks certain checkpoints in history through copies, the copy is
-usually placed in a directory named tags.  Git tags are quite more powerful.
+usually placed in a directory named tags.  Git tags are much more powerful.
 The Git tag can have an arbitrary description attached (the first
 line is special as in the commit case), some people actually store
 the whole release announcements in the tag descriptions. The identity
 of the person who tagged is stored (again following the same rules
 as identity of the committer). You usually tag commits but if you
-want, you can tag files (or trees, but that's a bit lowlevel) as well.
+want, you can tag files (or trees, but that's a bit low-level) as well.
 And the tag can be cryptographically PGP signed to verify the identity
 (by Git's nature of working, that signature also confirms the validity
 of the associated revision, its history and tree). So, let's do it:</p>
@@ -420,11 +420,11 @@ If changes were made on both branches, they are merged intelligently
 will report them and let you resolve them, updating the rest of the tree
 already to the result state; you can <code>git commit</code> when you resolve
 the conflicts. If no changes conflicted, a commit is made automatically with
-a conveniently log message (or you can do
+a convenient log message (or you can do
 <code class="g">git merge --no-commit <em>branch</em></code> to review the merge
 result and then do the commit yourself).</p>
 
-<p>Aside of merging, sometimes you want to just pick one commit from
+<p>Aside from merging, sometimes you want to just pick one commit from
 a different branch. To apply the changes in revision <em>rev</em> and commit
 them to the current branch use:</p>
 
@@ -473,19 +473,19 @@ the <code>--track</code>) you can set:</p>
 git config --global branch.autosetupmerge auto
 </pre>
 
-<p>You can add more remote branches, to a cloned repository as well as just
+<p>You can add more remote branches to a cloned repository, as well as just
 an initialized one, using <code class="g">git remote add <em>remote</em> <em>url</em></code>.
 The command <code class="g">git remote</code> lists all the remotes
 repositories and <code class="g">git remote show <em>remote</em></code> shows
 the branches in a remote repository.</p>
 
-<p>Now, how to get any new changes from a remote repository?
+<p>Now, how do you get any new changes from a remote repository?
 You fetch them: <code class="g">git fetch</code>.
 At this point they are in your repository and you can examine them using
 <code>git log <em>origin</em></code> (<code>git log HEAD..<em>origin</em></code>
 to see just the changes you don't have in your branch), diff them, and obviously, merge them - just do
 <code>git merge <em>origin</em></code>. Note that if you don't specify a branch
-for fetch, it will conveniently default to the tracking remote.</p>
+to fetch, it will conveniently default to the tracking remote.</p>
 
 <p>Since you frequently just fetch + merge the tracking remote branch,
 there is a command to automate that:</p>
@@ -515,16 +515,16 @@ will ensue. The best way to avoid that is to push only to remote
 repositories with no working copy at all - so called <em>bare</em>
 repositories which are commonly used for public access or developers'
 meeting point - just for exchange of history where a checked out copy
-would be a waste of space anyway. You can create such a repository,
-see <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.txt#setting-up-a-public-repository">Setting up a public repository</a> for details.</p>
+would be a waste of space anyway. You can create such a repository.
+See <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.txt#setting-up-a-public-repository">Setting up a public repository</a> for details.</p>
 
 <p>Git can work with the same workflow as Subversion, with a group of developers
-using a single repository for exchange of their work - the only change
+using a single repository for exchange of their work. The only change
 is that their changes aren't submitted automatically but they have
 to push (however, you can setup a post-commit hook that will push for you
 every time you commit; that loses the flexibility to fix up a screwed
-commit, though). The developers have to have either an entry in htaccess
-(for HTTP DAV) or a UNIX account (for SSH) - you can restrict their
+commit, though). The developers must have either an entry in htaccess
+(for HTTP DAV) or a UNIX account (for SSH). You can restrict their
 shell account only to Git pushing/fetching by using the
 <code class="g">git-shell</code> login shell.</p>
 
@@ -534,10 +534,10 @@ with patch mails to <code class="g">git am</code>. If you
 want to <em>send</em> patches use <code class="g">git format-patch</code> and
 possibly <code class="g">git send-email</code>.
 To maintain a set of patches it is best to use
-the <strong>StGIT</strong> tool - see
+the <strong>StGIT</strong> tool (see
 the <a href="stgit.html">StGIT Crash Course</a>).</p>
 
-<p>If you have any question or problem which is not obvious from
+<p>If you have any questions or problems which are not obvious from
 the documentation, please contact us at the <strong>Git mailing list</strong>
 at <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a>.
 We hope you enjoy using Git!</p>

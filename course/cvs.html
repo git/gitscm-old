@@ -35,7 +35,7 @@
 <h1>Cogito - CVS Crash Course</h1>
 
 <p>Welcome to the Git version control system! Here we will briefly
-introduce to Git usage based on your current CVS knowledge. You will
+introduce you to Git usage based on your current CVS knowledge. You will
 need the latest <a href="http://git.or.cz/">Git</a> and Cogito packages installed;
 <a href="http://git.or.cz/cogito/">Cogito</a> is a user
 interface for Git which extends it for easier use, while you can still
@@ -56,7 +56,7 @@ which uses Git commands only, but covers only some specific differences.</p>
 <div align="center"><table class="relnotes" style="border: 1px">
 <tr><td>
 <p style="margin: 0em 0.4em">If you are just after tracking someone else's project,
-this is to get you started quickly:</p>
+this will get you started quickly:</p>
 <p/>
 <div align="center">
 <table class="ccmd" style="margin:0em"><tr><td class="g">cg clone <em>url</em><br />cg update</td><td>cvs&nbsp;-d<em>root</em>&nbsp;checkout&nbsp;<em>module</em><br />cvs update -dP</td></tr></table>
@@ -84,7 +84,7 @@ switch.</p>
 
 <h2 id="know">Things You Should Know</h2>
 
-<p>There is couple of important concepts it is good to know when
+<p>There are couple important concepts it is good to know when
 starting with Git. If you are in hurry though, you can skip this
 section and only get back to it when you get seriously confused;
 it should be possible to pick up with just using your intuition.</p>
@@ -104,8 +104,8 @@ repositories.</p>
 
 <p>CVS identifies revisions with the RCS ids - few numbers delimited
 with dots. That is impractical in distributed systems like Git. Git
-identifies revisions with SHA1 ids, which are long 128bit numbers
-written in hex. It may look scary at first, but in practice it is
+identifies revisions with SHA1 ids, which are long 160-bit numbers
+written in hexadecimal. It may look scary at first, but in practice it is
 not a big hurdle - you can refer to the latest revision by <code>HEAD</code>
 and its parent as <code>HEAD^</code> (you can go on adding carrets),
 cut'n'paste helps a lot and you can write only the few leading digits
@@ -127,7 +127,7 @@ the Git commands take the form of <code>git command</code>.
 In both cases, you can interchangeably use the <code>cg-command</code>
 and <code>git-command</code> form as well.</p>
 
-<p>Cogito can produce colourful output with some commands; since
+<p>Cogito can produce colorful output with some commands; since
 some people hate colors way more than the rest likes them, by default
 the colors are turned off. If you would like to have colors in your
 output, create <code>~/.cgrc</code> and put this inside:
@@ -179,12 +179,12 @@ the diffs about adds, removals and mode changes:</p>
 <p>That will apply the patch while telling Git about and performing
 those "meta-changes".</p>
 
-<p>There is a more conscise changes representation available:</p>
+<p>There is a more concise representation of changes available:</p>
 
 <table class="ccmd"><tr><td class="g">cg status</td><td>(cvs -n update)</td></tr></table>
 
 <p><code>cg status</code> will not update your working copy, though,
-only show the conscise changes summary as well as list any files
+only show the concise changes summary as well as list any files
 that you haven't either ignored or told Git about. In addition,
 it will also show some cryptic line at the top (with "<code>master</code>"
 inside) - ignore it for now, we'll learn more about it later.</p>
@@ -192,7 +192,7 @@ inside) - ignore it for now, we'll learn more about it later.</p>
 <p>While we are at the status command, over time plenty of the
 "? lines" will get in there, denoting files not tracked by Git.
 Wait a moment if you want to add them, run <code class="g">cg clean</code>
-if you want to get rid all of them, or add them to the <code class="g">.gitignore</code>
+if you want to get rid of all of them, or add them to the <code class="g">.gitignore</code>
 file if you want to keep them around untracked (works the same as <code>.cvsignore</code>).
 
 <p>Another thing <code>cvs update</code> would do is restoring
@@ -221,7 +221,7 @@ about the command:</p>
 <table class="ccmd"><tr><td class="g">cg commit</td><td>cvs commit</td></tr></table>
 
 <p>As with CVS, you can limit the commit only to specified files
-and so on. Few words on the commit message: it is <em>customary</em>
+and so on. A few words on the commit message: it is <em>customary</em>
 to have a short commit summary as the first line of the message,
 because various tools listing commits frequently show only the
 first line of the message You can specify the commit message
@@ -252,7 +252,7 @@ commit (and your working tree).</p>
 
 <p>By the way, if you screwed up committing, there's not much you
 can do with CVS, except using some enigmatic <code>cvs admin</code>
-subcommands.  Git does better - you can amend your latest commit
+subcommands.  Git does it better - you can amend your latest commit
 (re-edit the metadata as well as update the tree) using
 <code class="g">cg commit --amend</code>, or toss your latest
 commit away completely using <code class="g">cg admin-uncommit</code>.</p>
@@ -274,8 +274,8 @@ again and if you are sure, <code class="g">cg switch -f -r <em>newrev</em> maste
 (this will be perhaps made simpler in the future, we will review
 the switch command in more detail in the future).</p>
 
-<p>Git now has an annotation command akin to CVS', but there are
-big chances that you probably want to do something different! Usually,
+<p>Git now has an annotation command akin to CVS', but there is a
+big chance that you probably want to do something different! Usually,
 when using annotate you are looking for the origin of some piece of
 code, and the so-called <em>pickaxe</em> of Git is much more comfortable
 tool for that job (<a href="http://www.kernel.org/pub/software/scm/git/docs/cvs-migration.html">detailed discussion</a>;
@@ -287,13 +287,13 @@ of <code>git log -S<em>string</em></code>, tho').</p>
 
 <p>CVS marks certain checkpoints in history with tags. Git
 obviously can do that to, but not only are Git tags <em>much</em>
-faster to make (and actually reliable), but quite more powerful.
+faster to make (and actually reliable), but much more powerful.
 The Git tag can have an arbitrary description attached (the first
 line is special as in the commit case), some people actually store
 the whole release announcements in the tag descriptions. The identity
 of the person who tagged is stored (again following the same rules
 as identity of the committer). You usually tag commits but if you
-want, you can tag files (or trees, but that's a bit lowlevel) as well.
+want, you can tag files (or trees, but that's a bit low-level) as well.
 And the tag can be cryptographically PGP signed to verify the identity
 (by Git's nature of working, that signature also confirms the validity
 of the associated revision, its ihstory and tree). So, let's do it:</p>
@@ -351,7 +351,7 @@ join together two unrelated branches (coming from different projects;
 hold on, we'll get to that in a minute): <code class="g">-j</code> will take care
 of that.</p>
 
-<p>Aside of merging, sometimes you want to just pick one commit from
+<p>Aside from merging, sometimes you want to just pick one commit from
 a different branch. We have already mentioned the command <code>cg patch</code>.
 It can apply patches, but also autocommit them and extract them from given
 commits. The command <code class="g">cg patch -C <em>rev</em></code> combines both
@@ -381,17 +381,17 @@ branch which will "track" the remote branch. In clone's default setup,
 the master local branch tracks the origin remote branch, which represents
 the remote repository.</p>
 
-<p>You can add more remote branches, to a cloned repository as well as just
+<p>You can add more remote branches to a cloned repository, as well as just
 an initialized one, using <code class="g">cg branch-add <em>branch</em> <em>url</em></code>.
 The command <code class="g">cg branch-ls</code> lists all the branches.</p>
 
-<p>Now, how to get any new changes from a remote repository to your
+<p>Now, how do you get any new changes from a remote repository to your
 local branch? You fetch them: <code class="g">cg fetch <em>branch</em></code>.
 At this point they are in your local branch and you can examine them using
 <code>cg log -r <em>branch</em></code> (<code>cg log -r HEAD..<em>branch</em></code>
 to see just the changes you don't have in your branch), diff them, and obviously, merge them - just do
 <code>cg merge <em>branch</em></code>. Note that if you don't specify a branch
-for fetch or merge, it will conveniently default to origin.</p>
+to fetch or merge, it will conveniently default to origin.</p>
 
 <p>Since you frequently just fetch + merge, there is a command to automate that:</p>
 
@@ -423,12 +423,12 @@ using <code class="g">cg admin-setuprepo <em>path</em></code> - you
 can add additional options to make it shared for a UNIX group of users.</p>
 
 <p>Git can work with the same workflow as CVS, with a group of developers
-using a single repository for exchange of their work - the only change
+using a single repository for exchange of their work. The only change
 is that their changes aren't submitted automatically but they have
 to push (however, you can setup a post-commit hook that will push for you
 every time you commit; that loses the flexibility to fix up a screwed
-commit, though). The developers have to have either an entry in htaccess
-(for HTTP DAV) or a UNIX account (for SSH) - you can restrict their
+commit, though). The developers must have either an entry in htaccess
+(for HTTP DAV) or a UNIX account (for SSH). You can restrict their
 shell account only to Git pushing/fetching by using the
 <code class="g">git-shell</code> login shell.</p>
 
@@ -437,10 +437,10 @@ for patches incoming by mail. You can apply them by feeding mailboxes
 with patch mails to <code class="g">cg patch -m</code>. If you
 want to <em>send</em> patches (or a third-party changes to an upstream
 repository with no commit access in general), it is best to use
-the <strong>StGIT</strong> tool - see
+the <strong>StGIT</strong> tool (see
 the <a href="stgit.html">StGIT Crash Course</a>).</p>
 
-<p>If you have any question or problem which is not obvious from
+<p>If you have any questions or problems which are not obvious from
 the documentation, please contact us at the <strong>Git mailing list</strong>
 at <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a>.
 We hope you enjoy using Git and Cogito!</p>
