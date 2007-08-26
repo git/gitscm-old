@@ -122,7 +122,7 @@ master).
 Subversion identifies revisions with ids of decimal numbers growing
 monotonically which are typically small (although they can get quickly
 to hundreds of thousands for large projects).  That is impractical in distributed systems like Git. Git
-identifies revisions with SHA1 ids, which are long 128bit numbers
+identifies revisions with SHA1 ids, which are long 160-bit numbers
 written in hex. It may look scary at first, but in practice it is
 not a big hurdle - you can refer to the latest revision by <code>HEAD</code>,
 its parent as <code>HEAD^</code> and its parent as <code>HEAD^^ = HEAD~2</code>
@@ -516,7 +516,7 @@ repositories with no working copy at all - so called <em>bare</em>
 repositories which are commonly used for public access or developers'
 meeting point - just for exchange of history where a checked out copy
 would be a waste of space anyway. You can create such a repository,
-see <a href="http://www.kernel.org/pub/software/scm/git/user-manual.txt#setting-up-a-public-repository">Setting up a public repository</a> for details.</p>
+see <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.txt#setting-up-a-public-repository">Setting up a public repository</a> for details.</p>
 
 <p>Git can work with the same workflow as Subversion, with a group of developers
 using a single repository for exchange of their work - the only change
