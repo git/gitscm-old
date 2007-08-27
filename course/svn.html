@@ -52,17 +52,15 @@ tutorial</a> in the Git documentation.</p>
 	<li><a href="#share">Sharing the Work</a></li>
 </ul>
 
-<div align="center"><table class="relnotes" style="border: 1px">
-<tr><td>
+<div style="text-align:center;"><table class="relnotes" style="margin-left: auto; margin-right: auto; border: 1px">
+<tr><td style="text-align:center;">
 <p style="margin: 0em 0.4em">If you are just after tracking someone else's project,
 this get you started quickly:</p>
 <p/>
-<div align="center">
-<table class="ccmd" style="margin:0em"><tr>
+<table class="ccmd" style="margin:0em; margin-left: auto; margin-right: auto;"><tr>
     <td class="g">git clone <em>url</em><br />git pull</td>
     <td>svn&nbsp;checkout&nbsp;<em>url</em><br />svn update</td>
 </tr></table>
-</div>
 </td></tr>
 </table></div>
 
@@ -204,7 +202,7 @@ files or such. Let's check what we've done:</p>
 </tr></table>
 
 <p>That's it. This is one of the more powerful commands. To get a diff with an
-specific revision and path do:
+specific revision and path do:</p>
 
 <table class="ccmd"><tr>
     <td class="g">git diff <em>rev</em> <em>path</em></td>
@@ -238,7 +236,7 @@ it will also show at the top which branch you are in.</p>
 Wait a moment if you want to add them, run <code class="g">git clean</code>
 if you want to get rid of all of them, or add them to the <code class="g">.gitignore</code>
 file if you want to keep them around untracked (works the same as the <code>svn:ignore</code>
-property in SVN).
+property in SVN).</p>
 
 <p>To restore a file from the last revision:</p>
 
@@ -247,7 +245,7 @@ property in SVN).
     <td>svn revert <em>path</em></td>
 </tr></table>
 
-<p>You can restore everything or just specified files.
+<p>You can restore everything or just specified files.</p>
 
 <p>So, just like in SVN, you need to tell Git when you add, move or
 remove any files:</p>
@@ -387,7 +385,7 @@ The current one is denoted by an "*".</p>
     <td>svn list http://example.com/svn/branches/</td>
 </tr></table>
 
-<p>To move your tree to some older revision, use:
+<p>To move your tree to some older revision, use:</p>
 
 <table class="ccmd"><tr>
     <td class="g">git checkout <em>rev</em>
