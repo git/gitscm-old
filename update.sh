@@ -23,6 +23,7 @@ sed -i -e '
 s/\(@DATE@-->\[\)[^]]*/\1'$date'/
 s/\(@VNUM@-->\)[^<]*/\1'$ver'/
 s/\(@TARLINK@-->.*git-\).*\(\.tar\)/\1'$verno'\2/
+s/\(@NOTESLINK@-->.*RelNotes-\).*\(\.txt\)/\1'$verno'\2/
 ' index.html
 echo
 cat index.html
