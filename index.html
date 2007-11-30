@@ -88,7 +88,8 @@ Junio C Hamano.</p>
 
 <h2 id="about">About Git</h2>
 
-<div style="float: right"><table class="releases">
+<div style="float: right">
+<table class="releases">
 	<tr><th><a href="course/index.html">Git Crash Courses</a></th></tr>
 	<tr><td align="center">
 	<a href="http://www.kernel.org/pub/software/scm/git/docs/tutorial.html">Git for everyone</a>
@@ -98,8 +99,9 @@ Junio C Hamano.</p>
 	<br /><a href="course/stgit.html">Maintaining external patches</a>
 	<br /><a href="course/svn.html">Git for SVN users</a>
 	<br /><em>More to come soon...</em>
-	</tr></td>
-</table></div>
+	</td></tr>
+</table>
+</div>
 
 <p>Git is distributed version control system focused on
 speed, effectivity and real-world usability on large projects.
@@ -173,7 +175,7 @@ and are either porting an existing toolset to use the Git tools,
 or reimplementing the concepts internally,
 to benefit from the performance improvements.
 This includes e.g.
-<a href="http://wiki.darcs.net/DarcsWiki/DarcsGit">Darcs-git</a>.</li>
+<a href="http://wiki.darcs.net/DarcsWiki/DarcsGit">Darcs-git</a>.</p>
 
 
 <hr />
@@ -223,7 +225,7 @@ You can also use one of many <a href="http://www.kernel.org/mirrors/">kernel.org
 <tr class="odd">
 <td rowspan="3">Debs</td>
 <td>Stable</td>
-<td><a href="http://www.backports.org/debian/pool/main/g/git-core/">http://www.backports.org/debian/pool/main/g/git-core/</a></dd></td>
+<td><a href="http://www.backports.org/debian/pool/main/g/git-core/">http://www.backports.org/debian/pool/main/g/git-core/</a></td>
 </tr>
 <tr>
 <td>Testing</td>
@@ -233,7 +235,6 @@ You can also use one of many <a href="http://www.kernel.org/mirrors/">kernel.org
 <td>Unstable</td>
 <td><a href="http://packages.debian.org/unstable/devel/git-core">http://packages.debian.org/unstable/devel/git-core</a></td>
 </tr>
-</td>
 
 </table>
 
@@ -247,16 +248,14 @@ You can also use one of many <a href="http://www.kernel.org/mirrors/">kernel.org
 <h3>Git by git</h3>
 
 <p>If you already have Git installed, you can get the latest
-development version via Git itself:
+development version via Git itself:</p>
 <pre>git clone git://git.kernel.org/pub/scm/git/git.git</pre>
-</p>
 
 <p>If you have problems connecting (Git uses port 9418),
-you can try to access the repository over the HTTP protocol:
+you can try to access the repository over the HTTP protocol:</p>
 <pre>git clone http://www.kernel.org/pub/scm/git/git.git</pre>
-(this method is considerably slower but works even behind
-firewalls and such).
-</p>
+<p>(this method is considerably slower but works even behind
+firewalls and such).</p>
 
 <p>You can also always browse the current contents
 of the git repository on web using the kernel.org
