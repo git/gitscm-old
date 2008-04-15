@@ -35,15 +35,17 @@
 
 <h1>Git - Fast Version Control System</h1>
 
-<p>Git is a popular version control system
+<p>Git is an open source version control system
 designed to handle very large projects with speed and efficiency;
-it is used mainly for various open source projects,
-most notably the Linux kernel.</p>
+it is especially popular in the open source community,
+serving as a development platform for projects like
+the Linux Kernel, WINE or X.org.</p>
 
 <p>Git falls in the category of distributed source code management tools,
-similar to e.g. GNU Arch or Monotone (or BitKeeper in the proprietary world).
-Every Git working directory is a full-fledged repository with full revision
-tracking capabilities, not dependent on network access or a central server.</p>
+similar to e.g. Mercurial or Bazaar.
+Every Git working directory is a full-fledged repository with complete history
+and full revision tracking capabilities, not dependent on network access
+or a central server. Still, Git manages to be extremely fast and space efficient.</p>
 
 <p>Git is an <a href="http://www.opensource.org/">Open Source</a> project covered by
 the <a href="http://www.gnu.org/licenses/gpl2.txt">GNU General Public License v2</a>.
@@ -126,9 +128,9 @@ and changes are copied from one such repository to another.
 These changes are imported as additional development branches,
 and can be merged in the same way as a locally developed branch.
 Repositories can be easily accessed via the efficient Git protocol
-(optionally wrapped in ssh) or simply using HTTP - you can publish
-your repository anywhere without <em>any</em> special webserver
-configuration required.
+(optionally wrapped in ssh for authentication and security)
+or simply using HTTP - you can publish your repository anywhere
+without <em>any</em> special webserver configuration required.
 </li>
 
 <li>
@@ -136,7 +138,7 @@ configuration required.
 Git is very fast and scales well
 even when working with large projects and long histories.
 It is commonly an order of magnitude faster
-than most other revision control systems,
+than most other version control systems,
 and several orders of magnitude faster on some operations.
 It also uses an extremely efficient packed format
 for long-term revision storage
@@ -157,7 +159,8 @@ without it being noticed. Also, tags can be cryptographically signed.
 Following the Unix tradition,
 Git is a collection of many small tools written in C,
 and a number of scripts that provide convenient wrappers.
-It is easy to chain the components together to do other clever things.
+Git provides tools for both convenient human usage and easy
+scripting to perform new clever operations.
 </li>
 
 </ul>
@@ -166,7 +169,8 @@ It is easy to chain the components together to do other clever things.
 the Git project provides a generic low-level toolkit
 for tree history storage and directory content management.
 Traditionally, the toolkit is called the <em>plumbing</em>.
-Several other projects (so-called <em>porcelains</em>)
+Aside the user interface coming with Git itself,
+several other projects (so-called <em>porcelains</em>)
 offer compatible version control interfaces - see the
 <a href="#tools">related tools</a> list.</p>
 
@@ -183,20 +187,15 @@ This includes e.g.
 <h2 id="documentation">Git Documentation</h2>
 
 <p>You can find all the documentation bundled with the Git source code
-in the <code>Documentation/</code> subdirectory. In addition, you can
-also <a href="http://www.kernel.org/pub/software/scm/git/docs/">read the web version</a>
-(corresponding to the latest Git development version).</p>
+in the <a href="http://www.kernel.org/pub/software/scm/git/docs/"><code>Documentation/</code></a> subdirectory
+(the web version corresponds to the latest Git development version).</p>
 
-<p>For a quick start, the
-<a href="http://www.kernel.org/pub/software/scm/git/docs/tutorial.html">tutorial</a>
-covers the basics. See the
-<a href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday Git</a>
-handbook for a useful minimum set of commands
-depending on your style of Git usage.
-Additionally, the
-<a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html">Git User's Manual</a>
-may be useful. You can find more documents in
-<a href="http://git.or.cz/gitwiki/GitDocumentation">GitDocumentation</a>.</p>
+<p>See <a href="http://www.kernel.org/pub/software/scm/git/docs/tutorial.html">the tutorial</a> to get started,
+then see <a href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday Git</a> for a useful minimum set of commands.
+Especially users migrating from other systems might appreciate the <a href="course/">Crash Courses</a>.
+See <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html">Git User's Manual</a> for a more in-depth introduction.
+You can find links to more useful documentation at the
+<a href="http://git.or.cz/gitwiki/GitDocumentation">GitDocumentation</a> wiki page.</p>
 
 <p>For a large and continuously growing resource of information
 about Git, you can refer to the <a href="http://git.or.cz/gitwiki">Git Wiki</a>
@@ -320,16 +319,18 @@ operations. Git-gui is shipped with Git.
 <dt id="tig">Tig</dt>
 <dd><a href="http://jonas.nitro.dk/tig/">tig</a>
 is a text-mode interface for Git. It acts as a repository browser
-that in addition can act as a pager for various Git commands
+that can also act as a pager for various Git commands
 and manage your index (on diff chunk level).
 </dd>
 
 <dt id="cogito">Cogito</dt>
 <dd><a href="http://git.or.cz/cogito/">Cogito</a>
-was a popular version control system on top of Git, aiming
-at seamless user interface and ease of use. It provided much
-better user interface in the past days of Git but by now it is
-mostly obsolete and currently unmaintained.</dd>
+was a popular version control system on top of Git,
+aiming at seamless user interface and ease of use.
+It provided much better user interface in the past
+but later improvements of Git made it mostly obsolete
+and it is not maintained anymore.
+Please migrate to Git itself.</dd>
 
 </dl>
 
@@ -375,7 +376,7 @@ The mailing list archives are available at
 <a href="http://marc.info/?l=git">http://marc.info/?l=git</a>.</p>
 
 <p>You can also visit the IRC channel dedicated to Git -
-meet us at <a href="irc://irc.freenode.net/#git">#git at FreeNode</a>.</p>
+meet us at <a href="irc://irc.freenode.net/#git">#git on FreeNode</a>.</p>
 
 <p>This website itself is tracked in Git as well -
 you can
