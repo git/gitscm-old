@@ -31,6 +31,9 @@ pre	{ padding: 1em; text-align: left;
 	margin: 0.5em 4em; }
 var	{ font-family: monospace; font-style: normal; }
 
+ul li	{ margin-top: 0.5em; margin-bottom: 0.5em }
+ul.toc li	{ margin-top: 0em; margin-bottom: 0em }
+
 /* Indent paragraphs etc. a bit to make them look nested. */
 ul li, dl, p, div.news
 {
