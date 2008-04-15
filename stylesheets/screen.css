@@ -13,7 +13,7 @@ a:hover	{ text-decoration: none; }
 /* Specifically targeted on screenshoots/index.html */
 dt 	{ font-weight: bold; margin-top: 1em; }
 
-h1	{ font-size: 1.2em; text-align: center; }
+h1	{ font-size: 2em; text-align: center; margin: 1.4em; font-weight: normal; }
 h2	{ font-size: 1.2em; margin-top: 2em }
 h3	{ font-size: 1em; }
 h4	{ font-size: 1em; text-decoration: underline; }
