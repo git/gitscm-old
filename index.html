@@ -210,6 +210,39 @@ about Git, you can refer to the <a href="http://git.or.cz/gitwiki">Git Wiki</a>
 <a href="http://www.kernel.org/pub/software/scm/git/">http://www.kernel.org/pub/software/scm/git/</a>.
 You can also use one of many <a href="http://www.kernel.org/mirrors/">kernel.org mirrors</a>.</p>
 
+<table>
+
+<tr valign="top">
+<td colspan="2">
+<h3>Development snapshots</h3>
+
+<p>Daily snapshots of the main Git development branch are available at
+<a href="http://www.codemonkey.org.uk/projects/git-snapshots/git/"
+>http://www.codemonkey.org.uk/projects/git-snapshots/git/</a>
+(thanks to Dave Jones).</p>
+</td>
+</tr>
+
+<tr valign="top">
+<td>
+<h3>Git by git</h3>
+
+<p>If you already have Git installed, you can get the latest
+development version via Git itself:</p>
+<pre>git clone git://git.kernel.org/pub/scm/git/git.git</pre>
+
+<p>If you have problems connecting (Git uses port 9418),
+you can try to access the repository over the HTTP protocol:</p>
+<pre>git clone http://www.kernel.org/pub/scm/git/git.git</pre>
+<p>(this method is considerably slower but works even behind
+firewalls and such).</p>
+
+<p>You can also always browse the current contents
+of the git repository on web using the kernel.org
+<a href="http://kernel.org/git/?p=git/git.git;a=summary">gitweb interface</a>.</p>
+</td>
+
+<td>
 <h3>Binaries</h3>
 
 <p>For people who prefer precompiled packages, these are available:</p>
@@ -254,29 +287,9 @@ You can also use one of many <a href="http://www.kernel.org/mirrors/">kernel.org
 </tr>
 
 </table>
+</td>
 
-<h3>Development snapshots</h3>
-
-<p>Daily snapshots of the main Git development branch are available at
-<a href="http://www.codemonkey.org.uk/projects/git-snapshots/git/"
->http://www.codemonkey.org.uk/projects/git-snapshots/git/</a>
-(thanks to Dave Jones).</p>
-
-<h3>Git by git</h3>
-
-<p>If you already have Git installed, you can get the latest
-development version via Git itself:</p>
-<pre>git clone git://git.kernel.org/pub/scm/git/git.git</pre>
-
-<p>If you have problems connecting (Git uses port 9418),
-you can try to access the repository over the HTTP protocol:</p>
-<pre>git clone http://www.kernel.org/pub/scm/git/git.git</pre>
-<p>(this method is considerably slower but works even behind
-firewalls and such).</p>
-
-<p>You can also always browse the current contents
-of the git repository on web using the kernel.org
-<a href="http://kernel.org/git/?p=git/git.git;a=summary">gitweb interface</a>.</p>
+</tr></table>
 
 
 <hr />
@@ -300,6 +313,52 @@ user friendly interface or extend Git to perform some specialized tasks.</p>
 <a href="http://git.or.cz/gitwiki/InterfacesFrontendsAndTools">the corresponding wiki page</a>
 for a full list.</p>
 
+<table>
+<tr valign="top">
+
+<td>
+<h3>User Interface Tools</h3>
+
+<dl>
+
+<dt id="qgit">qgit</dt>
+<dd><a href="http://sourceforge.net/projects/qgit">qgit</a> is a QT
+GUI for browsing history of Git repositories, similar to <em>gitk</em>
+but with more features.</dd>
+
+<dt id="tig">Tig</dt>
+<dd><a href="http://jonas.nitro.dk/tig/">tig</a>
+is a text-mode interface for Git. It acts as a repository browser
+that can also act as a pager for various Git commands
+and manage your index (on diff chunk level).</dd>
+
+</dl>
+</td>
+
+<td>
+<h3>Tools Shipped with Git</h3>
+
+<dl>
+
+<dt id="gitk">gitk</dt>
+<dd><a href="http://git.kernel.org/?p=gitk/gitk.git;a=summary">gitk</a>
+is the original TCL/TK GUI for browsing history of Git repositories.</dd>
+
+<dt id="git-gui">Git-gui</dt>
+<dd><a href="http://www.spearce.org/category/projects/scm/git-gui/">git-gui</a>
+is a simple Tk based graphical interface for common Git
+operations.</dd>
+
+<dt id="gitweb">gitweb</dt>
+<dd>gitweb provides a full-fledged <a href="http://git.kernel.org/">web interface</a>
+for Git repositories.</dd>
+
+</dl>
+</td>
+</tr>
+
+<tr valign="top">
+<td>
 <h3>Version Control Interface layers</h3>
 
 <dl>
@@ -325,43 +384,9 @@ and it is not maintained anymore.
 Please migrate to Git itself.</dd>
 
 </dl>
+</td>
 
-<h3>User Interface Tools</h3>
-
-<dl>
-
-<dt id="qgit">qgit</dt>
-<dd><a href="http://sourceforge.net/projects/qgit">qgit</a> is a QT
-GUI for browsing history of Git repositories, similar to <em>gitk</em>
-but with more features.</dd>
-
-<dt id="tig">Tig</dt>
-<dd><a href="http://jonas.nitro.dk/tig/">tig</a>
-is a text-mode interface for Git. It acts as a repository browser
-that can also act as a pager for various Git commands
-and manage your index (on diff chunk level).</dd>
-
-</dl>
-
-<h3>Tools Shipped with Git</h3>
-
-<dl>
-
-<dt id="gitk">gitk</dt>
-<dd><a href="http://git.kernel.org/?p=gitk/gitk.git;a=summary">gitk</a>
-is the original TCL/TK GUI for browsing history of Git repositories.</dd>
-
-<dt id="git-gui">Git-gui</dt>
-<dd><a href="http://www.spearce.org/category/projects/scm/git-gui/">git-gui</a>
-is a simple Tk based graphical interface for common Git
-operations.</dd>
-
-<dt id="gitweb">gitweb</dt>
-<dd>gitweb provides a full-fledged <a href="http://git.kernel.org/">web interface</a>
-for Git repositories.</dd>
-
-</dl>
-
+<td>
 <h3>Public Hosting</h3>
 
 <p>Several public Git hosting sites are available and open for anyone
@@ -386,6 +411,10 @@ site with a custom web interface, supporting multiple repositories per project,
 local installations and with open source code.</dd>
 
 </dl>
+</td>
+</tr>
+
+</table>
 
 
 <hr />
