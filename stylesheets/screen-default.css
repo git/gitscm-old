@@ -9,7 +9,7 @@ dt	{ font-weight: bold; }
 pre
 {
 	color: #124;
-	background: #ade;
+	background: #cde;
 	border: 1px solid #124;
 	font-weight: bold;
 }
@@ -19,7 +19,7 @@ pre
 	border-top: 2px solid #124;
 	border-bottom: 2px solid #124;
 	color: #124;
-	background: #bde /*url(header-footer-background-green.png)*/;
+	background: #ade /*url(header-footer-background-green.png)*/;
 }
 
 div.footer a:visited,
@@ -33,4 +33,4 @@ table.bugmail th,
 table.releases th,
 tr.odd td		{ background: #def; color: #124; }
 
-table.ccmd td.g		{ background: #9bc; color: #124; }
+table.ccmd td.g		{ background: #9cd; color: #124; }
