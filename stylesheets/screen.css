@@ -51,6 +51,8 @@ ul li, dl, p	{ text-align: justify; }
 .header	{ font-size: 1em; font-weight: bold; }
 .footer	{ font-size: 0.7em; }
 
+.footer{ margin-top: 4em; }
+
 .header span.menu,
 .footer span.menu	{ text-align: right; display: block; }
 
