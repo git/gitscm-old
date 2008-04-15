@@ -19,7 +19,7 @@ pre
 	border-top: 2px solid #124;
 	border-bottom: 2px solid #124;
 	color: #124;
-	background: #8ab /*url(header-footer-background-green.png)*/;
+	background: #bde /*url(header-footer-background-green.png)*/;
 }
 
 div.footer a:visited,
@@ -31,6 +31,6 @@ table.bugmail		{ border: 2px solid #124; }
 
 table.bugmail th,
 table.releases th,
-tr.odd td		{ background: #8ab; color: #124; }
+tr.odd td		{ background: #def; color: #124; }
 
-table.ccmd td.g		{ background: #bde; color: #124; }
+table.ccmd td.g		{ background: #9bc; color: #124; }
