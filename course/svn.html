@@ -338,8 +338,8 @@ The Git tag can have an arbitrary description attached (the first
 line is special as in the commit case), some people actually store
 the whole release announcements in the tag descriptions. The identity
 of the person who tagged is stored (again following the same rules
-as identity of the committer). You usually tag commits but if you
-want, you can tag files (or trees, but that's a bit low-level) as well.
+as identity of the committer). You can tag other objects than commits (but
+that is conceptually rather low-level operation).
 And the tag can be cryptographically PGP signed to verify the identity
 (by Git's nature of working, that signature also confirms the validity
 of the associated revision, its history and tree). So, let's do it:</p>
