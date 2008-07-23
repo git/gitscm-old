@@ -1,0 +1,93 @@
+<div class="span-9">
+
+  <div id="git-is">
+    <h3>Git is...</h3>
+
+    <p>Git is an open source, distributed version control system
+    designed to handle very large projects with speed and efficiency,
+    but just as well suited for small personal repositories</p>
+
+    <p>Every Git checkout is a full-fledged repository with complete history
+    and full revision tracking capabilities, not dependent on network access
+    or a central server.</p>
+    
+    <p>Git is used for version control of files, much like tools such as
+    <a href="http://www.selenic.com/mercurial/wiki/">Mercurial</a>,
+    <a href="http://subversion.tigris.org/">Subversion</a>,
+    <a href="http://www.nongnu.org/cvs/">CVS</a>,
+    <a href="http://www.perforce.com/">Perforce</a>,
+    <a href="http://www.bitkeeper.com/">Bitkeeper</a>,
+    and <a href="http://msdn.microsoft.com/en-us/vs2005/aa718670.aspx">Visual SourceSafe</a>.  
+    Though of course it is much, much better at it.
+    </p>
+    <p><a href="http://github.com/git/git">Browse the source code</a></p>
+  </div>
+  
+</div>
+
+<div class="span-5">
+  
+  <div id="using-git">
+    <h3>Projects using Git</h3>
+    <ul>
+      <li><a href="http://git.kernel.org/?p=git/git.git;a=summary">Git</a></li>
+      <li><a href="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=summary">Linux Kernel</a></li>
+      <li><a href="http://github.com/rails/rails/tree/master">Ruby on Rails</a></li>
+      <li><a href="http://www.winehq.org/site/git">WINE</a></li>
+      <li><a href="http://git.fedoraproject.org/git/">Fedora</a></li>
+      <li><a href="http://dev.laptop.org/browser">OLPC</a></li>
+      <li><a href="http://www.x.org/wiki/Development/git">X.org</a></li>
+      <li><a href="http://rubinius.lighthouseapp.com/projects/5089/using-git">Rubinius</a></li>
+      <li><a href="http://git.videolan.org/gitweb.cgi?p=vlc.git;a=summary">VLC</a></li>
+      <li><a href="http://github.com/sstephenson/prototype/tree/master">Prototype</a></li>
+      <li><a href="http://github.com/mootools/mootools-core/tree/master">MooTools</a></li>
+      <li><a href="http://github.com/dpp/liftweb/tree/master">Liftweb</a></li>
+      <!-- be cool to have the last one randomly change to anything on github -->
+    </ul>
+  </div>
+</div>
+
+<div class="span-7 last">
+  <%= render :partial => 'shared/sidebar' %>
+</div>
+
+<div class="span-21">
+  <h2 class="section-start">Git Quick Start</h2>
+</div>
+
+<div class="span-11">
+  <div class="example">
+  <h3>Cloning and Patching</h3>
+<pre>$ git clone git://github.com/git/hello-world.git
+$ cd hello-world
+$ (edit files)
+$ git add (files)
+$ git commit -m 'what I changed message'
+$ git format-patch origin/master --stdout > my.patch
+</pre>
+</div>
+</div>
+
+<div class="span-10 last">
+  <div class="example">
+  <h3>Creating and Commiting</h3>
+<pre>$ cd (project-directory)
+$ git init
+$ git add .
+$ git commit -m 'my first commit' 
+</pre>
+</div>
+</div>
+
+<div class="span-21">
+  <div id="tip">
+    To learn more about how to use Git, move along to the <a href="/documentation">Documentation</a>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#git-is').corner();
+    $('.example').corner();
+  });
+</script>

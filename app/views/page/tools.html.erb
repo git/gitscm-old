@@ -1,0 +1,124 @@
+
+<h2 id="tools">Related Tools</h2>
+
+<p>Git is a true UNIX tool in the sense that it consists of many commands
+that do one thing well. It has been designed from the start to be easily
+wrapped in other tools and frontends. Currently, there are several
+interfaces offering more comfortable Git usage, and also graphical
+interfaces for browsing the history and more.</p>
+
+<p>Traditionally, the low-level part of Git is called <em>plumbing</em>
+and the interfaces and frontends are called <em>porcelains</em>.
+Git itself comes with a default porcelain bundled and that is actually
+what you will normally mean when you say you use Git. However, there
+are several alternative porcelains which might offer considerably more
+user friendly interface or extend Git to perform some specialized tasks.</p>
+
+<p>Below, the most widely used tools are listed. Please refer to
+<a href="http://git.or.cz/gitwiki/InterfacesFrontendsAndTools">the corresponding wiki page</a>
+for a full list.</p>
+
+<table>
+<tr valign="top">
+
+<td>
+<h3>User Interface Tools</h3>
+
+<dl>
+
+<dt id="qgit">qgit</dt>
+<dd><a href="http://sourceforge.net/projects/qgit">qgit</a> is a QT
+GUI for browsing history of Git repositories, similar to <em>gitk</em>
+but with more features.</dd>
+
+<dt id="tig">Tig</dt>
+<dd><a href="http://jonas.nitro.dk/tig/">tig</a>
+is a text-mode interface for Git. It acts as a repository browser
+that can also act as a pager for various Git commands
+and manage your index (on diff chunk level).</dd>
+
+</dl>
+</td>
+
+<td>
+<h3>Tools Shipped with Git</h3>
+
+<dl>
+
+<dt id="gitk">gitk</dt>
+<dd><a href="http://git.kernel.org/?p=gitk/gitk.git;a=summary">gitk</a>
+is the original TCL/TK GUI for browsing history of Git repositories.</dd>
+
+<dt id="git-gui">Git-gui</dt>
+<dd><a href="http://www.spearce.org/category/projects/scm/git-gui/">git-gui</a>
+is a simple Tk based graphical interface for common Git
+operations.</dd>
+
+<dt id="gitweb">gitweb</dt>
+<dd>gitweb provides a full-fledged <a href="http://git.kernel.org/">web interface</a>
+for Git repositories.</dd>
+
+</dl>
+</td>
+</tr>
+
+<tr valign="top">
+<td>
+<h3>Version Control Interface layers</h3>
+
+<dl>
+
+<dt id="stgit">StGIT</dt>
+<dd><a href="http://www.procode.org/stgit/">Stacked Git</a> provides
+a <em>Quilt</em>-like patch management functionality in the Git environment.
+You can easily manage your patches in the scope of Git until they get
+merged upstream.</dd>
+
+<dt id="guilt">Guilt</dt>
+<dd><a href="http://www.kernel.org/pub/linux/kernel/people/jsipek/guilt/">Guilt</a>
+is another patch management tool, closer to the spirit of <em>Quilt</em>
+than StGIT.</dd>
+
+<dt id="cogito">Cogito</dt>
+<dd><a href="http://git.or.cz/cogito/">Cogito</a>
+was a popular version control system on top of Git,
+aiming at seamless user interface and ease of use.
+It provided much better user interface in the past
+but later improvements of Git made it mostly obsolete
+and it is not maintained anymore.
+Please migrate to Git itself.</dd>
+
+</dl>
+</td>
+
+<td>
+<h3>Public Hosting</h3>
+
+<p>Several public Git hosting sites are available and open for anyone
+to host their pet projects:</p>
+
+<dl>
+<dt id="repo">repo.or.cz</dt>
+<dd><a href="http://repo.or.cz/">repo.or.cz</a> is the oldest hosting site,
+accomodating many hundreds of projects, with open-sourced infrastructure
+and aimed at open source software. It provides full push features as well
+as simple mirroring mode and gitweb interface with various enhancements.</dd>
+
+<dt id="github">GitHub</dt>
+<dd><a href="http://github.com/">GitHub</a> provides both free hosting for
+smaller projects and paid options for private hosting and large-sized projects.
+It uses a custom web interface including a wiki hosting and puts emphasis
+on social networking of project developers.</dd>
+
+<dt id="gitorious">Gitorious</dt>
+<dd><a href="http://gitorious.org/">Gitorious</a> is another free hosting
+site with a custom web interface, supporting multiple repositories per project,
+local installations and with open source code.</dd>
+
+</dl>
+
+<p style="text-align: right; font-size: small"><a href="http://git.or.cz/gitwiki/GitHosting">more sites</a></p>
+</td>
+</tr>
+
+</table>
