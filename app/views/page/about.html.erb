@@ -1,21 +1,6 @@
 
 <h2 id="about">About Git</h2>
 
-<div style="float: right">
-<table class="releases">
-	<tr><th><a href="course/index.html">Git Crash Courses</a></th></tr>
-	<tr><td align="center">
-	<a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">Git for everyone</a>
-	<!--
-	<br /><a href="course/new.html">New to revision control?</a>
-	-->
-	<br /><a href="course/stgit.html">Maintaining external patches</a>
-	<br /><a href="course/svn.html">Git for SVN users</a>
-	<!-- <br /><em>More to come soon...</em> -->
-	</td></tr>
-</table>
-</div>
-
 <p>Git is distributed version control system focused on
 speed, effectivity and real-world usability on large projects.
 Its highlights include:</p>
@@ -85,5 +70,33 @@ several other projects (so-called <em>porcelains</em>)
 offer compatible version control interfaces - see the
 <a href="#tools">related tools</a> list.</p>
 
+
+<h2 class="section-start">The Authors of Git</h2>
+
+<p>These are the heroes that have made Git what it is <em>(grouped by commits)</em>:</p>
+  
+<h3 class="title">Primary Authors</h3>
+<table id="authors">
+  <% @authors[:main].in_groups_of(4).each do |group| %>
+  <tr>
+    <% group.each do |author, number| %>
+      <% next if !author%>
+      <td><%= author %> <small>(<%= number %>)</small></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+<h3 class="title">Contributors</h3>
+<table>
+  <% @authors[:contrib].in_groups_of(5).each do |group| %>
+  <tr>
+    <% group.each do |author, number| %>
+      <% next if !author%>
+      <td><%= author %> <small>(<%= number %>)</small></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
 
 <hr />

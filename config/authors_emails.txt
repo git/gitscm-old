@@ -1,0 +1,647 @@
+A Large Angry SCM:gitzilla@gmail.com
+Abhijit Menon-Sen:ams@toroid.org
+Adam Brewster:adambrewster@gmail.com
+Adam Piątyszek:ediap@users.sourceforge.net
+Adam Roben:aroben@apple.com
+Adam Simpkins:adam@adamsimpkins.net
+Adeodato Simó:dato@net.com.org.es
+Alan Chandler:alan@chandlerfamily.org.uk
+Alberto Bertogli:albertito@gmail.com
+Alecs King:alecsk@gmail.com
+Alejandro Mery:amery@geeks.cl
+Alex Bennee:kernel-hacker@bennee.com
+Alex Riesen:fork0@t-online.de
+Alex Riesen:raa.lkml@gmail.com
+Alex Riesen:raa@limbo.localdomain
+Alex Riesen:raa@steel.home
+Alexander Gavrilov:angavrilov@gmail.com
+Alexander Litvinov:lan@ac-sw.com
+Alexander N. Gavrilov:angavrilov@gmail.com
+Alexandre Julliard:julliard@winehq.org
+Alexandre Vassalotti:alexandre@peadrop.com
+Alexey Guzeev:aga@supplehost.com
+Alexey Nezhdanov:snake@penza-gsm.ru
+Alp Toker:alp@atoker.com
+Amos Waterland:apw@rossby.metr.ou.edu
+Amos Waterland:apw@us.ibm.com
+Anand Kumria:wildfire@progsoc.org
+Anders Waldenborg:anders@0x63.nu
+Andre Noll:maan@systemlinux.org
+Andreas Ericsson:ae@op5.se
+Andreas Ericsson:exon@op5.se
+Andreas Gal:gal@uci.edu
+Andrew Clausen:clausen@econ.upenn.edu
+Andrew Ruder:andy@aeruder.net
+André Goddard Rosa:andre.goddard@gmail.com
+Andy Parkins:andyparkins@gmail.com
+Andy Whitcroft:apw@shadowen.org
+Aneesh Kumar K.V:aneesh.kumar@gmail.com
+Aneesh Kumar:aneesh.kumar@gmail.com
+Anton Altaparmakov:aia21@cam.ac.uk
+Anton Gyllenberg:anton@iki.fi
+Ariel Badichi:abadichi@bezeqint.net
+Arjen Laarhoven:arjen@yaph.org
+Art Haas:ahaas@airmail.net
+Ask Bjørn Hansen:ask@develooper.com
+Aurelien Bompard:aurelien@bompard.org
+Avery Pennarun:apenwarr@gmail.com
+Avery Pennarun:apenwarr@versabanq.com
+Avi Kivity:avi@qumranet.com
+Bart Trojanowski:bart@jukie.net
+Ben Clifford:benc@hawaga.org.uk
+Benjamin Sergeant:bsergean@gmail.com
+Benoit Sigoure:tsuna@lrde.epita.fr
+Bernt Hansen:bernt@alumni.uwaterloo.ca
+Bernt Hansen:bernt@norang.ca
+Bill Lear:rael@zopyra.com
+Björn Engelmann:BjEngelmann@gmx.de
+Björn Steinbrink:B.Steinbrink@gmx.de
+Blake Ramsdell:blaker@gmail.com
+Bob Proulx:bob@proulx.com
+Boyd Lynn Gerber:gerberb@zenez.com
+Brad King:brad.king@kitware.com
+Brad Roberts:braddr@puremagic.com
+Bradford C. Smith:bradford.carl.smith@gmail.com
+Brandon Casey:casey@nrlssc.navy.mil
+Brandon Casey:drafnel@gmail.com
+Brian Downing:bdowning@lavos.net
+Brian Ewins:brian.ewins@gmail.com
+Brian Gernhardt:benji@silverinsanity.com
+Brian Gerst:bgerst@didntduck.org
+Brian Hetro:whee@smaertness.net
+Bruno Ribas:ribas@c3sl.ufpr.br
+Bryan Donlan:bdonlan@fushizen.net
+Bryan Larsen:bryan.larsen@gmail.com
+Bryan Larsen:bryan@larsen.st
+Bryan Larsen:bryanlarsen@yahoo.com
+CJ van den Berg:cj@vdbonline.com
+Caio Marcelo de Oliveira Filho:cmarcelo@gmail.com
+Carl Worth:cworth@cworth.org
+Carlos Rica:jasampler@gmail.com
+Catalin Marinas:catalin.marinas@gmail.com
+Charles Bailey:charles@hashpling.org
+Chris Frey:cdfrey@foursquare.net
+Chris Parsons:chris@edendevelopment.co.uk
+Chris Pettitt:cpettitt@gmail.com
+Chris Ridd:chris.ridd@isode.com
+Chris Riddoch:chris@syntacticsugar.org
+Chris Shoemaker:c.shoemaker@cox.net
+Chris Wedgwood:cw@f00f.org
+Chris Wright:chrisw@osdl.org
+Chris Wright:chrisw@sous-sol.org
+Christian Biesinger:cbiesinger@web.de
+Christian Couder:chriscool@tuxfamily.org
+Christian Engwer:christi@uni-hd.de
+Christian Meder:chris@absolutegiganten.org
+Christian Schlotter:schlotter@users.sourceforge.net
+Christian Stimming:chs@ckiste.goetheallee
+Christian Stimming:stimming@tuhh.de
+Christopher Li:git@chrisli.org
+Ciaran McCreesh:ciaran.mccreesh@googlemail.com
+Clemens Buchacher:drizzd@aon.at
+Clifford Caoile:piyo@users.sourceforge.net
+Cristian Peraferrer:corellian.c@gmail.com
+Damien Diederen:dash@foobox.net
+Dan Holmsand:holmsand@gmail.com
+Dan McGee:dpmcgee@gmail.com
+Dan Nicholson:dbn.lists@gmail.com
+Dana How:danahow@gmail.com
+Dana How:how@deathvalley.cswitch.com
+Dana L. How:danahow@gmail.com
+Daniel Barkalow:barkalow@iabervon.org
+Daniel Drake:dsd@gentoo.org
+Darrin Thompson:darrint@progeny.com
+Dave O'Neill:dmo@roaringpenguin.com
+Dave Peticolas:dave@krondo.com
+Dave Watson:dwatson@mimvista.com
+David Aguilar:davvid@gmail.com
+David Brown:git@davidb.org
+David D Kilzer:ddkilzer@kilzer.net
+David D. Kilzer:ddkilzer@kilzer.net
+David Greaves:david@dgreaves.com
+David Kastrup:dak@gnu.org
+David Kågedal:davidk@lysator.liu.se
+David Meybohm:dmeybohmlkml@bellsouth.net
+David Miller:davem@davemloft.net
+David Reiss:dreiss@dreiss-vmware.(none)
+David Reiss:dreiss@facebook.com
+David Rientjes:rientjes@google.com
+David S. Miller:davem@davemloft.net
+David Soria Parra:dsp@php.net
+David Steven Tweed:d.s.tweed@reading.ac.uk
+David Symonds:dsymonds@gmail.com
+David Woodhouse:dwmw2@infradead.org
+David_K�gedal:davidk@lysator.liu.se
+Davide Libenzi:davidel@xmailserver.org
+Denis Cheng:crquan@gmail.com
+Dennis Stosberg:dennis@stosberg.net
+Dirk Suesserott:newsletter@dirk.my1.cc
+Dirk Süsserott:newsletter@dirk.my1.cc
+Dmitry Kakurin:Dmitry.Kakurin@gmail.com
+Dmitry Potapov:dpotapov@gmail.com
+Dmitry V. Levin:ldv@altlinux.org
+Don Zickus:dzickus@redhat.com
+Dotan Barak:dotanb@dev.mellanox.co.il
+Doug Maxey:dwm@bebe.enoyolf.org
+Douglas Stockwell:doug@11011.net
+Dustin Sallings:dustin@spy.net
+Edgar Toernig:froese@gmx.de
+Elrond:elrond+kernel.org@samba-tng.org
+Elvis Pranskevichus:el@prans.net
+Emil Medve:Emilian.Medve@Freescale.com
+Eric Hanchrow:offby1@blarg.net
+Eric Raible:raible@gmail.com
+Eric W. Biederman:ebiederm@xmission.com
+Eric Wong:normalperson@yhbt.net
+Eygene Ryabinkin:rea-git@codelabs.ru
+Eyvind Bernhardsen:eyvind-git@orakel.ntnu.no
+Fabian Emmes:fabian.emmes@rwth-aachen.de
+Federico Mena Quintero:federico@novell.com
+Fernando J. Pereda:ferdy@gentoo.org
+Finn Arne Gangstad:finnag@pvv.org
+Flavio Poletti:flavio@polettix.it
+Florian Forster:octo@verplant.org
+Florian La Roche:laroche@redhat.com
+Florian Ragwitz:rafl@debian.org
+Florian Weimer:fw@deneb.enyo.de
+Francis Daly:francis@daoine.org
+Francis Moreau:francis.moro@gmail.com
+Franck Bui-Huu:fbuihuu@gmail.com
+Franck Bui-Huu:vagabon.xyz@gmail.com
+Frank Lichtenheld:djpig@debian.org
+Frank Lichtenheld:frank@lichtenheld.de
+Frank Sorenson:frank@tuxrocks.com
+Fred Maranhão:fred.maranhao@gmail.com
+Frederick Akalin:akalin@akalin.cx
+Frederik Schwarzer:schwarzerf@gmail.com
+Fredrik Kuivinen:freku045@student.liu.se
+Fredrik Kuivinen:frekui@gmail.com
+Geert Bosch:bosch@gnat.com
+Geoffrey Irving:irving@naml.us
+Gerrit Pape:pape@smarden.org
+Giuseppe Bilotta:giuseppe.bilotta@gmail.com
+Glenn Rempe:glenn@rempe.us
+Gordon Hopper:g.hopper@computer.org
+Govind Salinas:govind@sophiasuchtig.com
+Greg KH:greg@kroah.com
+Greg Louis:glouis@dynamicro.ca
+Grégoire Barbier:gb@gbarbier.org
+Guanqun Lu:guanqun.lu@gmail.com
+Guido Ostkamp:git@ostkamp.fastmail.fm
+Gustaf Hendeby:hendeby@isy.liu.se
+H. Peter Anvin:hpa@smyrno.hos.anvin.org
+H. Peter Anvin:hpa@zytor.com
+H.Merijn Brand:h.m.brand@xs4all.nl
+Haavard Skinnemoen:hskinnemoen@atmel.com
+Han Boetes:han@mijncomputer.nl
+Han-Wen Nienhuys:hanwen@google.com
+Han-Wen Nienhuys:hanwen@xs4all.nl
+Harri Ilari Tapio Liusvaara:hliusvaa@cc.hut.fi
+Heikki Orsila:heikki.orsila@iki.fi
+Herbert Valerio Riedel:hvr@gnu.org
+Herbert Xu:herbert@gondor.apana.org.au
+Holger Eitzenberger:holger@my-eitzenberger.de
+Horst H. von Brand:vonbrand@inf.utfsm.cl
+Horst von Brand:vonbrand@inf.utfsm.cl
+Huw Davies:huw@codeweavers.com
+Ian Hilt:ian.hilt@gmail.com
+Ian Katz:ifreecarve@gmail.com
+Imran M Yousuf:imyousuf@smartitengineering.com
+Ingo Molnar:mingo@elte.hu
+Irina Riesen:irina.riesen@gmail.com
+Ismail Dönmez:ismail@pardus.org.tr
+Iñaki Arenaza:iarenuno@eteo.mondragon.edu
+J. Bruce Fields:bfields@citi.umich.edu
+J. Bruce Fields:bfields@fieldses.org
+J. Bruce Fields:bfields@pig.linuxdev.us.dell.com
+J. Bruce Fields:bfields@puzzle.fieldses.org
+Jakub Narebski:jnareb@gmail.com
+James Bottomley:James.Bottomley@SteelEye.com
+James Bowes:jbowes@dangerouslyinc.com
+James Y Knight:foom@fuhm.net
+Jamis Buck:jamis@37signals.com
+Jan Andres:jandres@gmx.net
+Jan Harkes:jaharkes@cs.cmu.edu
+Jan Hudec:bulb@ucw.cz
+Jan Krüger:jk@jk.gs
+Jan Veldeman:jan@mind.be
+Jari Aalto:jari.aalto@cante.net
+Jason McMullan:jason.mcmullan@timesys.com
+Jason McMullan:mcmullan@netapp.com
+Jason Riedy:ejr@EECS.Berkeley.EDU
+Jason Riedy:ejr@cs.berkeley.edu
+Jay Soffian:jaysoffian@gmail.com
+Jean-Luc Herren:jlh@gmx.ch
+Jeff Garzik:jgarzik@pobox.com
+Jeff Hobbs:jeffh@ActiveState.com
+Jeff King:peff@peff.net
+Jeff Muizelaar:jeff@infidigm.net
+Jeffrey C. Ollie:jeff@ocjtech.us
+Jens Axboe:axboe@suse.de
+Jens Axboe:jens.axboe@oracle.com
+Jerald Fitzjerald:jfj@freemail.gr
+Jim Meyering:jim@meyering.net
+Jim Meyering:meyering@redhat.com
+Jim Radford:radford@blackbean.org
+Jing Xue:jingxue@digizenstudio.com
+Joachim B Haga:cjhaga@fys.uio.no
+Joachim Berdal Haga:cjhaga@fys.uio.no
+Joakim Tjernlund:Joakim.Tjernlund@transmode.se
+Jochen Voss:voss@seehuhn.de
+Joe English:jenglish@flightlab.com
+Joe Perches:joe@perches.com
+Joey Hess:joey@kitenet.net
+Johan Herland:johan@herland.net
+Johannes Schindelin:Johannes.Schindelin@gmx.de
+Johannes Schindelin:johannes.schindelin@gmx.de
+Johannes Sixt:J.Sixt@eudaptics.com
+Johannes Sixt:j.sixt@viscovery.net
+Johannes Sixt:johannes.sixt@telecom.at
+John Ellson:ellson@research.att.com
+John Goerzen:jgoerzen@complete.org
+John J. Franey:jjfraney@gmail.com
+Jon Loeliger:jdl@freescale.com
+Jon Loeliger:jdl@freescale.org
+Jon Loeliger:jdl@jdl.com
+Jon Seymour:jon.seymour@gmail.com
+Jonas Fonseca:fonseca@diku.dk
+Jonathan Nieder:jrnieder@uchicago.edu
+Jonathan del Strother:jon.delStrother@bestbefore.tv
+Jonathan del Strother:maillist@steelskies.com
+Josef Weidendorfer:Josef.Weidendorfer@gmx.de
+Josh Elsasser:josh@elsasser.org
+Josh England:jjengla@sandia.gov
+Josh Triplett:josh@freedesktop.org
+Josh Triplett:josht@us.ibm.com
+João Abecasis:joao@abecasis.name
+Julian Phillips:jp3@quantumfyre.co.uk
+Julian Phillips:julian@quantumfyre.co.uk
+Junichi Uekawa:dancer@netfort.gr.jp
+Junio C Hamano:gitster@pobox.com
+Junio C Hamano:junio@hera.kernel.org
+Junio C Hamano:junio@kernel.org
+Junio C Hamano:junio@pobox.com
+Junio C Hamano:junio@twinsun.com
+Junio C Hamano:junkio@cox.net
+Junio C Hamano:junkio@twinsun.com
+Junio Hamano:junio@twinsun.com
+Jyotirmoy Bhattacharya:jyotirmoy@jyotirmoy.net
+Jörg Sommer:joerg@alea.gnuu.de
+Jürgen Rühle:j-r@online.de
+Kai Ruemmler:kai.ruemmler@gmx.net
+Kalle Valo:Kalle.Valo@iki.fi
+Karl  Hasselström:kha@treskal.com
+Karl Hasselström:kha@treskal.com
+Karl Hasselström:kha@yoghurt.hemma.treskal.com
+Kay Sievers:kay.sievers@suse.de
+Kay Sievers:kay.sievers@vrfy.org
+Kay Sievers:kay@mam.(none)
+Keith Packard:keithp@keithp.com
+Kevin Ballard:kevin@sb.org
+Kevin Geiss:kevin@desertsol.com
+Kevin Green:Kevin.Green@morganstanley.com
+Kevin Leung:kevinlsk@gmail.com
+Kirill:kirillathome@gmail.com
+Konstantin V. Arkhipov:voxus@onphp.org
+Kris Shannon:kris.shannon@gmail.com
+Kristian Høgsberg:hoegsberg@gmail.com
+Kristian Høgsberg:krh@redhat.com
+Kristof Provost:Kristof@provost-engineering.be
+Krzysztof Kowalczyk:kkowalczyk@gmail.com
+Kumar Gala:galak@kernel.crashing.org
+Lars Hjemli:hjemli@gmail.com
+Lars Knoll:lars@trolltech.com
+Lars Noschinski:lars.noschinski@rwth-aachen.de
+Lars Noschinski:lars@public.noschinski.de
+Lea Wiemann:lewiemann@gmail.com
+Li Yang:leoli@freescale.com
+Linus Torvalds:torvalds@evo.osdl.org
+Linus Torvalds:torvalds@g5.osdl.org
+Linus Torvalds:torvalds@linux-foundation.org
+Linus Torvalds:torvalds@osdl.org
+Linus Torvalds:torvalds@ppc970.osdl.org
+Linus Torvalds:torvalds@ppc970.osdl.org.(none)
+Linus Torvalds:torvalds@woody.linux-foundation.org
+Liu Yubao:yubao.liu@gmail.com
+Luben Tuikov:ltuikov@yahoo.com
+Luciano Rocha:luciano@eurotux.com
+Luck, Tony:tony.luck@intel.com
+Luiz Fernando N. Capitulino:lcapitulino@mandriva.com.br
+Lukas Sandström:lukass@etek.chalmers.se
+Lukas_Sandström:lukass@etek.chalmers.se
+Luke Lu:git@vicaya.com
+Marc-Andre Lureau:marcandre.lureau@gmail.com
+Marcel Koeppen:git-dev@marzelpan.de
+Marco Costalba:mcostalba@gmail.com
+Marco Costalba:mcostalba@yahoo.it
+Marco Roeland:marco.roeland@xs4all.nl
+Marcus Fritzsch:m@fritschy.de
+Marius Storm-Olsen:marius@trolltech.com
+Marius Storm-Olsen:mstormo_git@storm-olsen.com
+Mark Allen:mrallen1@yahoo.com
+Mark Drago:markdrago@gmail.com
+Mark Hills:mark@pogo.org.uk
+Mark Hollomon:markhollomon@comcast.net
+Mark Levedahl:mdl123@verizon.net
+Mark Levedahl:mlevedahl@gmail.com
+Mark Wooding:mdw@distorted.org.uk
+Markus Amsler:markus.amsler@oribi.org
+Martin Atukunda:matlads@dsmagic.com
+Martin Koegler:mkoegler@auto.tuwien.ac.at
+Martin Langhoff:martin@catalyst.net.nz
+Martin Langhoff:martin@ng.eduforge.org
+Martin Mares:mj@ucw.cz
+Martin Sivak:mars@nomi.cz
+Martin Waitz:tali@admingilde.org
+Martyn Smith:martyn@catalyst.net.nz
+Mathias Megyei:mathias@mnet-mail.de
+Matt Draisey:matt@draisey.ca
+Matt Draisey:mattdraisey@sympatico.ca
+Matt Graham:mdg149@gmail.com
+Matt Kraai:kraai@ftbfs.org
+Matt McCutchen:hashproduct@gmail.com
+Matthew Ogilvie:mmogilvi_git@miniinfo.net
+Matthew Wilcox:matthew@wil.cx
+Matthias Kestenholz:matthias@spinlock.ch
+Matthias Kestenholz:mk@spinlock.ch
+Matthias Lederhofer:matled@gmx.net
+Matthias Urlichs:smurf@kiste.(none)
+Matthias Urlichs:smurf@smurf.noris.de
+Matthieu Castet:castet.matthieu@free.fr
+Matthieu Moy:Matthieu.Moy@imag.fr
+Matthijs Melchior:mmelchior@xs4all.nl
+Michael Coleman:tutufan@gmail.com
+Michael Dressel:MichaelTiloDressel@t-online.de
+Michael Ellerman:michael@ellerman.id.au
+Michael Gebetsroither:michael.geb@gmx.at
+Michael Hendricks:michael@ndrix.org
+Michael Krelin:hacker@klever.net
+Michael Loeffler:zvpunry@zvpunry.de
+Michael Milligan:milli@acmeps.com
+Michael Olson:mwolson@gnu.org
+Michael Poole:mdpoole@troilus.org
+Michael S. Tsirkin:mst@dev.mellanox.co.il
+Michael S. Tsirkin:mst@mellanox.co.il
+Michael Smith:msmith@cbnco.com
+Michael Spang:mspang@uwaterloo.ca
+Michael Stefaniuc:mstefani@redhat.com
+Michael W. Olson:mwolson@gnu.org
+Michael Weber:michaelw@foldr.org
+Michael Witten:mfwitten@MIT.EDU
+Michael Witten:mfwitten@mit.edu
+Michael:barra_cuda@katamail.com
+Michal Ostrowski:mostrows@watson.ibm.com
+Michal Rokos:michal.rokos@nextsoft.cz
+Michal Vitecek:fuf@mageo.cz
+Michele Ballabio:barra_cuda@katamail.com
+Mika Kukkonen:mikukkon@miku.homelinux.net
+Mikael Magnusson:mikachu@gmail.com
+Mike Coleman:tutufan@gmail.com
+Mike Dalessio:mike@csa.net
+Mike Hommey:mh@glandium.org
+Mike McCormack:mike@codeweavers.com
+Mike Pape:dotzenlabs@gmail.com
+Mike Ralphson:mike@abacus.co.uk
+Miklos Vajna:vmiklos@frugalware.org
+Miles Bader:miles@gnu.org
+Mukund:muks@mukund.org
+Nanako Shiraishi:nanako3@bluebottle.com
+Nanako Shiraishi:nanako3@lavabit.com
+Nguyen Thai Ngoc Duy:pclouds@gmail.com
+Nguyễn Thái Ngọc Duy:pclouds@gmail.com
+Nick Hengeveld:nickh@reactrix.com
+Nicolas Pitre:nico@cam.org
+Nikolai Weibull:mailing-lists.git@rawuncut.elitemail.org
+Nikolaus Schulz:microschulz@web.de
+No name:linux@horizon.com
+OGAWA Hirofumi:hirofumi@mail.parknet.co.jp
+Olaf Hering:olh@suse.de
+Olivier Marin:dkr@freesurf.fr
+Panagiotis Issaris:takis@lumumba.luc.ac.be
+Paolo 'Blaisorblade' Giarrusso:blaisorblade@yahoo.it
+Paolo Bonzini:bonzini@gnu.org
+Paolo Bonzini:paolo.bonzini@lu.unisi.ch
+Paolo Ciarrocchi:paolo.ciarrocchi@gmail.com
+Pascal Obry:pascal.obry@gmail.com
+Pascal Obry:pascal.obry@wanadoo.fr
+Patrick Higgins:patrick.higgins@cexp.com
+Patrick Mauritz:oxygene@studentenbude.ath.cx
+Patrick Welche:prlw1@newn.cam.ac.uk
+Paul Collins:paul@briny.ondioline.org
+Paul Eggert:eggert@CS.UCLA.EDU
+Paul Jakma:paul@clubi.ie
+Paul Mackerras:paulus@dorrigo.(none)
+Paul Mackerras:paulus@pogo.(none)
+Paul Mackerras:paulus@samba.org
+Paul Oliver:puzza007@gmail.com
+Paul Serice:paul@serice.net
+Paul T Darga:pdarga@umich.edu
+Pavel Roskin:proski@gnu.org
+Pedro Melo:melo@simplicidade.org
+Pekka Kaitaniemi:kaitanie@cc.helsinki.fi
+Peter Anvin:hpa@tazenda.sc.orionmulti.com
+Peter Baumann:Peter.B.Baumann@stud.informatik.uni-erlangen.de
+Peter Baumann:siprbaum@stud.informatik.uni-erlangen.de
+Peter Eriksen:s022018@student.dtu.dk
+Peter Hagervall:hager@cs.umu.se
+Peter Harris:git@peter.is-a-geek.org
+Peter Karlsson:peter@softwolves.pp.se
+Peter Karlsson:peter@svarten.intern.softwolves.pp.se
+Petr Baudis:pasky@suse.cz
+Petr Baudis:pasky@ucw.cz
+Petr Baudis:xpasky@machine
+Philipp A. Hartmann:ph@sorgh.de
+Philippe Bruhat (BooK):book@cpan.org
+Philippe Bruhat (BooK:book@cpan.org
+Pierre Habouzit:madcoder@debian.org
+Pieter de Bie:pdebie@ai.rug.nl
+Ping Yin:pkufranky@gmail.com
+Pini Reznik:pinir@expand.com
+Qingning Huo:qhuo@mayhq.co.uk
+Quy Tonthat:qtonthat@gmail.com
+Rafael Garcia-Suarez:rgarciasuarez@gmail.com
+Ralf Baechle:ralf@linux-mips.org
+Ralf Wildenhues:Ralf.Wildenhues@gmx.de
+Ramsay Allan Jones:ramsay@ramsay1.demon.co.uk
+Ramsay Jones:ramsay@ramsay1.demon.co.uk
+Randal L. Schwartz:merlyn@stonehenge.com
+Randy Dunlap:rdunlap@xenotime.net
+Reece H. Dunn:msclrhd@gmail.com
+Ren,Ai(B Scharfe:rene.scharfe@lsrfire.ath.cx
+Ren,bi(B Scharfe:rene.scharfe@lsrfire.ath.cx
+Rene Scharfe:rene.scharfe@lsrfire.ath.cx
+René Scharfe:rene.scharfe@lsrfire.ath.cx
+Richard MUSIL:richard.musil@st.com
+Richard P. Curnow:rc@rc0.org.uk
+Richard Quirk:richard.quirk@gmail.com
+Robert Boone:robert@rlb3.com
+Robert Ewald:robert.ewald@nov.com
+Robert Fitzsimons:robfitz@273k.net
+Robert Schiele:rschiele@gmail.com
+Robert Shearman:rob@codeweavers.com
+Robert Shearman:robertshearman@gmail.com
+Robert Suetterlin:robert@mpe.mpg.de
+Robert Watson:robert.oo.watson@gmail.com
+Robin H. Johnson:robbat2@gentoo.org
+Robin Rosenberg:robin.rosenberg.lists@dewire.com
+Robin Rosenberg:robin.rosenberg@dewire.com
+Rocco Rutte:pdmef@gmx.net
+Rogan Dawes:rogan@dawes.za.net
+Roland Dreier:roland@digitalvampire.org
+Rutger Nijlunsing:git@tux.tmfweb.nl
+Rutger Nijlunsing:rutger@nospam.com
+Ryan Anderson:rda@google.com
+Ryan Anderson:ryan@michonline.com
+Rémi Vanicat:vanicat@debian.org
+SZEDER Gábor:szeder@ira.uka.de
+Salikh Zakirov:Salikh.Zakirov@Intel.com
+Salikh Zakirov:salikh.zakirov@gmail.com
+Sam Ravnborg:sam@ravnborg.org
+Sam Vilain:sam.vilain@catalyst.net.nz
+Sam Vilain:sam@vilain.net
+Sami Farin:safari-kernel@safari.iki.fi
+Samuel Tardieu:sam@rfc1149.net
+Santi B,Ai(Bjar:sbejar@gmail.com
+Santi Béjar:sbejar@gmail.com
+Santi:sbejar@gmail.com
+Santi_Béjar:sbejar@gmail.com
+Santiago Gala:sgala@apache.org
+Sasha Khapyorsky:sashak@voltaire.com
+Scott Collins:scc@ScottCollins.net
+Scott Lamb:slamb@slamb.org
+Scott R Parish:srp@srparish.net
+Sean Estabrooks:seanlkml@sympatico.ca
+Sean:seanlkml@sympatico.ca
+Sebastian Kuzminsky:seb@highlab.com
+Sebastian Noack:sebastian.noack@gmail.com
+Sebastian Schuberth:sschuberth@visageimaging.com
+Serge E. Hallyn:serue@us.ibm.com
+Sergei Organov:osv@javad.com
+Sergey Vlasov:vsu@altlinux.ru
+Seth Falcon:seth@userprimary.net
+Seth Falcon:sfalcon@fhcrc.org
+Shawn Bohrer:shawn.bohrer@gmail.com
+Shawn O. Pearce:spearce@spearce.org
+Shawn Pearce:spearce@spearce.org
+Shun Kei Leung:kevinlsk@gmail.com
+Simon 'corecode' Schubert:corecode@fs.ei.tum.de
+Simon Hausmann:hausmann@kde.org
+Simon Hausmann:shausman@trolltech.com
+Simon Hausmann:simon@lst.de
+Simon Sasburg:simon.sasburg@gmail.com
+Sitaram Chamarty:sitaramc@gmail.com
+Soeren Finster:sf@9by6.de
+Stefan Sperling:stsp@elego.de
+Stefan Sperling:stsp@stsp.name
+Stefan-W. Hahn:stefan.hahn@s-hahn.de
+Steffen Prohaska:prohaska@zib.de
+Stelian Pop:stelian@popies.net
+Stephan Beyer:s-beyer@gmx.net
+Stephan Feder:sf@b-i-t.de
+Stephan Springl:springl-git@bfw-online.de
+Stephen R. van den Berg:srb@cuci.nl
+Stephen Rothwell:sfr@canb.auug.org.au
+Steve Hoelzer:shoelzer@gmail.com
+Steven Drake:sdrake@ihug.co.nz
+Steven Grimm:koreth@midwinter.com
+Steven Grimm:sgrimm@sgrimm-mbp.local
+Steven Walter:stevenrwalter@gmail.com
+SungHyun Nam:goweol@gmail.com
+Sven Verdoolaege:Sven.Verdoolaege@cs.kuleuven.ac.be
+Sven Verdoolaege:skimo@kotnet.org
+Sven Verdoolaege:skimo@liacs.nl
+Sverre Hvammen Johansen:hvammen+git@gmail.com
+Sverre Rabbelier:srabbelier@gmail.com
+Ted Percival:ted@midg3t.net
+Teemu Likonen:tlikonen@iki.fi
+Terje Sten Bjerkseth:terje@bjerkseth.org
+Tero Roponen:teanropo@jyu.fi
+Theodore Ts'o:tytso@mit.edu
+Theodore Tso:tytso@mit.edu
+Thomas Arcila:thomas.arcila@gmail.com
+Thomas Glanzmann:sithglan@stud.uni-erlangen.de
+Thomas Guyot-Sionnest:dermoth@aei.ca
+Thomas Harning:harningt@gmail.com
+Thomas Matysik:thomas@matysik.co.nz
+Thomas Rast:trast@student.ethz.ch
+Thomas Schwinge:tschwinge@gnu.org
+Thomas Zander:zander@kde.org
+Tilman Sauerbeck:tilman@code-monkey.de
+Tim Stoakes:tim@stoakes.net
+Timo Hirvonen:tihirvon@ee.oulu.fi
+Timo Hirvonen:tihirvon@gmail.com
+Timo Sirainen:tss@iki.fi
+Toby Allsopp:Toby.Allsopp@navman.co.nz
+Tom Clarke:tom@u2i.com
+Tom Prince:tom.prince@ualberta.net
+Tomash Brechko:tomash.brechko@gmail.com
+Tommi Kyntola:tommi.kyntola@ray.fi
+Tommi Virtanen:tv@debian.org
+Tommi Virtanen:tv@inoi.fi
+Tommy M. McGuire:mcguire@crsr.net
+Tommy Thorn:tommy-git@thorn.ws
+Tommy Thorn:tt1729@yahoo.com
+Tony Luck:tony.luck@intel.com
+Tor Arvid Lund:torarvid@gmail.com
+Trent Piepho:tpiepho@freescale.com
+Tuncer Ayaz:tuncer.ayaz@gmail.com
+Twiinz:twiinz@gmail.com
+Ulrik Sverdrup:ulrik.sverdrup@gmail.com
+Unknown:linux@horizon.net
+Uwe Kleine-K,Av(Bnig:Uwe.Kleine-Koenig@digi.com
+Uwe Kleine-K,Av(Bnig:ukleinek@informatik.uni-freiburg.de
+Uwe Kleine-K,Av(Bnig:zeisberg@informatik.uni-freiburg.de
+Uwe Kleine-König:Uwe.Kleine-Koenig@digi.com
+Uwe Kleine-König:ukleinek@informatik.uni-freiburg.de
+Uwe Kleine-König:zeisberg@informatik.uni-freiburg.de
+Uwe Zeisberger:Uwe_Zeisberger@digi.com
+Uwe Zeisberger:zeisberg@informatik.uni-freiburg.de
+Ville Skytt,Ad(B:scop@xemacs.org
+Ville Skyttä:scop@xemacs.org
+Vincent Zanotti:vincent.zanotti@m4x.org
+Vineet Kumar:vineet@doorstop.net
+Väinö Järvelä:v@pp.inet.fi
+William Pursell:bill.pursell@gmail.com
+Willy Tarreau:w@1wt.eu
+Wincent Colaiuta:gitster@pobox.com
+Wincent Colaiuta:win@wincent.com
+Xavier Maillard:zedek@gnu.org
+Xudong Guan:xudong.guan@gmail.com
+YOSHIFUJI Hideaki / 吉藤英明:yoshfuji@linux-ipv6.org
+YOSHIFUJI Hideaki:yoshfuji@linux-ipv6.org
+Yaacov Akiba Slama:ya@slamail.org
+Yakov Lerner:iler.ml@gmail.com
+Yann Dirson:ydirson@altern.org
+Yasushi SHOJI:yashi@atmark-techno.com
+Zach Welch:zw@superlucidity.net
+Zack Brown:zbrown@tumblerings.org
+aneesh.kumar@gmail.com:aneesh.kumar@gmail.com
+barkalow@iabervon.org:barkalow@iabervon.org
+brian m. carlson:sandals@crustytoothpaste.ath.cx
+c.shoemaker@cox.net:c.shoemaker@cox.net
+eric miao:eric.y.miao@gmail.com
+freku045@student.liu.se:freku045@student.liu.se
+hpa:hpa@bonde.sc.orionmulti.com
+hpa:hpa@trantor.hos.anvin.org
+iso-8859-1?Q?David_K=E5gedal:davidk@lysator.liu.se
+jaysoffian+git@gmail.com:jaysoffian+git@gmail.com
+jdl@freescale.com:jdl@freescale.com
+jon@blackcubes.dyndns.org:jon@blackcubes.dyndns.org
+jrnieder@uchicago.edu:jrnieder@uchicago.edu
+kent@lysator.liu.se:kent@lysator.liu.se
+koreth@midwinter.com:koreth@midwinter.com
+lars.doelle@on-line.de:lars.doelle@on-line.de
+linux@horizon.com:linux@horizon.com
+martin f. krafft:madduck@madduck.net
+martin@catalyst.net.nz:martin@catalyst.net.nz
+pclouds@gmail.com:pclouds@gmail.com
+robfitz@273k.net:robfitz@273k.net
+sam@vilain.net:sam@vilain.net
+sean:seanlkml@sympatico.ca
+tony.luck@intel.com:tony.luck@intel.com
+veillette@yahoo.ca:veillette@yahoo.ca
+william pursell:bill.pursell@gmail.com
+İsmail Dönmez:ismail@pardus.org.tr
+しらいしななこ:nanako3@bluebottle.com
+しらいしななこ:nanako3@lavabit.com
+李鸿:leehong@pku.edu.cn

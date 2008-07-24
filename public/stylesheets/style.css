@@ -23,7 +23,10 @@ a { color: #6E212E; }
 .navbar { text-align: center; background: #9AB54F;}
 .footer { text-align: center; background: #E3D185;}
 .menu { padding: 10px; }
+
 h2.section-start { text-align:center; background: #9AB54F; color: #240; }
+h3.title { background: #eee; padding: 5px;}
+
 .inner { background: #FFE9B7; }
 .example { background: #eee; padding: 10px;}
 
@@ -43,3 +46,5 @@ h2.section-start { text-align:center; background: #9AB54F; color: #240; }
 
 table.data-table tr td { vertical-align: top;}
 table.data-table tr td h3 { background: #B5463F; color: #fff; padding: 5px; }
+
+table#authors tr td { font-size: 120%; }
