@@ -28,12 +28,12 @@
 
   <div class="span-21 navbar">
     <div id="toc">
-      <ul>
-      	<li><a href="/">Home</a></li>
-      	<li><a href="/about">About Git</a></li>
-      	<li><a href="/documentation">Documentation</a></li>
-      	<li><a href="/download">Download</a></li>
-      	<li><a href="/tools">Related Tools</a></li>
+      <ul class="a-<%= @controller.action_name %>">
+      	<li id="m-index"><a href="/">Home</a></li>
+      	<li id="m-about"><a href="/about">About Git</a></li>
+      	<li id="m-documentation"><a href="/documentation">Documentation</a></li>
+      	<li id="m-download"><a href="/download">Download</a></li>
+      	<li id="m-tools"><a href="/tools">Related Tools</a></li>
       </ul>
     </div>
   </div>
@@ -64,10 +64,20 @@
   
 </div>
 
-<script>
+<script type="text/javascript">
   $(function() {
     $('.footer').corner();
   });
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-82337-12");
+pageTracker._initData();
+pageTracker._trackPageview();
 </script>
 
 </body>

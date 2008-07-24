@@ -19,6 +19,10 @@ a { color: #6E212E; }
 #toc ul li { display: inline; margin-left: 45px; }
 #toc ul li a { color: #240; }
 
+ul.a-index li#m-index a, ul.a-about li#m-about a, 
+ul.a-documentation li#m-documentation a, ul.a-download li#m-download a, 
+ul.a-tools li#m-tools a { font-weight: bold; color: #fff; text-decoration: none;}
+
 ul#about-list li { padding: 5px; }
 ul#about-list li b { color: #6E212E; }
 
