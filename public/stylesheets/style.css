@@ -31,9 +31,9 @@ h2.section-start { text-align:center; background: #9AB54F; color: #240; }
 #tip { text-align:center; padding: 10px; font-size: 200%;}
 
 #git-is { padding: 10px; background: #FFE9B7;}
-#git-is h3 { color: #630; font-size: 200%;}
+#git-is h3 { color: #630; font-size: 200%; font-weight: bold;}
 
-#download-source { padding: 8px; background: #B5463F; }
+#download-source { padding: 10px; background: #B5463F; }
 #download-source h3 { color: #fff; font-weight: bold; text-align: center;}
 #download-source h3 small { color: #eee; font-weight: normal; font-size: 70%;}
 
