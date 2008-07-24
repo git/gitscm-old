@@ -27,7 +27,8 @@ h2.section-start { text-align:center; background: #9AB54F; color: #240; }
 .inner { background: #FFE9B7; }
 .example { background: #eee; padding: 10px;}
 
-#current-release { font-size: 200%; color: #630; font-weight: bold; }
+#current-release #ver { font-size: 200%; color: #630; font-weight: bold; }
+#current-release small { font-size: 80% !important; color: #888;}
 #tip { text-align:center; padding: 10px; font-size: 200%;}
 
 #git-is { padding: 10px; background: #FFE9B7;}
@@ -39,3 +40,6 @@ h2.section-start { text-align:center; background: #9AB54F; color: #240; }
 
 #using-git h3 { color: #6E212E; font-weight: bold;}
 #using-git ul { font-size: 120%; color: #6E212E;}
+
+table.data-table tr td { vertical-align: top;}
+table.data-table tr td h3 { background: #B5463F; color: #fff; padding: 5px; }

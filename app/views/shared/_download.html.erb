@@ -1,0 +1,38 @@
+<div id="download-source">
+<h3>Download Git</h3> 
+<div class="inner">
+  <div class="center pad">
+    The latest stable Git release is 
+    <div id="current-release">
+      <div id="ver">v<%= @version %></div>
+    </div>
+    <a href="http://www.kernel.org/pub/software/scm/git/docs/RelNotes-<%= @version %>.txt">release notes</a>
+    <small>(<%= @date %>)</small>
+  </div>
+	<table><tr><td><center>
+		<img width="60" src="images/tar.png"><br/>
+		<a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.bz2">tar.bz2</a>
+		<a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.bz2.sign">(sign)</a>
+	</center></td><td><center>
+		<img width="60" src="images/tar.png"><br/>
+		<a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.gz">tar.gz</a>
+		<a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.gz.sign">(sign)</a>
+<!--
+  </center></td><td><center>
+		<img width="60" src="images/zip.png"><br/>
+		<a href="/downloads/git-<%= @version %>.zip">zip</a>
+		<a href="/downloads/git-<%= @version %>.zip.sign">(sign)</a>
+-->
+	</center></td></tr></table>
+	<center>
+	  <a href="http://kernel.org/pub/software/scm/git/">More versions</a><br/>
+	</center>
+</div>
+</div>
+
+<script>
+  $(function() {
+    $('#download-source').corner();
+    $('.inner').corner();
+  });
+</script>
