@@ -1,19 +1,154 @@
-<h2 id="documentation">Documentation</h2>
+<h2 id="documentation">Git Documentation</h2>
 
-<p>You can find all the documentation bundled with the Git source code
-in the <a href="http://www.kernel.org/pub/software/scm/git/docs/"><code>Documentation/</code></a> subdirectory
-(the web version corresponds to the latest Git development version).</p>
+<div class="span-8">
 
-<p>See <a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">the tutorial</a> to get started,
-then see <a href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday Git</a> for a useful minimum set of commands.
-Especially users migrating from other systems might appreciate the <a href="course/">Crash Courses</a>.
-See <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html">Git User's Manual</a> for a more in-depth introduction.
-You can find links to more useful documentation at the
-<a href="http://git.or.cz/gitwiki/GitDocumentation">GitDocumentation</a> wiki page.</p>
+  <h2 class="section-start">Commands</h2>
 
-<p>For a large and continuously growing resource of information
-about Git, you can refer to the <a href="http://git.or.cz/gitwiki">Git Wiki</a>
-- you are welcome to contribute!</p>
+  
+  <% commands = [
+    ['Local Commands', [
+      ['git config', 'Get and set repository or global options'],
+      ['git init', 'Create an empty git repository or reinitialize an existing one'],
+      ['git add', 'Add file contents to the index'],
+      ['git commit', 'Record changes to the repository'],
+      ['git status', 'Show the working tree status'],
+      ['git tag', 'Create, list, delete or verify tags'],
+      ['git log', 'Show commit history'],
+      ['git show', 'Show information on any object'],
+    ]],
+    ['Branchey Commands', [
+      ['git checkout', 'Checkout a branch or paths to the working tree'],
+      ['git branch', 'List, create, or delete branches'],
+      ['git merge', 'Join two or more development histories together'],
+      ['git rebase', 'Forward-port local commits to the updated upstream head'],
+    ]],
+    ['Remotey Commands', [
+      ['git remote', 'Manage set of tracked repositories'],
+      ['git fetch', 'Download objects and refs from another repository'],
+      ['git pull', 'Fetch from and merge with another repository or a local branch'],
+      ['git clone', 'Clone a repository into a new directory'],
+      ['git push', 'Update remote refs along with associated objects'],
+    ]],
+    ['Patchy Commands', [
+      ['git diff', 'Show changes between commits, commit and working tree, etc'],
+      ['git apply', 'Apply a patch on a git index file and a working tree'],
+      ['git format-patch', 'Prepare patches for e-mail submission'],
+      ['git am', 'Apply a series of patches from a mailbox'],
+    ]],
+  ] %>
 
+  <% commands.each do |section, scommands| %>
+    <table>
+      <tr><td colspan="2">
+        <h3 class="title"><%= section %></h3>
+      </td></tr>
+      <% scommands.each do |cmd, desc| %>
+        <tr>
+          <td valign="top" nowrap="true"><a href="http://www.kernel.org/pub/software/scm/git/docs/<%= cmd.gsub(' ', '-') %>.html"><%= cmd %></a></td>
+          <td><%= desc %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+
+  
+</div>
+<div class="span-7">
+  <h2 class="section-start">Reference</h2>
+  <p>
+    You can find all the documentation bundled with the Git source code
+    in the <a href="http://www.kernel.org/pub/software/scm/git/docs/">Documentation/</a> subdirectory
+  </p>
+    
+  <p>
+    <a href="https://37s.backpackit.com/pub/1465067">
+      37signals&#8217; Git Resources</a> &#8211; Great lightweight reference to keep handy
+  </p>
+
+  <p><a href="http://zrusin.blogspot.com/2007/09/git-cheat-sheet.html">
+    Visual Git Cheat Sheet</a> &#8211; Everyone loves to cheat
+  </p>
+  
+  
+  <h2 class="section-start">Tutorials</h2>
+  
+  <h3 class="title">Short and Sweet</h3>
+  
+  <p>The <a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">official Git tutorial</a>
+    is a good place to get started.</p>
+  
+  <p>
+    <a href="http://www.spheredev.org/wiki/Git_for_the_lazy">Git for the lazy</a> is a great guide for beginners.
+  </p>
+  
+  <p>
+    <a href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday Git</a> in 20 commands is good
+    for a useful minimum set of commands.</p>
+  </p>
+  
+  <p>The <a href="http://git.or.cz/course/svn.html">SVN Crash Course</a> at git.or.cz might be helpful if you're
+    coming from the SVN world.
+  </p>
+
+  <h3 class="title">Longer, More In Depth</h3>
+
+  <p>The <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html">Git User's Manual</a> 
+    is an incredible resource, covering a lot of Git functionality.
+  </p>
+
+  <p>
+    <a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">Git Magic</a> 
+    &#8211; A fantastic online book with the source <a href="http://github.com/blynn/gitmagic/tree/master">online</a>.
+  </p>
+  
+  <p>
+    <a href="http://github.com/guides">The GitHub Guides</a> 
+    &#8211; Guides on a bunch of Git and GitHub related issues
+  </p>
+  
+  <p>
+    <a href="http://hoth.entp.com/output/git_for_designers.html">
+    Git for designers</a> &#8211; No knowledge of <span class="caps">SCM</span>?  No problem.
+  </p>
+  
+  <p>
+    <a href="http://eagain.net/articles/git-for-computer-scientists/">
+      Git for Computer Scientists</a> &#8211; For the hardcore, a quick 
+      introduction to git internals for people who are not scared by words like Directed Acyclic Graph.
+  </p>
+  
+	
+	<h3 class="title">Multimedia</h3>
+	
+  <p>
+    <a href="http://gitcasts.com/">GitCasts</a> &#8211; 
+    Short and sweet screencasts on a variety of Git topics
+  </p>
+  
+  
+</div>
+
+<div class="span-6 last">
+  <h2 class="section-start">Books</h2>
+
+  <div class="center">
+    <a href="http://peepcode.com/products/git-internals-pdf"><img class="book" src="/images/books/gitbook-cover.png"></a><br/>
+    <a href="http://peepcode.com/products/git-internals-pdf">Git Internals PDF</a><br/>
+    by Scott Chacon
+  
+    <br/><br/><hr/>
+  
+    <a href="http://www.pragprog.com/titles/tsgit/pragmatic-version-control-using-git"><img class="book" src="/images/books/pvc_git.gif"></a><br/>
+    <a href="http://www.pragprog.com/titles/tsgit/pragmatic-version-control-using-git">Pragmatic Version Control Using Git</a><br/>
+    by Travis Swicegood
+  </div>
+</div>
+
+<div class="span-21">
+  <div id="tip">
+    You can find links to more useful documentation at the<br/>
+    <a href="http://git.or.cz/gitwiki/GitDocumentation">git.or.cz documentation</a> wiki page.
+  </div>
+</div>
 
 <hr />

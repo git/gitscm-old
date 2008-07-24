@@ -30,6 +30,7 @@ h3.title { background: #eee; padding: 5px;}
 
 .inner { background: #FFE9B7; padding-bottom: 10px;}
 .example { background: #eee; padding: 10px; }
+img.book { border: 1px solid #666; }
 
 #current-release #ver { font-size: 200%; color: #630; font-weight: bold; }
 #current-release small { font-size: 80% !important; color: #888;}
@@ -44,6 +45,8 @@ h3.title { background: #eee; padding: 5px;}
 
 #using-git h3 { color: #6E212E; font-weight: bold;}
 #using-git ul { font-size: 120%; color: #6E212E;}
+
+table tr td { vertical-align: top;}
 
 table.data-table tr td { vertical-align: top;}
 table.data-table tr td h3 { background: #B5463F; color: #fff; padding: 5px; }
