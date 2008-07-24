@@ -1,5 +1,6 @@
 class PageController < ApplicationController
   before_filter :get_version, :only => [:index, :download]
+  caches_page :index, :about, :development, :documentation, :download, :tools
   
   def index
   end
