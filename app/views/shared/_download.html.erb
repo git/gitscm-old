@@ -9,28 +9,28 @@
     <a href="http://www.kernel.org/pub/software/scm/git/docs/RelNotes-<%= @version %>.txt">release notes</a>
     <small>(<%= @date %>)</small>
   </div>
-	<table><tr><td><center>
-		<img width="60" src="images/tar.png"><br/>
+	<table><tr><td align="center">
+		<img width="60" src="images/tar.png"><br>
 		<a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.bz2">tar.bz2</a>
 		<a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.bz2.sign">(sign)</a>
-	</center></td><td><center>
-		<img width="60" src="images/tar.png"><br/>
+	</td><td align="center">
+		<img width="60" src="images/tar.png"><br>
 		<a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.gz">tar.gz</a>
 		<a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.gz.sign">(sign)</a>
 <!--
-  </center></td><td><center>
-		<img width="60" src="images/zip.png"><br/>
+  </td><td align="center">
+		<img width="60" src="images/zip.png"><br>
 		<a href="/downloads/git-<%= @version %>.zip">zip</a>
 		<a href="/downloads/git-<%= @version %>.zip.sign">(sign)</a>
 -->
-	</center></td></tr></table>
-	<center>
-	  <a href="http://kernel.org/pub/software/scm/git/">More versions</a><br/>
-	</center>
+	</td></tr></table>
+	<div class="center">
+	  <a href="http://kernel.org/pub/software/scm/git/">More versions</a><br>
+	</div>
 </div>
 </div>
 
-<script>
+<script type="text/javascript">
   $(function() {
     $('#download-source').corner();
     $('.inner').corner();
