@@ -32,7 +32,10 @@ latest = versions.sort.reverse.shift
 
 latest_version = latest[1]
 if latest_version != current_version
+  puts "UPDATING to #{latest[1]}"
   data = {'latest_version' => {'version' => latest[1], 'ts' => latest[0].to_i}}
   File.open(version_file, 'w') { |f| f.write(data.to_yaml) }
   File.open(perm_file, 'w') { |f| f.write(data.to_yaml) } if File.exists?(perm_file)
+  `rm /u/apps/gitscm/current/public/index.html`
+  `rm /u/apps/gitscm/current/public/download.html`
 end
