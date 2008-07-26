@@ -16,7 +16,7 @@ a { color: #6E212E; }
 
 #toc { padding: 10px; font-size: 120%; }
 #toc ul { display: inline; }
-#toc ul li { display: inline; margin-left: 45px; }
+#toc ul li { display: inline; margin-left: 20px; margin-right: 20px;}
 #toc ul li a { color: #240; }
 
 ul.a-index li#m-index a, ul.a-about li#m-about a, 
