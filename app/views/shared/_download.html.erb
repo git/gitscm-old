@@ -31,8 +31,12 @@
 -->
 	</td></tr></table>
 	<div class="center">
-	  <a href="http://kernel.org/pub/software/scm/git/">More versions</a><br>
-	  <a href="http://git.kernel.org/?p=git/git.git;a=summary">Source and history</a>
+	  <% if controller.action_name != 'download' %>
+	    <a href="/download">Other Download Options</a><br>
+	  <% else %>
+      <a href="http://www.kernel.org/pub/software/scm/git/">Older Releases</a><br/>
+	  <% end %>
+	  <a href="http://git.kernel.org/?p=git/git.git;a=summary">Source and History</a>
 	</div>
 </div>
 </div>
