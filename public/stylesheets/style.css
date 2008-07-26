@@ -41,9 +41,9 @@ img.book { border: 1px solid #666; }
 
 #current-release #ver { font-size: 200%; color: #630; font-weight: bold; }
 #current-release small { font-size: 80% !important; color: #888;}
-#tip { text-align:center; padding: 40px 10px; font-size: 200%;}
+#tip { text-align:center; padding: 20px 10px; font-size: 200%;}
 
-#git-is { padding: 10px; background: #FFE9B7;}
+#git-is { padding: 10px; margin-bottom: 15px; background: #FFE9B7;}
 #git-is h3 { color: #630; font-size: 200%; font-weight: bold;}
 
 #download-source { padding: 10px; padding-bottom:15px; background: #B5463F; }
