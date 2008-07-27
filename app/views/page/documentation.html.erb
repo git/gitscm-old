@@ -1,57 +1,4 @@
-<div class="span-7">
-
-  <h2 class="section-start">Commands</h2>
-
-  
-  <% commands = [
-    ['Local Commands', [
-      ['git config', 'Get and set repository or global options'],
-      ['git init', 'Create an empty git repository or reinitialize an existing one'],
-      ['git add', 'Add file contents to the index'],
-      ['git status', 'Show the working tree status'],
-      ['git commit', 'Record changes to the repository'],
-      ['git log', 'Show commit history'],
-      ['git show', 'Show information on any object'],
-      ['git tag', 'Create, list, delete or verify tags'],
-    ]],
-    ['Branchey Commands', [
-      ['git checkout', 'Checkout a branch or paths to the working tree'],
-      ['git branch', 'List, create, or delete branches'],
-      ['git merge', 'Join two or more development histories together'],
-      ['git rebase', 'Forward-port local commits to the updated upstream head'],
-    ]],
-    ['Remotey Commands', [
-      ['git clone', 'Clone a repository into a new directory'],
-      ['git remote', 'Manage set of tracked repositories'],
-      ['git pull', 'Fetch from and merge with another repository or a local branch'],
-      ['git fetch', 'Download objects and refs from another repository'],
-      ['git push', 'Update remote refs along with associated objects'],
-    ]],
-    ['Patchy Commands', [
-      ['git diff', 'Show changes between commits, commit and working tree, etc'],
-      ['git apply', 'Apply a patch on a git index file and a working tree'],
-      ['git format-patch', 'Prepare patches for e-mail submission'],
-      ['git am', 'Apply a series of patches from a mailbox'],
-    ]],
-  ] %>
-
-  <% commands.each do |section, scommands| %>
-    <table>
-      <tr><td colspan="2">
-        <h3 class="title"><%= section %></h3>
-      </td></tr>
-      <% scommands.each do |cmd, desc| %>
-        <tr>
-          <td valign="top" nowrap="true"><a href="http://www.kernel.org/pub/software/scm/git/docs/<%= cmd.gsub(' ', '-') %>.html"><%= cmd %></a></td>
-          <td><%= desc %></td>
-        </tr>
-      <% end %>
-    </table>
-  <% end %>
-
-  
-</div>
-<div class="span-7">
+<div class="span-11">
   <h2 class="section-start">Tutorials</h2>
   
   <h3 class="title">Short and Sweet</h3>
@@ -110,7 +57,7 @@
   
 </div>
 
-<div class="span-7 last">
+<div class="span-10 last">
   <h2 class="section-start">Reference</h2>
   <p>
     The official and comprehensive
@@ -131,17 +78,80 @@
   <h2 class="section-start">Books</h2>
 
   <div class="center">
-    <a href="http://peepcode.com/products/git-internals-pdf"><img class="book" width="100" src="/images/books/gitbook-cover.png"></a><br/>
+    <a href="http://peepcode.com/products/git-internals-pdf"><img class="book" width="120" src="/images/books/gitbook-cover.png"></a><br/>
     <a href="http://peepcode.com/products/git-internals-pdf">Git Internals PDF</a><br/>
     by Scott Chacon
   
     <br/><br/><hr/>
   
-    <a href="http://www.pragprog.com/titles/tsgit/pragmatic-version-control-using-git"><img class="book" width="100" src="/images/books/pvc_git.gif"></a><br/>
+    <a href="http://www.pragprog.com/titles/tsgit/pragmatic-version-control-using-git"><img class="book" width="120" src="/images/books/pvc_git.gif"></a><br/>
     <a href="http://www.pragprog.com/titles/tsgit/pragmatic-version-control-using-git">Pragmatic Version Control Using Git</a><br/>
     by Travis Swicegood
   </div>
 </div>
+
+
+<div class="span-21">
+
+  <h2 class="section-start">Commands</h2>
+
+  <p>Here is a list of the most common commands you're likely to use on a day-to-day basis.</p>
+  
+  <% commands = [
+    ['Local Commands', [
+      ['git config', 'Get and set repository or global options'],
+      ['git init', 'Create an empty git repository or reinitialize an existing one'],
+      ['git add', 'Add file contents to the index'],
+      ['git status', 'Show the working tree status'],
+      ['git commit', 'Record changes to the repository'],
+      ['git log', 'Show commit history'],
+      ['git show', 'Show information on any object'],
+      ['git tag', 'Create, list, delete or verify tags'],
+    ]],
+    ['Remotey Commands', [
+      ['git clone', 'Clone a repository into a new directory'],
+      ['git remote', 'Manage set of tracked repositories'],
+      ['git pull', 'Fetch from and merge with another repository or a local branch'],
+      ['git fetch', 'Download objects and refs from another repository'],
+      ['git push', 'Update remote refs along with associated objects'],
+    ]],
+    ['Branchey Commands', [
+      ['git checkout', 'Checkout a branch or paths to the working tree'],
+      ['git branch', 'List, create, or delete branches'],
+      ['git merge', 'Join two or more development histories together'],
+      ['git rebase', 'Forward-port local commits to the updated upstream head'],
+    ]],
+    ['Patchy Commands', [
+      ['git diff', 'Show changes between commits, commit and working tree, etc'],
+      ['git apply', 'Apply a patch on a git index file and a working tree'],
+      ['git format-patch', 'Prepare patches for e-mail submission'],
+      ['git am', 'Apply a series of patches from a mailbox'],
+    ]],
+  ] %>
+
+  <table>
+  <% commands.in_groups_of(2) do |sections| %>
+    <tr>
+    <% sections.each do |section, scommands| %>
+      <td>
+      <table>
+        <tr><td colspan="2">
+          <h3 class="title"><%= section %></h3>
+        </td></tr>
+        <% scommands.each do |cmd, desc| %>
+          <tr>
+            <td valign="top" nowrap="true"><a href="http://www.kernel.org/pub/software/scm/git/docs/<%= cmd.gsub(' ', '-') %>.html"><%= cmd %></a></td>
+            <td><%= desc %></td>
+          </tr>
+        <% end %>
+      </table>
+      </td>
+    <% end %>
+    </td></tr>
+  <% end %>
+  </table>
+</div>
+
 
 <div class="span-21">
   <div id="tip">
