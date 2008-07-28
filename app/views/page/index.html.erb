@@ -48,20 +48,6 @@
       <%= render :partial => 'shared/download' %>
     </div>
 
-    <div class="span-21" id="featured-git">
-      <h2 class="section-start">Featured Git-Powered Project</h2>
-    </div>          
-
-    <div class="span-9" id="featured-git-name">
-      <h3><%= link_to @featured.repo, @featured.url_for_project %></h3>
-      <h4>By <%= link_to @featured.user, @featured.url_for_user %></h4> 
-    </div>
-
-    <div class="span-12 last" id="featured-git-description">
-      <%= @featured.description %>
-      <p id="featured-git-github">Featured Git project powered by <a href="http://github.com">Github</a>.</p>   
-    </div>
-
     <div class="span-21">
       <h2 class="section-start">Git Quick Start</h2>
     </div>
@@ -69,25 +55,29 @@
     <div class="span-9">
       <div class="example">
         <h3>Cloning and Creating a Patch</h3>
-        <pre>$ git clone git://github.com/git/hello-world.git
-          $ cd hello-world
-          $ (edit files)
-          $ git add (files)
-          $ git commit -m 'Explain what I changed'
-          $ git format-patch origin/master
-        </pre>
+        
+<pre>$ git clone git://github.com/git/hello-world.git
+$ cd hello-world
+$ (edit files)
+$ git add (files)
+$ git commit -m 'Explain what I changed'
+$ git format-patch origin/master
+</pre>
+
       </div>
     </div>
 
     <div class="span-6">
       <div class="example">
         <h3>Creating and Commiting</h3>
-        <pre>$ cd (project-directory)
-          $ git init
-          $ (add some files)
-          $ git add .
-          $ git commit -m 'Initial commit'
-        </pre>
+        
+<pre>$ cd (project-directory)
+$ git init
+$ (add some files)
+$ git add .
+$ git commit -m 'Initial commit'
+</pre>
+
       </div>
     </div>
 

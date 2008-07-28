@@ -3,7 +3,6 @@ class PageController < ApplicationController
 	caches_page :index, :about, :development, :documentation, :download, :tools
 
 	def index
-		@featured = Repository.featured
 	end
 
 	def about
