@@ -9,6 +9,7 @@ class PageController < ApplicationController
     @authors = Author.all
   end
   
+  private
   def get_version
     version_file = File.expand_path(File.dirname(__FILE__) + "/../../config/app_config.yml")
     config = YAML.load(File.read(version_file))
