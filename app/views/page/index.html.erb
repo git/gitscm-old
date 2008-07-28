@@ -39,14 +39,29 @@
       <li><a href="http://git.videolan.org/gitweb.cgi?p=vlc.git;a=summary">VLC</a></li>
       <li><a href="http://github.com/sstephenson/prototype/tree/master">Prototype</a></li>
       <li><a href="http://github.com/mootools/mootools-core/tree/master">MooTools</a></li>
-    </ul>
+    </ul>     
+
   </div>
 </div>
 
 <div class="span-7 last">
   <%= render :partial => 'shared/download' %>
 </div>
-  
+                             
+<div class="span-21" id="featured-git">
+	<h2 class="section-start">Featured Git-Powered Project</h2>
+</div>          
+
+<div class="span-9" id="featured-git-name">
+	<h3><%= link_to @featured.repo, @featured.url_for_project %></h3>
+	<h4>By <%= link_to @featured.user, @featured.url_for_user %></h4> 
+</div>
+      
+<div class="span-12 last" id="featured-git-description">
+	<%= @featured.description %>
+	<p id="featured-git-github">Featured Git project powered by <a href="http://github.com">Github</a>.</p>   
+</div>
+
 <div class="span-21">
   <h2 class="section-start">Git Quick Start</h2>
 </div>
