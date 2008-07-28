@@ -4,114 +4,114 @@
     <h3>Git is...</h3>
 
     <p>Git is an <b>open source, distributed version control system</b>
-    designed to handle everything from small to very large projects with 
-    speed and efficiency.</p>
+      designed to handle everything from small to very large projects with 
+      speed and efficiency.</p>
 
-    <p><b>Every Git clone is a full-fledged repository</b> with complete history
-    and full revision tracking capabilities, not dependent on network access
-    or a central server. <b>Branching and merging are fast</b> and easy to do.</p>
-    
-    <p>Git is used for version control of files, much like tools such as
-    <a href="http://www.selenic.com/mercurial/wiki/">Mercurial</a>,
-    <a href="http://subversion.tigris.org/">Subversion</a>,
-    <a href="http://www.nongnu.org/cvs/">CVS</a>,
-    <a href="http://www.perforce.com/">Perforce</a>,
-    <a href="http://www.bitkeeper.com/">Bitkeeper</a>,
-    and <a href="http://msdn.microsoft.com/en-us/vs2005/aa718670.aspx">Visual SourceSafe</a>.  
-    </p>
-  </div>
-  
-</div>
+      <p><b>Every Git clone is a full-fledged repository</b> with complete history
+        and full revision tracking capabilities, not dependent on network access
+        or a central server. <b>Branching and merging are fast</b> and easy to do.</p>
 
-<div class="span-5">
-  
-  <div id="using-git">
-    <h3>Projects using Git</h3>
-    <ul>
-      <li><a href="http://git.kernel.org/?p=git/git.git;a=summary">Git</a></li>
-      <li><a href="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=summary">Linux Kernel</a></li>
-      <li><a href="http://github.com/rails/rails/tree/master">Ruby on Rails</a></li>
-      <li><a href="http://www.winehq.org/site/git">WINE</a></li>
-      <li><a href="http://git.fedoraproject.org/git/">Fedora</a></li>
-      <li><a href="http://dev.laptop.org/browser">OLPC</a></li>
-      <li><a href="http://www.x.org/wiki/Development/git">X.org</a></li>
-      <li><a href="http://rubinius.lighthouseapp.com/projects/5089/using-git">Rubinius</a></li>
-      <li><a href="http://git.videolan.org/gitweb.cgi?p=vlc.git;a=summary">VLC</a></li>
-      <li><a href="http://github.com/sstephenson/prototype/tree/master">Prototype</a></li>
-      <li><a href="http://github.com/mootools/mootools-core/tree/master">MooTools</a></li>
-    </ul>     
+        <p>Git is used for version control of files, much like tools such as
+          <a href="http://www.selenic.com/mercurial/wiki/">Mercurial</a>,
+          <a href="http://subversion.tigris.org/">Subversion</a>,
+          <a href="http://www.nongnu.org/cvs/">CVS</a>,
+          <a href="http://www.perforce.com/">Perforce</a>,
+          <a href="http://www.bitkeeper.com/">Bitkeeper</a>,
+          and <a href="http://msdn.microsoft.com/en-us/vs2005/aa718670.aspx">Visual SourceSafe</a>.  
+        </p>
+      </div>
 
-  </div>
-</div>
+    </div>
 
-<div class="span-7 last">
-  <%= render :partial => 'shared/download' %>
-</div>
-                             
-<div class="span-21" id="featured-git">
-	<h2 class="section-start">Featured Git-Powered Project</h2>
-</div>          
+    <div class="span-5">
 
-<div class="span-9" id="featured-git-name">
-	<h3><%= link_to @featured.repo, @featured.url_for_project %></h3>
-	<h4>By <%= link_to @featured.user, @featured.url_for_user %></h4> 
-</div>
-      
-<div class="span-12 last" id="featured-git-description">
-	<%= @featured.description %>
-	<p id="featured-git-github">Featured Git project powered by <a href="http://github.com">Github</a>.</p>   
-</div>
+      <div id="using-git">
+        <h3>Projects using Git</h3>
+        <ul>
+          <li><a href="http://git.kernel.org/?p=git/git.git;a=summary">Git</a></li>
+          <li><a href="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=summary">Linux Kernel</a></li>
+          <li><a href="http://github.com/rails/rails/tree/master">Ruby on Rails</a></li>
+          <li><a href="http://www.winehq.org/site/git">WINE</a></li>
+          <li><a href="http://git.fedoraproject.org/git/">Fedora</a></li>
+          <li><a href="http://dev.laptop.org/browser">OLPC</a></li>
+          <li><a href="http://www.x.org/wiki/Development/git">X.org</a></li>
+          <li><a href="http://rubinius.lighthouseapp.com/projects/5089/using-git">Rubinius</a></li>
+          <li><a href="http://git.videolan.org/gitweb.cgi?p=vlc.git;a=summary">VLC</a></li>
+          <li><a href="http://github.com/sstephenson/prototype/tree/master">Prototype</a></li>
+          <li><a href="http://github.com/mootools/mootools-core/tree/master">MooTools</a></li>
+        </ul>     
 
-<div class="span-21">
-  <h2 class="section-start">Git Quick Start</h2>
-</div>
+      </div>
+    </div>
 
-<div class="span-9">
-  <div class="example">
-  <h3>Cloning and Creating a Patch</h3>
-<pre>$ git clone git://github.com/git/hello-world.git
-$ cd hello-world
-$ (edit files)
-$ git add (files)
-$ git commit -m 'Explain what I changed'
-$ git format-patch origin/master
-</pre>
-</div>
-</div>
+    <div class="span-7 last">
+      <%= render :partial => 'shared/download' %>
+    </div>
 
-<div class="span-6">
-  <div class="example">
-  <h3>Creating and Commiting</h3>
-<pre>$ cd (project-directory)
-$ git init
-$ (add some files)
-$ git add .
-$ git commit -m 'Initial commit'
-</pre>
-</div>
-</div>
+    <div class="span-21" id="featured-git">
+      <h2 class="section-start">Featured Git-Powered Project</h2>
+    </div>          
 
-<div class="span-6 last">
-  <h3 class="title">Got a Question?</h3>
+    <div class="span-9" id="featured-git-name">
+      <h3><%= link_to @featured.repo, @featured.url_for_project %></h3>
+      <h4>By <%= link_to @featured.user, @featured.url_for_user %></h4> 
+    </div>
 
-  <p>If you are curious about something, feel free to ask
-  on the IRC channel dedicated to Git -
-  <a href="irc://irc.freenode.net/#git">#git on FreeNode</a>.</p>
+    <div class="span-12 last" id="featured-git-description">
+      <%= @featured.description %>
+      <p id="featured-git-github">Featured Git project powered by <a href="http://github.com">Github</a>.</p>   
+    </div>
 
-  <p>You can also ask the Git community directly at our
-  <a href="http://dir.gmane.org/gmane.comp.version-control.git">git@vger.kernel.org mailing list</a>.</p>
-</div>
+    <div class="span-21">
+      <h2 class="section-start">Git Quick Start</h2>
+    </div>
 
-<div class="span-21">
-  <div id="tip">
-    To learn more about how to use Git, move along to the <a href="/documentation">Documentation</a>
-  </div>
-</div>
+    <div class="span-9">
+      <div class="example">
+        <h3>Cloning and Creating a Patch</h3>
+        <pre>$ git clone git://github.com/git/hello-world.git
+          $ cd hello-world
+          $ (edit files)
+          $ git add (files)
+          $ git commit -m 'Explain what I changed'
+          $ git format-patch origin/master
+        </pre>
+      </div>
+    </div>
+
+    <div class="span-6">
+      <div class="example">
+        <h3>Creating and Commiting</h3>
+        <pre>$ cd (project-directory)
+          $ git init
+          $ (add some files)
+          $ git add .
+          $ git commit -m 'Initial commit'
+        </pre>
+      </div>
+    </div>
+
+    <div class="span-6 last">
+      <h3 class="title">Got a Question?</h3>
+
+      <p>If you are curious about something, feel free to ask
+        on the IRC channel dedicated to Git -
+        <a href="irc://irc.freenode.net/#git">#git on FreeNode</a>.</p>
+
+        <p>You can also ask the Git community directly at our
+          <a href="http://dir.gmane.org/gmane.comp.version-control.git">git@vger.kernel.org mailing list</a>.</p>
+        </div>
+
+        <div class="span-21">
+          <div id="tip">
+            To learn more about how to use Git, move along to the <a href="/documentation">Documentation</a>
+          </div>
+        </div>
 
 
-<script  type="text/javascript">
-  $(function() {
-    $('#git-is').corner();
-    $('.example').corner();
-  });
-</script>
+        <script  type="text/javascript">
+        $(function() {
+          $('#git-is').corner();
+          $('.example').corner();
+        });
+        </script>
