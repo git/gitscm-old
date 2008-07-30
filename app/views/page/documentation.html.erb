@@ -8,7 +8,7 @@
   
   <p>
     <a href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday Git</a> in 20 commands is good
-    for a useful minimum set of commands.</p>
+    for a useful minimum set of commands.
   </p>
   
   <p>The <a href="http://git.or.cz/course/svn.html">SVN Crash Course</a> at git.or.cz might be helpful if you're
@@ -78,13 +78,13 @@
   <h2 class="section-start">Books</h2>
 
   <div class="center">
-    <a href="http://peepcode.com/products/git-internals-pdf"><img class="book" width="120" src="/images/books/gitbook-cover.png"></a><br/>
+    <a href="http://peepcode.com/products/git-internals-pdf"><img class="book" width="120" src="/images/books/gitbook-cover.png" alt="" /></a><br/>
     <a href="http://peepcode.com/products/git-internals-pdf">Git Internals PDF</a><br/>
     by Scott Chacon
   
     <br/><br/><hr/>
   
-    <a href="http://www.pragprog.com/titles/tsgit/pragmatic-version-control-using-git"><img class="book" width="120" src="/images/books/pvc_git.gif"></a><br/>
+    <a href="http://www.pragprog.com/titles/tsgit/pragmatic-version-control-using-git"><img class="book" width="120" src="/images/books/pvc_git.gif" alt="" /></a><br/>
     <a href="http://www.pragprog.com/titles/tsgit/pragmatic-version-control-using-git">Pragmatic Version Control Using Git</a><br/>
     by Travis Swicegood
   </div>
@@ -140,14 +140,14 @@
         </td></tr>
         <% scommands.each do |cmd, desc| %>
           <tr>
-            <td valign="top" nowrap="true"><a href="http://www.kernel.org/pub/software/scm/git/docs/<%= cmd.gsub(' ', '-') %>.html"><%= cmd %></a></td>
+            <td valign="top" style="white-space: nowrap;"><a href="http://www.kernel.org/pub/software/scm/git/docs/<%= cmd.gsub(' ', '-') %>.html"><%= cmd %></a></td>
             <td><%= desc %></td>
           </tr>
         <% end %>
       </table>
       </td>
     <% end %>
-    </td></tr>
+    </tr>
   <% end %>
   </table>
 </div>

@@ -24,7 +24,7 @@ ul.a-documentation li#m-documentation a, ul.a-download li#m-download a,
 ul.a-tools li#m-tools a { font-weight: bold; color: #fff; text-decoration: none;}
 
 ul#about-list li { padding: 5px; }
-ul#about-list li b { color: #6E212E; }
+ul#about-list li strong { color: #6E212E; }
 
 .header h1 { text-align: center; }
 .navbar { text-align: center; background: #9AB54F;}
