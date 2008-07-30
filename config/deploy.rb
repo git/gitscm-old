@@ -1,5 +1,5 @@
 set :application, "gitscm"
-set :repository,  "git://github.com/schacon/learn-github.git"
+set :repository,  "git://github.com/schacon/gitscm.git"
 
 default_run_options[:pty] = true
 
