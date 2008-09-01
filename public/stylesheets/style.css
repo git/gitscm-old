@@ -61,3 +61,5 @@ table.data-table tr td h3 { background: #B5463F; color: #fff; padding: 5px; }
 table#authors tr td { font-size: 120%; }                                                                                 
 
 table.bugmail td { border-bottom: 1px solid #f1f1f1; }
+
+#announce { text-align: center; padding: 5px; padding-bottom:15px; }
