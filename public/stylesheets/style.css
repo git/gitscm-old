@@ -53,6 +53,9 @@ img.book { border: 1px solid #666; }
 #using-git h3 { color: #6E212E; font-weight: bold;}
 #using-git ul { font-size: 120%; color: #6E212E;}
 
+#git-book { padding: 10px; text-align:center; color: #fff; font-size: 120%; background: #681;}
+#git-book a { color: #E3D185; font-weight: bold; }
+
 table tr td { vertical-align: top;}
 
 table.data-table tr td { vertical-align: top;}
