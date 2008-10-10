@@ -4,6 +4,16 @@ class PageController < ApplicationController
 
 	def index
 	end
+  
+	def feed
+		data = File.expand_path(File.dirname(__FILE__) + "/../../config/app_data.yml")
+		@releases = YAML.load(File.read(data))
+    headers["Content-Type"] = "text/xml"
+
+    respond_to do |format|
+      format.xml { render :template => 'page/feed.xml.builder', :layout => false }
+    end
+  end
 
 	def about
 		@authors = Author.all
