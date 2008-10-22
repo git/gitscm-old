@@ -6,13 +6,13 @@ require 'pp'
 version_file = File.expand_path(File.dirname(__FILE__) + "/../config/app_config.yml")
 data_file = File.expand_path(File.dirname(__FILE__) + "/../config/app_data.yml")
 
-#perm_file = "/u/apps/gitscm/shared/config/app_config.yml"
-#perm_data = "/u/apps/gitscm/shared/config/app_data.yml"
-#git_dir = '/home/git/git'
+perm_file = "/u/apps/gitscm/shared/config/app_config.yml"
+perm_data = "/u/apps/gitscm/shared/config/app_data.yml"
+git_dir = '/home/git/git'
 
-perm_file = "/tmp/app_config.yml"
-perm_data = "/tmp/rel_data.yml"
-git_dir = '/Users/schacon/projects/git'
+#perm_file = "/tmp/app_config.yml"
+#perm_data = "/tmp/rel_data.yml"
+#git_dir = '/Users/schacon/projects/git'
 
 current_version = nil
 if File.exists?(version_file)
