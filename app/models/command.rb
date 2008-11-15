@@ -1,9 +1,14 @@
 class Command < ActiveRecord::Base
-  has_and_belongs_to_many :categories
+  has_and_belongs_to_many :categories, :order => 'position'
   has_and_belongs_to_many :examples
+  has_many :manpages
   
   def clean_usage
     usage.gsub('[verse]', '')
+  end
+  
+  def manual
+    manpages.first
   end
   
   def has_examples?

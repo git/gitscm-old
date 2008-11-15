@@ -1,16 +1,12 @@
 <div id="results" class="search-results">  
   <form id="sr-searchbox">
   <div class="stitle">
-    <table width="100%" cellpadding="0" cellspacing="0">
-      <tr><td>
-        <h1>Search Results</h1>
-      </td><td align="right">
-        <div id="sr-form">
-          <input name="search" id="sr-searchterm" value="<%= @search %>">
-          <input type="submit" value="Search">
-        </div>
-      </td></tr>
-    </table>
+    <div id="sr-form">
+      <center>
+      <input name="search" id="sr-searchterm" value="<%= @search %>">
+      <input type="submit" value="Search">
+      </center>
+    </div>
   </div>
   </form>
 
@@ -23,42 +19,38 @@
       <div class="sr-desc"><%= @command.description %></div>
       <div class="sr-usage"><pre><%= @command.clean_usage %></pre></div>
       <div class="sr-links">
-        <small><a href="manpage">command page</a></small> &nbsp;
-        <small><a href="manpage">manual page</a></small> &nbsp;
-        <small><a href="manpage">category page</a></small>
+        <small><%= link_to 'command page', command_url(:command => @command.clean_command) %></small> &nbsp;
+        <small><%= link_to 'manual page', manual_url(:command => @command.clean_command) %></small> &nbsp;
+        <small><%= link_to 'category page' %></a></small>
       </div>
     </div>
-
-      <% if @command.has_examples? %>
-        <div class="doc-section">
-          <h2>Examples</h2>
-        </div>
-      <% end %>
-      
-      <% if @command.has_book_chapters? %>
-        <div class="doc-section">
-          <h2>Book</h2>
-          (go to chapter)
-        </div>
-      <% end %>
-      
-      <% if @command.has_manual_pages? %>
-        <div class="doc-section">
-          <h2>Related Tools</h2>
-             - go to chapter
-        </div>
-      <% end %>
-      
+    
+    <% if options = @command.manual.options %>
     <div class="doc-section">
-      <h2>Categories</h2>
-      <% @command.categories.each do |cat| %>
-         <h3><%= cat.category %></h3>
-          <% cat.commands.each do |cmd| %>
-            <div class="command-link"><%= cmd.command %></div>
-          <% end %>
-          <br clear="both"/>
-      <% end %>
-    </div>   
+      <h2>Options</h2>
+      <%= options.text.gsub("\n", '<br/>') %>
+    </div>
+    <% end %>
+
+    <% if @command.has_examples? %>
+      <div class="doc-section">
+        <h2>Examples</h2>
+      </div>
+    <% end %>
+    
+    <% if @command.has_book_chapters? %>
+      <div class="doc-section">
+        <h2>Book</h2>
+        (go to chapter)
+      </div>
+    <% end %>
+    
+    <% if @command.has_manual_pages? %>
+      <div class="doc-section">
+        <h2>Related Tools</h2>
+           - go to chapter
+      </div>
+    <% end %>
     
   <% end %>
   <br/>

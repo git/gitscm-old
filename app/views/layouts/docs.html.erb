@@ -27,10 +27,6 @@
 
 <div class="container showgrids">
 
-  <div class="span-21 header">
-    <a href="/"><img alt="Git - the fast version control system" src="/images/header.gif" /></a>
-  </div>
-
   <div class="span-21 navbar">
     <form id="searchbox">
     <div id="toc">
@@ -48,7 +44,7 @@
   </div>
   
   <div class="span-21">
-    <br/>
+    <br clear="both"/>
   </div>
   
   <%= yield %>
@@ -59,16 +55,12 @@
   
   <div class="span-17 footer">
   	<div class="menu">
-  		This page is maintained by Scott Chacon. 
-  		<br/>
-  		Please email me at <a href="mailto:schacon@gmail.com">schacon@gmail.com</a>
-  		with patches, suggestions and comments.
-  		<p>Source for this <a href="http://github.com/schacon/gitscm">website</a>
-      was forked from Petr Baudis's <a href="http://git.or.cz">git.or.cz</a></p>
-	  </div>
+  		This site is maintained by Scott Chacon, and hosting is donated by GitHub.<br/>
+      Please email me at <a href="mailto:schacon@gmail.com">schacon@gmail.com</a>
+       with <a href="http://github.com/schacon/gitscm">patches</a>, suggestions and comments.
+    </div>
   </div>
   <div class="span-4 last center">
-    hosting donated by:
     <a href="http://github.com"><img src="/images/github.png" alt="github logo" /></a>
   </div>
   
@@ -76,7 +68,7 @@
 
 <script type="text/javascript">
   $(function() {
-    $('.footer').corner();
+    $('.navbar').corner();
     $('#searchbox').submit(function() {
       term = $('#searchterm').val();
       jQuery.facebox(function() {

@@ -1,0 +1,22 @@
+&nbsp;
+
+<div class="doc-section">
+  <% not_shown = true %>
+  <h2>Porcelain Commands</h2>
+  <% @categories.each do |cat| %>
+    <% if !cat.porcelain_flag && not_shown %>
+      &nbsp;<br/>
+      &nbsp;<br/>
+      <h2>Plumbing Commands</h2>
+      <% not_shown = false %>
+    <% end %>
+    
+    <h3><%= cat.name %></h3>
+     <% cat.commands.each do |cmd| %>
+       <div class="command-link">
+         <%= link_to cmd.command, command_url(:command => cmd.clean_command) %>
+       </div>
+     <% end %>
+     <br clear="both"/>  
+  <% end %>
+</div>

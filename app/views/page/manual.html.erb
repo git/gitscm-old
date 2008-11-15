@@ -1,0 +1,28 @@
+<% @command =  @manpage.command %>
+<div class="doc-section">
+  <div class="flag <%= @command.level %>"><%= @command.level %></div>
+  <div class="sr-title">
+    <%= @command.full_command %>
+    <span class="desc"><%= @command.description %></span>
+  </div>
+</div>
+
+<br clear="both"/>
+
+<center>
+  <%= link_to 'command page', command_url(:command => @command.clean_command) %>
+  <span class="anchorlinks">
+  <% @manpage.sections.each do |section| %>
+    &middot; <a href="#<%= section.title.gsub(' ', '') %>"><%= truncate section.title %></a>
+  <% end %>
+  </span>
+</center>
+
+<% @manpage.sections.each do |section| %>
+<div class="man-section">
+  <h3><a class="anchor" name="<%= section.title.gsub(' ', '') %>"><%= section.title %></a></h3>
+  <div class="section">
+    <%= h(section.text).gsub("\n\n", '</p><p>') %>
+  </div>
+</div>
+<% end %>

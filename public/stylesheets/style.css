@@ -73,18 +73,25 @@ table.bugmail td { border-bottom: 1px solid #f1f1f1; }
 #announce { text-align: center; padding: 5px; padding-bottom:15px; }
 
 .doc-section { margin-top: 10px; }
-.doc-section h2 { border-bottom: 1px solid #aaa; margin-bottom: 1px;}
-.doc-section h3 { margin-bottom: 1px; margin-top: 8px; }
+.doc-section h2 { border-bottom: 1px solid #aaa; margin-bottom: 1px; 
+  color: #141; background-color:#9AB54F; padding: 5px;}
+.doc-section h3 { margin-bottom: 5px; margin-top: 8px; background: #eee; padding: 5px;}
 table.docs-table tr td { padding: 5px !important; }
 
+.man-section h3 { margin-bottom: 5px; margin-top: 5px; background: #eee; padding: 10px;}
+.man-section .section { padding: 8px; }
+.anchorlinks a { text-decoration: none; color: #590; }
+a.anchor { text-decoration: none; }
+
 .search-results { width: 600px; }
-.search-results .stitle { background: #B5463F; padding: 8px; 
+.stitle { background: #B5463F; padding: 8px; 
         padding-bottom: 1px; border-bottom: 3px solid #6E212E;}
-.search-results .stitle h1 { font-size: 2em; color: #fff; display: inline; }
-.search-results .sr-title { 
-  color: #333; background: #FFE9B7; padding: 5px;
+.stitle h1 { font-size: 2em; color: #fff; display: inline; }
+.sr-title { 
+  color: #333; background: #FFE9B7; padding: 5px; padding-left: 15px;
   font: 2em Monaco, "Courier New", monospace;
 }
+.sr-title .desc { font-size: 0.5em !important; color: #663;}
 .sr-desc { padding: 8px; font-size: 1.5em; color: #333; text-align: center; }
 .sr-links { text-align: center }
 .sr-usage pre { padding: 5px; font: 100% Monaco, "Courier New", monospace; background: #eee; }

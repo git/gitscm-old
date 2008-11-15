@@ -1,0 +1,50 @@
+<div class="command">  
+  
+<% if @command %>
+  <div class="doc-section">
+    <div class="flag <%= @command.level %>"><%= @command.level %></div>
+    <div class="sr-title">
+      <%= @command.full_command %>
+      <span class="desc"><%= @command.description %></span>
+    </div>
+    <div class="sr-usage"><pre><%= @command.clean_usage %></pre></div>
+    <div class="sr-links">
+      <%= link_to 'manual page', manual_url(:command => @command.clean_command) %>
+    </div>
+  </div>
+
+  <% if @command.has_examples? %>
+    <div class="doc-section">
+      <h2>Examples</h2>
+    </div>
+  <% end %>
+  
+  <% if @command.has_book_chapters? %>
+    <div class="doc-section">
+      <h2>Book</h2>
+      (go to chapter)
+    </div>
+  <% end %>
+  
+  <% if @command.has_manual_pages? %>
+    <div class="doc-section">
+      <h2>Related Tools</h2>
+         - go to chapter
+    </div>
+  <% end %>
+  
+  <div class="doc-section">
+    <h2>Related Commands</h2>
+    <% @command.categories.each do |cat| %>
+       <h3><%= cat.name %></h3>
+        <% cat.commands.each do |cmd| %>
+          <div class="command-link">
+            <%= link_to cmd.command, command_url(:command => cmd.clean_command) %>
+          </div>
+        <% end %>
+        <br clear="both"/>
+    <% end %>
+  </div>   
+  
+<% end %>
+</div>
