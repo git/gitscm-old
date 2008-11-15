@@ -5,6 +5,17 @@ class PageController < ApplicationController
 	def index
 	end
   
+  def searchbox
+    @search = params[:search]
+    search = @search.gsub(/[^a-zA-Z]/, '')
+    
+    # look for command
+    @command = Command.find_by_clean_command(search)
+    # else search man pages
+    
+    render :partial => 'searchbox'
+  end
+  
 	def feed
 		data = File.expand_path(File.dirname(__FILE__) + "/../../config/app_data.yml")
 		@releases = YAML.load(File.read(data))

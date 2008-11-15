@@ -15,3 +15,7 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+$perm_file = "/tmp/app_config.yml"
+$perm_data = "/tmp/rel_data.yml"
+$git_dir = '/Users/schacon/projects/git'

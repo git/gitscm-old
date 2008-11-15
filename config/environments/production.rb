@@ -20,3 +20,7 @@ config.action_view.cache_template_loading            = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
+
+$perm_file = "/u/apps/gitscm/shared/config/app_config.yml"
+$perm_data = "/u/apps/gitscm/shared/config/app_data.yml"
+$git_dir = '/home/git/git'
