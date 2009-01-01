@@ -11,7 +11,7 @@ class Author
         name = data.join(' ')
         if(number.to_i > 50)
           @authors[:main] << [name, number.to_i]
-        elsif (number.to_i >= 5)
+        else
           @authors[:contrib] << [name, number.to_i]
         end
       end
