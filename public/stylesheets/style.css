@@ -78,8 +78,8 @@ table.bugmail td { border-bottom: 1px solid #f1f1f1; }
 .doc-toc ul li a { color: #240; }
 
 table.ccmd td	{ border: 1px; padding-left: 2em; padding-right: 2em; }
-table.ccmd	{ width: 80%; border: 1px solid #000; }
+table.ccmd	{ width: 99%; border: 1px solid #000; }
 table.ccmd, code.g { font-family: monospace; }
-table.ccmd td.g	{ width: 40%; }
+table.ccmd td.g	{ width: 33%; }
 table.ccmd td.g, code.g { font-weight: bold; }
 table.ccmd td.g		{ background: #e9e8e1; color: #124; }

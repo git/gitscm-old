@@ -392,11 +392,13 @@ one of the to-be-merged branches and merge the other one now:</p>
 
 <table class="ccmd"><tr>
     <td class="g">git merge <em>branch</em></td>
-    <td><em>(assuming the branch was created in revision 20 and
-	you are inside a working copy of trunk)</em>
+    <td>
+      svn merge -r 20:HEAD
+      http://example.com/svn/branches/<em>branch</em>
+      <br /><em>(assuming the branch was created in revision 20 and
+	      you are inside a working copy of trunk)</em>
+    </td>
 
-      <br />svn merge -r 20:HEAD
-      http://example.com/svn/branches/<em>branch</em></td>
 </tr></table>
 
 <p>If changes were made on only one of the branches since the last merge,
@@ -451,7 +453,7 @@ branch which will "track" the remote branch:</p>
 
 <table class="ccmd"><tr>
     <td class="g">
-      git checkout --track -b <em>branch</em> origin/<em>branch</em></td>
+      git checkout -b <em>branch</em> origin/<em>branch</em></td>
 
     <td>svn&nbsp;switch&nbsp;<em>url</em></td></tr></table>
 

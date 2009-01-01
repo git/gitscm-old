@@ -9,7 +9,8 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.with_options :controller => 'course' do |page|
-    page.svn   'course/svn', :action => 'svn'
+    page.svn   'course/:action'
+    page.svn   'course/:action.html'
   end
   
   map.connect ':controller/:action/:id'
