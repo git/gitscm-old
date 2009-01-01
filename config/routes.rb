@@ -7,6 +7,10 @@ ActionController::Routing::Routes.draw do |map|
     page.about 'download', :action => 'download'
     page.about 'tools', :action => 'tools'
   end
+
+  map.with_options :controller => 'course' do |page|
+    page.svn   'course/svn', :action => 'svn'
+  end
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

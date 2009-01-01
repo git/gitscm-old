@@ -66,3 +66,20 @@ table#authors tr td { font-size: 120%; }
 table.bugmail td { border-bottom: 1px solid #f1f1f1; }
 
 #announce { text-align: center; padding: 5px; padding-bottom:15px; }
+
+.doc-section { margin-top: 10px; }
+.doc-section h2 { border-bottom: 1px solid #aaa; margin-bottom: 10px; 
+  color: #141; background-color:#9AB54F; padding: 3px;}
+.doc-section h3 { margin-bottom: 5px; margin-top: 8px; background: #eee; padding: 5px;}
+
+.doc-toc { background: #eee; text-align: center; padding: 10px; margin-bottom: 10px; }
+.doc-toc ul { margin: 0; display: inline; }
+.doc-toc ul li { display: inline; padding: 0; margin: 0; margin-left: 5px; margin-right: 5px;}
+.doc-toc ul li a { color: #240; }
+
+table.ccmd td	{ border: 1px; padding-left: 2em; padding-right: 2em; }
+table.ccmd	{ width: 80%; border: 1px solid #000; }
+table.ccmd, code.g { font-family: monospace; }
+table.ccmd td.g	{ width: 40%; }
+table.ccmd td.g, code.g { font-weight: bold; }
+table.ccmd td.g		{ background: #e9e8e1; color: #124; }
