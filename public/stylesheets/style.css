@@ -83,3 +83,5 @@ table.ccmd, code.g { font-family: monospace; }
 table.ccmd td.g	{ width: 33%; }
 table.ccmd td.g, code.g { font-weight: bold; }
 table.ccmd td.g		{ background: #e9e8e1; color: #124; }
+
+.videos img { border: 1px solid #aaa; padding: 5px; background: #eee; }
