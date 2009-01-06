@@ -7,7 +7,7 @@ class PageController < ApplicationController
   
 	def feed
 		data = File.expand_path(File.dirname(__FILE__) + "/../../config/app_data.yml")
-		@releases = YAML.load(File.read(data))
+		@releases = YAML.load(File.read(data)).reverse
     headers["Content-Type"] = "text/xml"
 
     respond_to do |format|
