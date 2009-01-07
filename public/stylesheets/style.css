@@ -61,6 +61,9 @@ table tr td { vertical-align: top;}
 table.data-table tr td { vertical-align: top;}
 table.data-table tr td h3 { background: #B5463F; color: #fff; padding: 5px; }
 
+table.data-table.hosting td { width:33%; }
+table.data-table.software td { width:50%;}
+
 table#authors tr td { font-size: 120%; }                                                                                 
 
 table.bugmail td { border-bottom: 1px solid #f1f1f1; }
