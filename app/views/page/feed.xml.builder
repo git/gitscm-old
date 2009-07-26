@@ -11,7 +11,7 @@ xml.rss(:version=>"2.0"){
           xml.description(release[2])
           xml.pubDate(release[0].strftime("%a, %d %b %Y %H:%M:%S %z"))
           xml.link('http://git-scm.com/download')
-          xml.guid(release[1])
+          xml.guid(release[1], "isPermaLink"=>"false")
         end
       end
   }
