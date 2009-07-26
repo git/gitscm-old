@@ -30,7 +30,7 @@ ul#about-list li strong { color: #6E212E; }
 .navbar { text-align: center; background: #9AB54F;}
 .footer { text-align: center; background: #E3D185;}
 .menu { padding: 10px; }
-#header { image: url("/images/header.png"); min-height: 106px;}
+#header { min-height: 106px;}
 
 h2.section-start { text-align:center; background: #9AB54F; color: #240; }
 h3.title { background: #eee; padding: 5px;}
