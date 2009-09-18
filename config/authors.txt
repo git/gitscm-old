@@ -1,650 +1,678 @@
-Junio C Hamano (3983):
+Junio C Hamano (4044):
 Shawn O. Pearce (1211):
-Linus Torvalds (1036):
-Johannes Schindelin (684):
-Eric Wong (429):
-Jakub Narebski (370):
-Jeff King (345):
-Nicolas Pitre (303):
-Paul Mackerras (293):
+Linus Torvalds (1064):
+Johannes Schindelin (697):
+Eric Wong (445):
+Jakub Narebski (381):
+Jeff King (366):
+Nicolas Pitre (312):
+Paul Mackerras (294):
 Simon Hausmann (252):
-Johannes Sixt (220):
+Johannes Sixt (241):
+Christian Couder (228):
 Petr Baudis (218):
-Christian Couder (208):
-Alex Riesen (198):
-René Scharfe (197):
+René Scharfe (206):
+Alex Riesen (199):
 J. Bruce Fields (160):
-Miklos Vajna (156):
-Daniel Barkalow (155):
+Miklos Vajna (159):
+Daniel Barkalow (157):
+Brandon Casey (152):
 Kay Sievers (147):
-Pierre Habouzit (134):
-Brandon Casey (128):
-Alexandre Julliard (108):
-Thomas Rast (91):
+Pierre Habouzit (139):
+Thomas Rast (110):
+Alexandre Julliard (109):
 Alexander Gavrilov (87):
 Frank Lichtenheld (73):
+Stephen Boyd (69):
 Fredrik Kuivinen (69):
 Martin Langhoff (66):
 Jonas Fonseca (65):
 Gerrit Pape (64):
-Nanako Shiraishi (60):
+Nanako Shiraishi (63):
 Matthias Lederhofer (58):
-Steffen Prohaska (56):
+Steffen Prohaska (57):
 Jay Soffian (55):
-Lars Hjemli (52):
+Giuseppe Bilotta (54):
+Lars Hjemli (54):
+SZEDER Gábor (53):
+Martin Koegler (52):
 Stephan Beyer (52):
 Nick Hengeveld (52):
-Martin Koegler (51):
+Michele Ballabio (51):
 Matthias Urlichs (51):
-Michele Ballabio (50):
-SZEDER Gábor (50):
 Andy Parkins (50):
+Jim Meyering (50):
+Christian Stimming (49):
 Sergey Vlasov (49):
-Jim Meyering (48):
-Christian Stimming (48):
+Mike Hommey (48):
 Luben Tuikov (47):
 Ryan Anderson (47):
-Stephen Boyd (46):
+Markus Heidelberg (47):
 Pavel Roskin (43):
+Santi Béjar (42):
 H. Peter Anvin (41):
-Mike Hommey (41):
-Giuseppe Bilotta (40):
-Markus Heidelberg (40):
-Sven Verdoolaege (38):
+Johan Herland (40):
+Sean Estabrooks (38):
 Jon Loeliger (38):
-Santi Béjar (37):
-Sean Estabrooks (37):
+Sven Verdoolaege (38):
 Brian Gernhardt (37):
+Michael J Gruber (37):
 Mark Levedahl (36):
+Wincent Colaiuta (35):
 Aneesh Kumar K.V (35):
 Dmitry Potapov (34):
-Wincent Colaiuta (34):
 Lukas Sandström (34):
 Theodore Ts'o (33):
+Nguyễn Thái Ngọc Duy (32):
+Andreas Ericsson (32):
 Han-Wen Nienhuys (32):
-Jonathan Nieder (31):
 Dennis Stosberg (31):
-Andreas Ericsson (31):
-Nguyễn Thái Ngọc Duy (31):
+Jonathan Nieder (31):
+Uwe Kleine-König (31):
+Matthieu Moy (29):
 Jon Seymour (29):
 Martin Waitz (28):
+Marius Storm-Olsen (28):
+David Aguilar (28):
 Eric W. Biederman (28):
 Timo Hirvonen (28):
-Michael J Gruber (27):
-Johan Herland (27):
-David Aguilar (26):
-Carlos Rica (26):
+Kjetil Barvik (26):
+Clemens Buchacher (26):
 Kristian Høgsberg (26):
-Marius Storm-Olsen (26):
+Carlos Rica (26):
 Ramsay Allan Jones (25):
-Uwe Kleine-König (25):
 Andy Whitcroft (25):
-Robert Fitzsimons (25):
 Jason Riedy (25):
+Robert Fitzsimons (25):
 Sam Vilain (25):
-Kjetil Barvik (25):
-Ralf Wildenhues (24):
+Ralf Wildenhues (25):
+Tay Ray Chuan (24):
+Yann Dirson (23):
 Karl Hasselström (23):
 Peter Eriksen (23):
-Clemens Buchacher (23):
-Matthieu Moy (23):
-Matthias Kestenholz (22):
-Charles Bailey (22):
+Björn Steinbrink (23):
 Josef Weidendorfer (22):
+Charles Bailey (22):
+Matthias Kestenholz (22):
 Felipe Contreras (22):
 Mark Wooding (21):
-Robin Rosenberg (21):
-Lee Marlow (21):
 David Kastrup (21):
 Adam Roben (21):
+Lee Marlow (21):
+Robin Rosenberg (21):
+Brian Downing (20):
 James Bowes (20):
 Michael Witten (20):
-Björn Steinbrink (20):
-Brian Downing (20):
-Lea Wiemann (19):
+Paolo Bonzini (20):
 Andrew Ruder (19):
 Nikolai Weibull (19):
+Lea Wiemann (19):
 Eygene Ryabinkin (18):
 David Rientjes (18):
-Gustaf Hendeby (17):
 David J. Mellor (17):
-Paolo Bonzini (17):
-Yann Dirson (17):
+Gustaf Hendeby (17):
 Dan McGee (16):
+Adam Simpkins (16):
+Mike Ralphson (16):
+Heikki Orsila (15):
+Steven Grimm (15):
 Julian Phillips (15):
-Adam Simpkins (15):
-Anand Kumria (15):
 Abhijit Menon-Sen (15):
 Yasushi SHOJI (15):
-Sergei Organov (15):
-Heikki Orsila (15):
+Anand Kumria (15):
 A Large Angry SCM (15):
-Steven Grimm (15):
-Arjen Laarhoven (14):
+Sergei Organov (15):
+David Kågedal (15):
+Carl Worth (14):
+Chris Johnsen (14):
 Teemu Likonen (14):
 Olivier Marin (14):
-Chris Johnsen (14):
-Carl Worth (14):
+Arjen Laarhoven (14):
 Quy Tonthat (14):
-Tony Luck (13):
-Mike Ralphson (13):
-Anders Melchiorsen (13):
+Ping Yin (13):
+Elijah Newren (13):
 Robin H. Johnson (13):
 Kevin Ballard (13):
+Tony Luck (13):
 David Greaves (13):
-David Kågedal (13):
-Ping Yin (13):
-Dmitry V. Levin (12):
+Anders Melchiorsen (13):
 Bryan Donlan (12):
 Marco Costalba (12):
+Dmitry V. Levin (12):
+Jari Aalto (12):
 Robert Shearman (12):
 Matt McCutchen (12):
-Deskin Miller (11):
 Marcus Griep (11):
-Horst H. von Brand (11):
-Jari Aalto (11):
-David Symonds (11):
-Benoit Sigoure (11):
-Matt Kraai (11):
-Franck Bui-Huu (11):
-Josh Triplett (11):
 David D. Kilzer (11):
-Pieter de Bie (11):
+Benoit Sigoure (11):
+Deskin Miller (11):
+Matt Kraai (11):
+David Symonds (11):
+Horst H. von Brand (11):
 Luiz Fernando N. Capitulino (11):
-Brian Hetro (10):
-Dana L. How (10):
-Michael S. Tsirkin (10):
-Ben Walton (10):
-Allan Caffee (10):
+Josh Triplett (11):
+Pieter de Bie (11):
+Franck Bui-Huu (11):
 Chris Shoemaker (10):
-Mikael Magnusson (10):
+Allan Caffee (10):
 Florian Forster (10):
-Ted Pavlic (10):
+Erik Faye-Lund (10):
+Brian Hetro (10):
 Shawn Bohrer (10):
-Avery Pennarun (9):
-Francis Daly (9):
-Finn Arne Gangstad (9):
-Erik Faye-Lund (9):
-Alp Toker (9):
+Dana L. How (10):
+Mikael Magnusson (10):
+Michael S. Tsirkin (10):
+Ted Pavlic (10):
+Ben Walton (10):
 Sasha Khapyorsky (9):
+Finn Arne Gangstad (9):
+Avery Pennarun (9):
+Alp Toker (9):
+Francis Daly (9):
 Robert Schiele (9):
+Benjamin Kramer (9):
 Stephen Haberman (9):
-Tommi Virtanen (8):
 Jean-Luc Herren (8):
-Chris Wright (8):
-William Pursell (8):
-Mike McCormack (8):
-Benjamin Kramer (8):
 Jonathan del Strother (8):
-Michael Hendricks (7):
-Damien Diederen (7):
-Yaacov Akiba Slama (7):
-Thomas Glanzmann (7):
-Jürgen Rühle (7):
-Kai Ruemmler (7):
+Chris Wright (8):
+Mike McCormack (8):
+William Pursell (8):
+Tommi Virtanen (8):
+Michał Kiedrowicz (8):
 Stephen R. van den Berg (7):
-James Bottomley (7):
-Peter Hagervall (7):
+Thomas Glanzmann (7):
+Michael Hendricks (7):
 Alexander Potashev (7):
 Serge E. Hallyn (7):
+Kirill Smelkov (7):
+Wesley J. Landaker (7):
+Yaacov Akiba Slama (7):
 Scott R Parish (7):
-Philippe Bruhat (6):
-Adeodato Simó (6):
-Amos Waterland (6):
-Brad Roberts (6):
-Bryan Larsen (6):
-David M. Syzdek (6):
-Don Zickus (6):
-Edgar Toernig (6):
-Eric Raible (6):
-Joey Hess (6):
-Keith Cascio (6):
-Kirill Smelkov (6):
+Todd Zullinger (7):
+Peter Hagervall (7):
+James Bottomley (7):
+Heiko Voigt (7):
+Jürgen Rühle (7):
+Kai Ruemmler (7):
+Damien Diederen (7):
+Jens Lehmann (7):
 Lars Noschinski (6):
+Philippe Bruhat (6):
+Joey Hess (6):
+Brad Roberts (6):
+Ben Jackson (6):
+Edgar Toernig (6):
+Amos Waterland (6):
+Don Zickus (6):
+David M. Syzdek (6):
 Michael Spang (6):
-Michał Kiedrowicz (6):
+Pat Thoyts (6):
+Keith Cascio (6):
+Michael Haggerty (6):
 Randal L. Schwartz (6):
-Todd Zullinger (6):
-Tom Prince (6):
-YOSHIFUJI Hideaki (6):
-Yakov Lerner (6):
 martin f. krafft (6):
-Wesley J. Landaker (5):
-Elijah Newren (5):
-Grégoire Barbier (5):
-Jens Lehmann (5):
-Fernando J. Pereda (5):
-jidanni@jidanni.org (5):
-David Reiss (5):
-Marco Roeland (5):
-Peter Karlsson (5):
-Tay Ray Chuan (5):
-Ingo Molnar (5):
-Marcel M. Cary (5):
-Pascal Obry (5):
-Stephan Feder (5):
-John Tapsell (5):
-Michael Coleman (5):
-Michal Rokos (5):
-Heiko Voigt (5):
-Tor Arvid Lund (5):
-Simon 'corecode' Schubert (5):
+Bryan Larsen (6):
+Yakov Lerner (6):
+Tom Prince (6):
+Adeodato Simó (6):
+Eric Raible (6):
+YOSHIFUJI Hideaki (6):
 Denis Cheng (5):
-Ask Bjørn Hansen (5):
-Matthew Ogilvie (5):
-Jan Krüger (5):
+Michal Rokos (5):
+Alex Vandiver (5):
+Pascal Obry (5):
+Peter Karlsson (5):
+Bert Wesarg (5):
+Fernando J. Pereda (5):
 Samuel Tardieu (5):
-Sverre Rabbelier (4):
-Jan Harkes (4):
-Florian Weimer (4):
-Federico Mena Quintero (4):
-Christian Meder (4):
-Emil Medve (4):
-Alecs King (4):
-Bert Wesarg (4):
-Richard Quirk (4):
-anonymous (4):
-Steve Haslam (4):
-Mark Burton (4):
-Pat Thoyts (4):
-Guanqun Lu (4):
+Simon 'corecode' Schubert (5):
+Sitaram Chamarty (5):
+Stephan Feder (5):
+Grégoire Barbier (5):
+Tor Arvid Lund (5):
+jidanni@jidanni.org (5):
+Ingo Molnar (5):
+Jan Krüger (5):
+John Tapsell (5):
+Adam Brewster (5):
+Marcel M. Cary (5):
+Marco Roeland (5):
+Ask Bjørn Hansen (5):
+David Reiss (5):
+Matthew Ogilvie (5):
+Michael Coleman (5):
+Chris Frey (4):
+Mark A Rada (4):
 Michael Loeffler (4):
+Marcel Koeppen (4):
+Mark Burton (4):
+Richard Quirk (4):
 Rafael Garcia-Suarez (4):
+Davide Libenzi (4):
 Tuncer Ayaz (4):
-Boyd Stephen Smith Jr (4):
+Florian Weimer (4):
+Emil Medve (4):
+Federico Mena Quintero (4):
+Mark Lodato (4):
+David Soria Parra (4):
+Dirk Süsserott (4):
 Tommy M. McGuire (4):
+Sverre Rabbelier (4):
+Steve Haslam (4):
 Josh England (4):
+anonymous (4):
+Jan Harkes (4):
+Boyd Stephen Smith Jr (4):
+Kevin Geiss (4):
 Paolo Ciarrocchi (4):
 Fabian Emmes (4):
-Marcel Koeppen (4):
-Sitaram Chamarty (4):
-Davide Libenzi (4):
-Kevin Geiss (4):
-Josh Micich (3):
-David Woodhouse (3):
-Martyn Smith (3):
-Mark Allen (3):
-Jörg Sommer (3):
-David Soria Parra (3):
-Trent Piepho (3):
-Kalle Valo (3):
-Liu Yubao (3):
-Eyvind Bernhardsen (3):
-Tor Arne Vestbø (3):
-Holger Eitzenberger (3):
-Xavier Maillard (3):
+Guanqun Lu (4):
+Marc Branchaud (4):
+Christian Meder (4):
+Alecs King (4):
+İsmail Dönmez (3):
 Tilman Sauerbeck (3):
-Alex Vandiver (3):
-Steve Hoelzer (3):
-Stefan Sperling (3):
-Stefan Naewe (3):
-Jake Goulding (3):
-Alan Chandler (3):
-Eric Blake (3):
-Jan Hudec (3):
-Rutger Nijlunsing (3):
-Jason McMullan (3):
-Väinö Järvelä (3):
-Ben Jackson (3):
-Jeff Muizelaar (3):
+Nick Woolley (3):
+Chris Pettitt (3):
 Jeremy White (3):
 Jim Radford (3):
+Xavier Maillard (3):
+Josh Micich (3):
+Bruno Ribas (3):
+Väinö Järvelä (3):
 Vitaly \"_Vi\" Shukela (3):
+Eyvind Bernhardsen (3):
+Ville Skyttä (3):
+Zach Welch (3):
+Jake Goulding (3):
+Holger Eitzenberger (3):
+Trent Piepho (3):
+Jason McMullan (3):
+Liu Yubao (3):
 Peter Valdemar Mørch (3):
+Alan Chandler (3):
+Steve Hoelzer (3):
 Peter Krefting (3):
 Peter Baumann (3):
 Pete Wyckoff (3):
-Pete Harlan (3):
-Dustin Sallings (3):
-Patrick Mauritz (3):
-Ville Skyttä (3):
-Bruno Ribas (3):
-Chris Frey (3):
-Chris Pettitt (3):
-İsmail Dönmez (3):
-Michal Ostrowski (3):
-Dirk Süsserott (3):
 Michael W. Olson (3):
-Zach Welch (3):
-David S. Miller (2):
-Geoffrey Thomas (2):
-Greg KH (2):
-Guido Ostkamp (2):
-H.Merijn Brand (2):
-Henrik Austad (2):
-Holger Weiß (2):
+Pete Harlan (3):
+Jörg Sommer (3):
+Tor Arne Vestbø (3):
+Kalle Valo (3):
+Eric Blake (3):
+Mark Allen (3):
+Rutger Nijlunsing (3):
+Paul Bolle (3):
+Stefan Sperling (3):
+Patrick Mauritz (3):
+Stefan Naewe (3):
+Michal Ostrowski (3):
+David Woodhouse (3):
+André Goddard Rosa (3):
+Martyn Smith (3):
+Jeff Muizelaar (3):
+Jan Hudec (3):
+Dustin Sallings (3):
+Bernt Hansen (2):
+Anton Altaparmakov (2):
+Ali Gholami Rudi (2):
+Petr Kodl (2):
+Anton Gyllenberg (2):
+Ariel Badichi (2):
+Peter Harris (2):
+Marc-Andre Lureau (2):
+Pekka Kaitaniemi (2):
+Michael Krelin (2):
+David Brown (2):
 Eric Kidd (2):
 Eric Hanchrow (2):
-Emil Sit (2):
-Jason Merrill (2):
-Jeffrey C. Ollie (2):
-Jens Axboe (2):
-Jing Xue (2):
-Joachim Berdal Haga (2):
-John Chapman (2):
-Dotan Barak (2):
-Junio Hamano (2):
-Geert Bosch (2):
-Keith Packard (2):
-Kirill A. Korinskiy (2):
-Adam Brewster (2):
-David Brown (2):
-Li Yang (2):
-Daniel Lowe (2):
-Marc-Andre Lureau (2):
-Daniel Cheng (aka SDiZ) (2):
 Mark Drago (2):
-Daniel A. Steffen (2):
+Paul Serice (2):
+Emil Sit (2):
+Paul Collins (2):
+Patrick Welche (2):
 Marten Svanfeldt (dev) (2):
+Patrick Higgins (2):
 Martin Mares (2):
+Paolo 'Blaisorblade' Giarrusso (2):
+Alexander Litvinov (2):
+Ori Avtalion (2):
 Matt Draisey (2):
 Matt Graham (2):
-Clifford Caoile (2):
-Ciaran McCreesh (2):
-Christopher Li (2):
-Christian Schlotter (2):
-Matthijs Melchior (2):
-Michael Ellerman (2):
-Michael Krelin (2):
-Michael Smith (2):
-Mike Dalessio (2):
-Cheng Renquan (2):
-Cesar Eduardo Barros (2):
-Catalin Marinas (2):
-Caio Marcelo de Oliveira Filho (2):
 OGAWA Hirofumi (2):
-Paolo 'Blaisorblade' Giarrusso (2):
-Patrick Higgins (2):
-Patrick Welche (2):
-Paul Collins (2):
-Paul Serice (2):
-Pekka Kaitaniemi (2):
-Brian Ewins (2):
-Bradford C. Smith (2):
-Peter Harris (2):
-Brad King (2):
-Petr Kodl (2):
-Boyd Lynn Gerber (2):
-Ralf Baechle (2):
-Björn Engelmann (2):
-Bill Lear (2):
-Richard Hartmann (2):
-Richard P. Curnow (2):
-Bernt Hansen (2):
-Rémi Vanicat (2):
-Salikh Zakirov (2):
-Sam Hocevar (2):
-Avi Kivity (2):
-Scott Lamb (2):
-Sebastian Noack (2):
-Ariel Badichi (2):
-Anton Gyllenberg (2):
-Anton Altaparmakov (2):
-Seth Falcon (2):
-André Goddard Rosa (2):
-Simon Arlott (2):
-Andreas Gal (2):
-Simon Sasburg (2):
-Stefan Karpinski (2):
-Stefan-W. Hahn (2):
-Stelian Pop (2):
-Andre Noll (2):
-Amos King (2):
-Ali Gholami Rudi (2):
-Stephen Rothwell (2):
+Nicolas Sebrecht (2):
+David S. Miller (2):
+Nick Edelen (2):
+Dotan Barak (2):
+Matthijs Melchior (2):
+Mattias Nissler (2):
+Michael Smith (2):
 Alexey Nezhdanov (2):
-Steven Walter (2):
-Alexandre Bourget (2):
-Alexander Litvinov (2):
-Thomas Matysik (2):
-Thomas Schwinge (2):
-Tim Stoakes (2):
-Tom Preston-Werner (2):
-Tommy Thorn (2):
-Alec Berryman (2):
-Uwe Zeisberger (2):
-Vineet Kumar (2):
-Alberto Bertogli (2):
 Xudong Guan (2):
-Florian Ragwitz (2):
-Francis Moreau (2):
-Florian La Roche (2):
-Ferry Huberts (2):
-Fredrik Skolmli (2):
+Vineet Kumar (2):
+Holger Weiß (2):
+Li Yang (2):
+Mike Dalessio (2):
+Henrik Austad (2):
+Michael Ellerman (2):
+Caio Marcelo de Oliveira Filho (2):
+Tommy Thorn (2):
+Amos King (2):
+Tom Preston-Werner (2):
+Brian Ewins (2):
+H.Merijn Brand (2):
+Tim Stoakes (2):
+Catalin Marinas (2):
+Cesar Eduardo Barros (2):
+Avi Kivity (2):
+Cheng Renquan (2):
+Thomas Schwinge (2):
+Jason Merrill (2):
+Thomas Matysik (2):
+Guido Ostkamp (2):
+Thadeu Lima de Souza Cascardo (2):
+Bradford C. Smith (2):
+Greg KH (2):
+Jeffrey C. Ollie (2):
+Jens Axboe (2):
+Brad King (2):
+Jing Xue (2):
+Joachim Berdal Haga (2):
+Alberto Bertogli (2):
+Steven Walter (2):
+Boyd Lynn Gerber (2):
+Stephen Rothwell (2):
+Alec Berryman (2):
+Stelian Pop (2):
+Stefan-W. Hahn (2):
+John Chapman (2):
+Andre Noll (2):
+Stefan Karpinski (2):
+Geoffrey Thomas (2):
+Christian Schlotter (2):
+Simon Sasburg (2):
+Simon Arlott (2):
+Geoffrey Irving (2):
+Seth Falcon (2):
+Geert Bosch (2):
 Garry Dolley (2):
-Ted Percival (1):
-Michael Stefaniuc (1):
-Devin Doucette (1):
-Michael Weber (1):
-Chris Riddoch (1):
-Michal Marek (1):
-Jonas Flodén (1):
-Dmitry Kakurin (1):
-Michal Vitecek (1):
-Zack Brown (1):
-Chris Ridd (1):
-Mika Kukkonen (1):
-Jon Jensen (1):
-Alexandre Vassalotti (1):
-Chris Parsons (1):
-John J. Franey (1):
-Mike Pape (1):
-Terje Sten Bjerkseth (1):
-Tero Roponen (1):
-Miles Bader (1):
-Mukund (1):
-Gordon Hopper (1):
-Nate Case (1):
-Nazri Ramliy (1):
-Neil Roberts (1):
-Carlos Manuel Duclos Vergara (1):
-Carlo Marcelo Arenas Belon (1):
-Nico -telmich- Schottelius (1):
-Thomas Arcila (1):
-CJ van den Berg (1):
-Nikolaj Schumacher (1):
-Nikolaus Schulz (1):
-Wu Fengguang (1):
-Olaf Hering (1):
-Bryan Drewery (1):
-P. Christeas (1):
-Panagiotis Issaris (1):
-Thomas Guyot-Sionnest (1):
-John Goerzen (1):
-John Ellson (1):
-Doug Maxey (1):
-Pat Notz (1):
-Douglas Stockwell (1):
-Thomas Harning (1):
-Johannes Gilger (1):
-Thomas Jarosch (1):
-Paul Bolle (1):
-Glenn Rempe (1):
-Paul Eggert (1):
-Paul Jakma (1):
-Paul Jarc (1):
-Brian M. Carlson (1):
-Paul Oliver (1):
-Ian Katz (1):
-Paul T Darga (1):
-Paul Talacko (1):
-Brian Gerst (1):
-Pedro Melo (1):
-Frank Sorenson (1):
+Christopher Li (2):
+Ciaran McCreesh (2):
+Fredrik Skolmli (2):
+Sebastian Noack (2):
+Clifford Caoile (2):
+Scott Lamb (2):
+Junio Hamano (2):
+Sam Hocevar (2):
+Salikh Zakirov (2):
+Rémi Vanicat (2):
+Francis Moreau (2):
+Keith Packard (2):
+Andreas Gal (2):
+Florian Ragwitz (2):
+Michal Marek (2):
+Florian La Roche (2):
+Björn Engelmann (2):
+Kirill A. Korinskiy (2):
+Ferry Huberts (2):
+Richard P. Curnow (2):
+Daniel A. Steffen (2):
+Richard Hartmann (2):
+Daniel Cheng (aka SDiZ) (2):
+Alexandre Bourget (2):
+Bill Lear (2):
+Daniel Lowe (2):
+Daniel Trstenjak (2):
+Ralf Baechle (2):
+Štěpán Němec (1):
+Abhijit Bhopatkar (1):
 Adam Piątyszek (1):
-Joerg Bornemann (1):
-Joe Perches (1):
-Thomas Zander (1):
-Ian Hilt (1):
-YONETANI Tomokazu (1):
-Joe English (1):
-Jochen Voss (1):
-Peter Oberndorfer (1):
-Joakim Tjernlund (1):
-Alex Bennee (1):
-Timo Sirainen (1):
-Phil Lawrence (1):
-Philipp A. Hartmann (1):
-Dévai Tamás (1):
-Toby Allsopp (1):
-Boris Byk (1):
-Bob Proulx (1):
-Pini Reznik (1):
-Qingning Huo (1):
-Blake Ramsdell (1):
-Jerald Fitzjerald (1):
-eric miao (1):
-Tom Clarke (1):
-Bill Pemberton (1):
-Jeff Hobbs (1):
-Randy Dunlap (1):
-Raphael Zimmerer (1):
-Ray Chuan (1):
-Reece H. Dunn (1):
-Giovanni Funchal (1):
-Huw Davies (1):
-Richard MUSIL (1):
-Tomash Brechko (1):
-Jeff Garzik (1):
-Robert Blum (1):
-Robert Boone (1):
-Robert Ewald (1):
-Elrond (1):
-Tommi Kyntola (1):
-Bernd Ahlers (1):
-Robert Suetterlin (1):
-Robert Watson (1):
-Benjamin Sergeant (1):
-Elvis Pranskevichus (1):
-Rocco Rutte (1):
-Rogan Dawes (1):
-Roland Dreier (1):
-Romain Francoise (1):
-Roy Lee (1):
-Janos Laube (1):
-Ben Clifford (1):
 Alejandro Mery (1):
-Bart Trojanowski (1):
-Eugene Letuchy (1):
-Geoffrey Irving (1):
-Sam Ravnborg (1):
-Tony Kemp (1):
-Sami Farin (1):
-Jan Veldeman (1):
-Aurelien Bompard (1):
-Santiago Gala (1):
-Jan Andres (1):
-Scott Chacon (1):
-Scott Collins (1):
-Herbert Xu (1):
-Arto Jonsson (1):
-Art Haas (1):
-Sebastian Kuzminsky (1):
-Herbert Valerio Riedel (1):
-Sebastian Pipping (1):
-Sebastian Schuberth (1):
-Harri Ilari Tapio Liusvaara (1):
-Serge van den Boom (1):
-Han Boetes (1):
-Haavard Skinnemoen (1):
-Twiinz (1):
-Ulrich Windl (1):
-Andrew Clausen (1):
-Shun Kei Leung (1):
-Jamis Buck (1):
-Ulrik Sverdrup (1):
-Uwe Kleine-K,Av(Bnig (1):
-Fred Maranhão (1):
-James Y Knight (1):
-Soeren Finster (1):
-Frederick Akalin (1):
-Jacob Helwig (1):
-Erik Broes (1):
-Fabian Franz (1):
+Alex Bennee (1):
+Alex Bennée (1):
+Alexandre Vassalotti (1):
+Alexey Borzenkov (1):
+Alexey Guzeev (1):
+Anders Kaseorg (1):
+Anders Waldenborg (1):
 Andreas Färber (1):
+Andrew Clausen (1):
+Art Haas (1):
+Arto Jonsson (1):
+Aurelien Bompard (1):
+Bart Trojanowski (1):
+Ben Clifford (1):
+Benjamin Sergeant (1):
+Bernd Ahlers (1):
+Bill Pemberton (1):
+Blake Ramsdell (1):
+Bob Proulx (1):
+Boris Byk (1):
+Brian Gerst (1):
+Brian M. Carlson (1):
+Bryan Drewery (1):
+CJ van den Berg (1):
+Carlo Marcelo Arenas Belon (1):
+Carlos Manuel Duclos Vergara (1):
+Chris Parsons (1):
+Chris Ridd (1):
+Chris Riddoch (1):
+Chris Wedgwood (1):
+Christian Biesinger (1):
+Christian Engwer (1):
+Christian Jaeger (1):
+Cristian Peraferrer (1):
+Dan Hensgen (1):
+Dan Holmsand (1):
+Dan Loewenherz (1):
+Dan Nicholson (1):
+Daniel Cordero (1):
+Daniel Drake (1):
+Danijel Tasov (1):
+Darrin Thompson (1):
+Dave O'Neill (1):
+Dave Olszewski (1):
+Dave Peticolas (1):
+Dave Watson (1):
+David Bryson (1):
+David Meybohm (1):
+David Steven Tweed (1):
+Deskin Miler (1):
+Devin Doucette (1):
+Dirk Hoerner (1):
+Dmitry Kakurin (1):
+Doug Maxey (1):
+Douglas Stockwell (1):
+Dévai Tamás (1):
+Edward Z. Yang (1):
+Elrond (1):
+Elvis Pranskevichus (1):
+Erik Broes (1):
+Eugene Letuchy (1):
+Fabian Franz (1):
+Fabrizio Chiarello (1):
+Flavio Poletti (1):
+Frank Sorenson (1):
+Fred Maranhão (1):
+Frederick Akalin (1):
+Frederik Schwarzer (1):
+Giovanni Funchal (1):
+Glenn Rempe (1):
+Gordon Hopper (1):
+Govind Salinas (1):
+Greg Louis (1):
+Greg Price (1):
+Haavard Skinnemoen (1):
+Han Boetes (1):
+Harri Ilari Tapio Liusvaara (1):
+Herbert Valerio Riedel (1):
+Herbert Xu (1):
+Hunter, D. Seth (1):
+Huw Davies (1):
+Ian Hilt (1):
+Ian Katz (1):
+Imran M Yousuf (1):
+Imre Deak (1):
+Irina Riesen (1):
+Ivan Stankovic (1):
+Iñaki Arenaza (1):
+Jacob Helwig (1):
+James Y Knight (1):
+Jamis Buck (1):
+Jan Andres (1):
+Jan Veldeman (1):
+Janos Laube (1):
+Jeff Garzik (1):
+Jeff Hobbs (1):
+Jeff Lasslett (1):
+Jerald Fitzjerald (1):
+Joakim Tjernlund (1):
+Jochen Voss (1):
+Joe English (1):
+Joe Perches (1):
+Joerg Bornemann (1):
+Johannes Gilger (1):
+John Ellson (1):
+John Goerzen (1):
+John J. Franey (1):
+Jon Jensen (1):
+Jonas Flodén (1):
+Josh Elsasser (1):
+Joshua Williams (1):
+João Abecasis (1):
+Julien Danjou (1):
+Junichi Uekawa (1):
+Jyotirmoy Bhattacharya (1):
+Karthik R (1):
+Kent Engstrom (1):
 Kevin Green (1):
 Kevin Leung (1):
 Kevin McConnell (1):
 Kirill (1):
-Vincent Zanotti (1):
-Frederik Schwarzer (1):
-Iñaki Arenaza (1):
 Konstantin V. Arkhipov (1):
 Kris Shannon (1):
 Kristian Amlie (1):
-Dave Watson (1):
 Kristof Provost (1):
 Krzysztof Kowalczyk (1):
 Kumar Gala (1):
+Larry D'Anna (1):
 Lars Doelle (1):
-Dave Peticolas (1):
 Lars Knoll (1):
-Abhijit Bhopatkar (1):
-Dave Olszewski (1):
-Dave O'Neill (1):
 Li Hong (1):
-Stephan Springl (1):
-Darrin Thompson (1):
-David Bryson (1):
-Danijel Tasov (1):
 Luc Heinrich (1):
 Luciano Rocha (1):
-Daniel Trstenjak (1):
-Anders Waldenborg (1):
+Luke Diamand (1):
 Luke Lu (1):
-Marc Branchaud (1):
-Fabrizio Chiarello (1):
-Kent Engstrom (1):
-veillette@yahoo.ca (1):
-Daniel Drake (1):
-David Meybohm (1):
+Marco Nelissen (1):
 Marcus Fritzsch (1):
-Daniel Cordero (1):
 Marek Zawirski (1):
-Greg Louis (1):
-Jyotirmoy Bhattacharya (1):
-David Steven Tweed (1):
-Govind Salinas (1):
 Mark Hills (1):
 Mark Hollomon (1):
-Ivan Stankovic (1):
-Mark Lodato (1):
-Dan Nicholson (1):
 Markus Amsler (1):
-Dan Loewenherz (1):
-Irina Riesen (1):
 Martin Atukunda (1):
-Dan Holmsand (1):
-Dan Hensgen (1):
-Steven Drake (1):
+Martin Renold (1):
 Martin Sivak (1):
 Martin Storsjö (1):
-Cristian Peraferrer (1):
-Junichi Uekawa (1):
 Mathias Megyei (1):
-Flavio Poletti (1):
-Willy Tarreau (1):
-SungHyun Nam (1):
-Alexey Guzeev (1):
-Julien Danjou (1):
 Matthew Wilcox (1):
-Sverre Hvammen Johansen (1):
-Imre Deak (1):
-João Abecasis (1):
+Matthias Andree (1):
 Matthieu Castet (1):
-Christian Jaeger (1):
-Tarmigan Casebolt (1):
-Joshua Williams (1):
 Michael Dressel (1):
-Imran M Yousuf (1):
 Michael Gebetsroither (1):
-Christian Engwer (1):
-Christian Biesinger (1):
-Alexey Borzenkov (1):
 Michael Lai (1):
-Josh Elsasser (1):
 Michael Milligan (1):
 Michael Poole (1):
 Michael Prokop (1):
-Chris Wedgwood (1):
-Deskin Miler (1):
+Michael Stefaniuc (1):
+Michael Weber (1):
+Michal Vitecek (1):
+Mika Kukkonen (1):
+Mike Pape (1):
+Miles Bader (1):
+Mukund (1):
+Nate Case (1):
+Nazri Ramliy (1):
+Neil Roberts (1):
+Nico -telmich- Schottelius (1):
+Nikolaj Schumacher (1):
+Nikolaus Schulz (1):
+Olaf Hering (1):
+P. Christeas (1):
+Panagiotis Issaris (1):
+Pat Notz (1):
+Paul Eggert (1):
+Paul Jakma (1):
+Paul Jarc (1):
+Paul Oliver (1):
+Paul T Darga (1):
+Paul Talacko (1):
+Pedro Melo (1):
+Peter Hutterer (1):
+Peter Oberndorfer (1):
+Phil Lawrence (1):
+Philipp A. Hartmann (1):
+Pickens, James E (1):
+Pini Reznik (1):
+Qingning Huo (1):
+Randy Dunlap (1):
+Raphael Zimmerer (1):
+Ray Chuan (1):
+Reece H. Dunn (1):
+Richard MUSIL (1):
+Robert Allan Zeh (1):
+Robert Blum (1):
+Robert Boone (1):
+Robert Ewald (1):
+Robert Suetterlin (1):
+Robert Watson (1):
+Rocco Rutte (1):
+Roel Kluin (1):
+Rogan Dawes (1):
+Roland Dreier (1):
+Romain Francoise (1):
+Roy Lee (1):
+Sam Ravnborg (1):
+Sami Farin (1):
+Santiago Gala (1):
+Scott Chacon (1):
+Scott Collins (1):
+Sebastian Kuzminsky (1):
+Sebastian Pipping (1):
+Sebastian Schuberth (1):
+Serge van den Boom (1):
+Shun Kei Leung (1):
+Soeren Finster (1):
+Stephan Springl (1):
+Steven Drake (1):
+SungHyun Nam (1):
+Sverre Hvammen Johansen (1):
+Tarmigan Casebolt (1):
+Ted Percival (1):
+Terje Sten Bjerkseth (1):
+Tero Roponen (1):
+Thomas Arcila (1):
+Thomas Guyot-Sionnest (1):
+Thomas Harning (1):
+Thomas Jarosch (1):
+Thomas Zander (1):
+Timo Sirainen (1):
+Toby Allsopp (1):
+Tom Clarke (1):
+Tom Grennan (1):
+Tomash Brechko (1):
+Tommi Kyntola (1):
+Tony Kemp (1):
+Tuomas Suutari (1):
+Twiinz (1):
+Ulrich Dangel (1):
+Ulrich Windl (1):
+Ulrik Sverdrup (1):
+Vincent Zanotti (1):
+Willy Tarreau (1):
+Wu Fengguang (1):
+YONETANI Tomokazu (1):
+Zack Brown (1):
+Zoltán Füzesi (1):
+eric miao (1):
+veillette@yahoo.ca (1):
