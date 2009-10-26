@@ -1,0 +1,1232 @@
+
+
+
+Internet Engineering Task Force                                S. Chacon
+Internet-Draft                                                    GitHub
+Intended status: Informational                              June 6, 2009
+Expires: December 8, 2009
+
+
+                          Git Server Protocol
+                         git-server-protocol-01
+
+Status of this Memo
+
+   By submitting this Internet-Draft, each author represents that any
+   applicable patent or other IPR claims of which he or she is aware
+   have been or will be disclosed, and any of which he or she becomes
+   aware will be disclosed, in accordance with Section 6 of BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF), its areas, and its working groups.  Note that
+   other groups may also distribute working documents as Internet-
+   Drafts.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   The list of current Internet-Drafts can be accessed at
+   http://www.ietf.org/ietf/1id-abstracts.txt.
+
+   The list of Internet-Draft Shadow Directories can be accessed at
+   http://www.ietf.org/shadow.html.
+
+   This Internet-Draft will expire on December 8, 2009.
+
+Abstract
+
+   This documents the Git version control system packfile based server
+   protocol.  It describes expected behaviour of client and server and
+   best current practices to help avoid pitfalls when implementing Git
+   daemon or SSH based servers in other language implementations.  It
+   will describe the data structures underlying Git repositories, how
+   that data is compressed into a packfile and how the contents of that
+   packfile are negotiated and transferred.  This does not cover the
+   HTTP based Git server protocols.
+
+
+
+
+
+
+
+Chacon                  Expires December 8, 2009                [Page 1]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+Table of Contents
+
+   1.  Introduction . . . . . . . . . . . . . . . . . . . . . . . . .  3
+   2.  Git Data . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+     2.1.  The SHA-1 ID . . . . . . . . . . . . . . . . . . . . . . .  3
+     2.2.  Git Objects  . . . . . . . . . . . . . . . . . . . . . . .  4
+       2.2.1.  Blob . . . . . . . . . . . . . . . . . . . . . . . . .  4
+       2.2.2.  Tree . . . . . . . . . . . . . . . . . . . . . . . . .  4
+       2.2.3.  Commit . . . . . . . . . . . . . . . . . . . . . . . .  5
+       2.2.4.  Tag  . . . . . . . . . . . . . . . . . . . . . . . . .  5
+       2.2.5.  Git Object Model . . . . . . . . . . . . . . . . . . .  5
+         2.2.5.1.  The Commit Graph . . . . . . . . . . . . . . . . .  6
+     2.3.  Git References . . . . . . . . . . . . . . . . . . . . . .  7
+   3.  Git Packfile Format  . . . . . . . . . . . . . . . . . . . . .  7
+     3.1.  Deltified Objects  . . . . . . . . . . . . . . . . . . . . 10
+   4.  Protocols  . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+     4.1.  Packet Line Format . . . . . . . . . . . . . . . . . . . . 11
+     4.2.  Git Protocol . . . . . . . . . . . . . . . . . . . . . . . 11
+     4.3.  SSH Protocol . . . . . . . . . . . . . . . . . . . . . . . 12
+   5.  Fetching Data From a Server  . . . . . . . . . . . . . . . . . 12
+     5.1.  Initial Server Response  . . . . . . . . . . . . . . . . . 13
+     5.2.  Capabilities . . . . . . . . . . . . . . . . . . . . . . . 14
+       5.2.1.  multi-ack  . . . . . . . . . . . . . . . . . . . . . . 14
+       5.2.2.  thin-pack  . . . . . . . . . . . . . . . . . . . . . . 15
+       5.2.3.  side-band, side-band-64k . . . . . . . . . . . . . . . 15
+       5.2.4.  ofs-delta  . . . . . . . . . . . . . . . . . . . . . . 16
+       5.2.5.  shallow  . . . . . . . . . . . . . . . . . . . . . . . 16
+       5.2.6.  no-progress  . . . . . . . . . . . . . . . . . . . . . 16
+       5.2.7.  include-tag  . . . . . . . . . . . . . . . . . . . . . 16
+     5.3.  Client Response  . . . . . . . . . . . . . . . . . . . . . 17
+   6.  Pushing Data to a Server . . . . . . . . . . . . . . . . . . . 19
+   7.  Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 20
+   8.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 20
+   9.  Security Considerations  . . . . . . . . . . . . . . . . . . . 20
+   Appendix A.  Additional Stuff  . . . . . . . . . . . . . . . . . . 20
+   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 20
+   Intellectual Property and Copyright Statements . . . . . . . . . . 22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chacon                  Expires December 8, 2009                [Page 2]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+1.  Introduction
+
+   The Git SCM is a snapshot based distributed version control system.
+   Each clone of each repository can synchronize with other nodes if
+   they have read or write access to them.  The two most common
+   protocols that these communications happen over are the custom 'Git'
+   protocol and over SSH.  In both of these cases, the communication
+   happens between the 'send-pack' process on the client side and
+   'receieve-pack' process on the server in the case of pushing changes
+   from the client to the server.  For fetching changes from the server
+   to the client, the 'fetch-pack' process on the client communicates
+   with an 'upload-pack' process on the server.  This document will
+   describe the ways in which these pairs of processes communicate.
+
+
+2.  Git Data
+
+   Git has a relatively simple data format for storing it's objects.
+   There are four different types of objects that Git stores and these
+   make up nearly all the data that is transferred between a Git client
+   and server.  The four object types are the 'blob', the 'tree', the
+   'commit' and the 'tag'.  Normal Git usage will add these objects to
+   Gits internal database in a simple format and client push will
+   package them up into what is called a 'packfile' and send them to a
+   Git server.  A fetch will figure out what objects the server has that
+   the client does not and will create a packfile of those objects and
+   send that to the client.  In order to understand how that difference
+   is calculated, we'll quickly cover the Git object model.
+
+2.1.  The SHA-1 ID
+
+   The Git database operates as a key-value store, where each object
+   that is put into the database is given an ID and then can be
+   retrieved from the database by that ID.  The ID is calculated as the
+   SHA-1 checksum of the content being stored plus a small header
+   appended to it of the format:
+
+   type = blob|tree|commit|tag
+   size = %d
+   header = type size\0
+   new_content = header content
+
+   The ID for the content is the SHA-1 checksum of the new_content
+   value.  Each object is then referenced from other objects and
+   throughout the Git system via it's SHA-1 ID.  Being a checksum, this
+   value can also be used to verify the integrity of the data by
+   rechecksumming the stored content at any time and verifying that it
+   matches the ID it is stored under.
+
+
+
+Chacon                  Expires December 8, 2009                [Page 3]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+2.2.  Git Objects
+
+   The content that is stored in the Git database falls into four types.
+   The blob type is completely unstructured - you can store anything as
+   a blob, but the other three types have very specific structures
+
+2.2.1.  Blob
+
+   The 'blob' is any content that you want to store in Git. Blobs are
+   generally created from files on disk - when one does a commit in Git,
+   the contents of each file in the whole project will be stored in Git,
+   one blob per unique file contents.  If two files in a project are
+   identical, even if they are named differently, only one blob will be
+   created for that content.
+
+   Blobs can also be any content at all - binary or text and of any
+   encoding.  The content will be stored and retrieved without
+   modification.
+
+2.2.2.  Tree
+
+   The 'tree' object is a specifically formatted content type that
+   specifies a directory listing.  It contains one or more entries, each
+   of which containing a mode, a filename and a SHA-1 pointing to the
+   contents of that entry elsewhere in the Git database.
+
+   sha   = 20*(\byte)
+   mode  = (modes?)
+   entry = mode filename\0sha
+   tree  = n*(entry)
+
+                              The Tree Object
+
+   The mode of each entry can be used to determine if the entry is a
+   tree (subdirectory) or a blob (file).
+
+   Conceptually, a tree object can be visualized like this, though the
+   data is not stored this way in the object.
+
+   100644 blob 0b1ba9e5e40c3874ad8ab7f4b8320c0b088c48d5    .gitignore
+   100644 blob bd4acab772011f5501e65397aab232a6948fd3d3    Makefile
+   040000 tree f1d00a52b23d3779a0a190dd095d7fa234fa5d9c    src
+   040000 tree 00f0a95f0d807585b2fc5e4bb274b9ba8dd1903a    tests
+
+   So if you have a tree and all of the SHA-1 values referenced in it
+   are valid and in the database, then you can walk the entries and
+   recreate a project exactly as it was committed.
+
+
+
+
+Chacon                  Expires December 8, 2009                [Page 4]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+2.2.3.  Commit
+
+   When someone commits in Git, the system will store in the database a
+   snapshot of the current state entirely as tree and blob objects.
+   Then it will store a single 'commit' object that contains information
+   about the circumstances in which that snapshot was stored.
+
+   tree      = "tree " + sha + \n
+   parent    = "parent" + sha + \n
+   userinfo  = NAME <EMAIL> TIME
+   author    = "author" + userinfo + \n
+   committer = "committer" + userinfo + \n
+   encoding  = "encoding" + encoding + \n
+   commit    = tree n*(parent) author committer (encoding) \n message
+
+                             The Commit Object
+
+   Notice that the tree pointer is manditory, but the parent pointer can
+   be missing for initial commits or multiple for commits that were the
+   result of merges.
+
+2.2.4.  Tag
+
+   A tag is a pointer to any object in the database with meta-
+   information about who tagged that object and when it was tagged.
+   Most often these are used to tag specific commits as being important
+   in some way - a release, perhaps.
+
+   object   = "object " + sha + \n
+   type     = "type " + sha + \n
+   tagnm    = "tag " + tagname + \n
+   userinfo = NAME <EMAIL> TIME
+   tagger   = "tagger" + sha + \n
+   tag      = object type tagnm tagger \n message
+
+                             The Commit Object
+
+2.2.5.  Git Object Model
+
+   The Git object model then are tags that point to commits, which point
+   to zero or more commits and a single tree, which points to one or
+   more trees and/or blobs.
+
+
+
+
+
+
+
+
+
+Chacon                  Expires December 8, 2009                [Page 5]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+                            +---+         +--+
+                            v   |         v  |
+             +-----+     +--------+     +--------+     +--------+
+             | Tag | --> | Commit | --> |  Tree  | --> |  Blob  |
+             +-----+     +--------+     +--------+     +--------+
+
+                           The Git Object Model
+
+   This creates a directed acyclic graph that can represent the project
+   state at any point.
+
+2.2.5.1.  The Commit Graph
+
+   Importantly for calculating data needs later on, the commit objects
+   by themselves are also a directed acyclic graph.  If we have three
+   commits in a project, they can be depicted as a directed graph where
+   each node is a commit and each edge is the SHA-1 pointer connecting a
+   commit to it's parent.  Three simple commits might be depicted like
+   this:
+
+                                A -- B -- C
+
+                               Commit Graph
+
+   Where the C commit contains the SHA-1 of B which in turn contains the
+   SHA-1 of A.
+
+   Divergent branches may be depicted like this:
+
+                                    +-- E
+                                   /
+                              A -- B -- C -- G
+                                \
+                                 +-- D -- F
+
+                           Branched Commit Graph
+
+   A merge (in this case, between D and F) could be depicted like this:
+
+                         A -- B -- C -- D -- G -- H
+                           \                /
+                            +-- E -- F ----+
+
+                            Merge Commit Graph
+
+   Another important term is 'reachability'.  Commits are considered
+   'reachable' from another commit if they can be arrived at by walking
+   the SHA-1 references.  For instance, in the previous commit graph, A,
+
+
+
+Chacon                  Expires December 8, 2009                [Page 6]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   B and C are all reachable from D because they are downstream from it.
+   E and F aren't because they are parallel to it, and G and H are not
+   because they are upstream from it.  Reachability and other concepts
+   of graphed object structures will be important in determining what
+   data is sent from client to server and vice versa.
+
+2.3.  Git References
+
+   The last major concept in the Git data structure is the reference.  A
+   reference is like a tag that moves.  When users work on a branch in
+   Git, the branch reference that is currently checked out is moved
+   forward to point to each new commit that is created.  So in Git, a
+   branch is really just a pointer to the latest commit on that branch -
+   the rest of the commits are obtained by walking the SHA-1 values one
+   commit at a time.
+
+                              +-- E  <= topic1
+                             /
+                        A -- B -- C -- G  <= master
+                          \
+                           +-- D -- F  <= topic2
+
+                       Commit Graph with References
+
+   In this example, the 'topic1' branch contains commits E, B and A, as
+   they are all reachable from the commit that 'topic1' points to (E).
+
+   Tags also have references, but they are not generally supposed to
+   move, whereas the branch references can move with each new commit.
+   In the Git filesystem, the branch references are kept in the
+   'GIT_DIR/refs/heads' directory and tags are kept in the 'GIT_DIR/
+   refs/tags' directory (where GIT_DIR is the main Git directory).  This
+   is important as this full path is needed when the client and server
+   are negotiating what objects to transfer - the references will be
+   identified as 'refs/heads/master' rather than simply 'master' so as
+   to be unambiguous.
+
+
+3.  Git Packfile Format
+
+   Once the client and the server figure out what objects need to be
+   transferred from one system to another, it will put all of those
+   objects into a "packfile".  This packfile is then streamed from one
+   system to the other.
+
+   The packfile itself is a very simple format.  There is a header, a
+   series of packed objects (each with it's own header and body) and
+   then a checksum trailer.  The first four bytes is the string 'PACK',
+
+
+
+Chacon                  Expires December 8, 2009                [Page 7]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   which is used to make sure you're getting the start of the packfile
+   correctly.  This is followed by a 4-byte packfile version number and
+   then a 4-byte number of entries in that file.
+
+   After that, you get a series of packed objects which each consist of
+   an object header and then object contents.  At the end of the
+   packfile is a 20-byte SHA1 sum of all the shas in that packfile.
+
+              +-------------------------------+
+   [4 bytes]  | 4-byte signature:             |
+              |   {'P', 'A', 'C', 'K'}        |
+              +-------------------------------+
+   [4 bytes]  | 4-byte version number         |
+              |  (network byte order):        |
+              +-------------------------------+
+   [4 bytes]  | 4-byte number of objects      |
+              | contained in the pack         |
+              |  (network byte order)         |
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -+
+   [1 byte]   | 1 | type (3) | size A (4)     |  |- object #1 header
+              +-------------------------------+  |
+   [1 byte]   | 0 | size data B (7)           |  |
+              +-------------------------------+ -+
+              | compressed object data        | (B << 4) & A bytes
+              |                               | when expanded
+              +===============================+ -+
+   [1 byte]   | 0 | type (3) | size A (4)     |  |- object #2 header
+              +-------------------------------+ -+
+              | compressed object data        | A bytes
+              |                               | when expanded
+              +===============================+ -+
+   [1 byte]   | 1 | type (3) | size A (4)     |  |- object #3 header
+              +-------------------------------+  |
+   [1 byte]   | 0 | size data B (7)           |  |
+              +-------------------------------+  |
+   [1 byte]   | 0 | size data C (7)           |  |
+              +-------------------------------+ -+
+              | compressed object data        | (C << 11) & (B << 4) & A
+              |                               | bytes when expanded
+              |                               |
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   [20 bytes] | SHA Checksum                  |
+              |                               |
+              +-------------------------------+
+
+                            Git Packfile Format
+
+   The object header is a series of one or more 1 byte (8 bit) hunks
+
+
+
+Chacon                  Expires December 8, 2009                [Page 8]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   that specify the type of object the following data is, and the size
+   of the data when expanded.  Each byte is really 7 bits of data, with
+   the first bit being used to say if that hunk is the last one or not
+   before the data starts.  If the first bit is a 1, you will read
+   another byte, otherwise the data starts next.  The first 3 bits in
+   the first byte specifies the type of data, according to the table
+   below.
+
+        The 6 object types that can be embedded in a Git packfile.
+
+                    +--------------+--------+---------+
+                    |  Object Type | Binary | Decimal |
+                    +--------------+--------+---------+
+                    |    Commit    |   001  |    1    |
+                    |     Tree     |   010  |    2    |
+                    |     Blob     |   011  |    3    |
+                    |      Tag     |   100  |    4    |
+                    | Offset Delta |   110  |    6    |
+                    |   Ref Delta  |   111  |    7    |
+                    +--------------+--------+---------+
+
+                      Table 1: Packfile Object Types
+
+   Currently, of the 8 values that can be expressed with 3 bits (0-7), 0
+   (000) is 'undefined' and 5 (101) is not yet used.
+
+   Example of reading and parsing the header of a single object in a Git
+   packfile.
+
+   10010000
+   |`-'`--'
+   | |   `-- the first 4 bits of the data size (A)
+   |  `----- '001' means that this is a 'commit' object
+   `-------- '1' indicates that this is not the last byte of header
+
+   00010010
+   |`-----'
+   |   `----- the next 7 bits of the size of the data following (B)
+   `--------- 0 indicates that this is the last byte of header
+
+   (B << 4) & A => 00100100000 => 144
+                   `-----'`--'
+                       B    A
+
+   Here, we can see an example of a header of two bytes, where the first
+   specifies that the following data is a commit, and the remainder of
+   the first and the last 7 bits of the second specifies that the data
+   will be 144 bytes when expanded.
+
+
+
+Chacon                  Expires December 8, 2009                [Page 9]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   It is important to note that the size specified in the header data is
+   not the size of the data that actually follows for normal object
+   types (types 1-4), but the size of that data when it is zlib
+   uncompressed.
+
+   Finally, the trailer records 20-byte SHA1 checksum of the rest of the
+   file.
+
+3.1.  Deltified Objects
+
+   There are two object types that are new here - the delta object
+   types.  These are object data that are deltas of existing objects,
+   saving space in the storage.  The instance that creates the packfile
+   determines which objects it wants to deltify, if any, in order to
+   save space.  It is possible to send packfiles with no delta objects
+   in it, though it often saves quite a bit of space.
+
+   For the two delta object representations, the data portion contains
+   something that identifies which base object this delta representation
+   depends on, and then the delta to apply on the base object to
+   resurrect this object.
+
+   REF_DELTA uses 20-byte hash of the base object at the beginning of
+   data, while OFS_DELTA stores an offset within the same packfile to
+   identify the base object.  In either case, two important constraints
+   a reimplementor must adhere to are:
+
+   1.  The delta representation must be based on some other object
+       within the same packfile.
+
+   2.  The base object must be of the same underlying type.
+
+   If it is REF_DELTA, then 20-byte base object name SHA1 (the size
+   above is the size of the delta data that follows).  Then the delta
+   data, deflated.
+
+   If it is OFS_DELTA, then n-byte offset (see below) interpreted as a
+   negative offset from the type-byte of the header of the ofs-delta
+   entry (the size above is the size of the delta data that follows).
+   Then the delta data, deflated.
+
+   offset encoding: n bytes with MSB set in all but the last one.  The
+   offset is then the number constructed by concatenating the lower 7
+   bit of each byte, and for n >= 2 adding 2^7 + 2^14 + ... +
+   2^(7*(n-1)) to the result.
+
+
+
+
+
+
+Chacon                  Expires December 8, 2009               [Page 10]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+4.  Protocols
+
+   There are two transports over which the packfile protocol is
+   initiated.  The Git protocol is a simple, unauthenticated server that
+   simply takes the command (almost always 'upload-pack', though Git
+   servers can be configured to be globally writable, in which 'receive-
+   pack' initiation is also allowed) with which the client wishes to
+   communicate and executes it and connects it to the requesting
+   process.  The other transport is the SSH protocol, in which the
+   client basically just runs the 'upload-pack' or 'receive-pack'
+   process over the SSH protocol.
+
+4.1.  Packet Line Format
+
+   Some data transmission in Git is done in what is called 'packet-line'
+   format.  This is where each line of data sent is prepended with the
+   four byte hex encoded length of the rest of the payload being sent.
+   This way the side receiving data can read 4 bytes and then know how
+   much more data is coming in that request.
+
+   pkt-length = 4HEXDIGIT   ; length of pkt-payload
+   pkt-line   = pkt-length pkt-payload [ LF / CR ]
+
+   In some cases Git will use a sideband packet-line format, where each
+   line is transmitted with the hex length prepended, followed by the
+   sideband channel (one byte) that the data is meant for, followed by
+   the actual data.
+
+   pkt-length   = 4HEXDIGIT   ; length of pkt-sb-payload
+   sideband-ch  = %d01-%d03
+   pkt-line-sb  = pkt-length sideband-ch pkt-payload [LF/CR]
+
+   When a sideband is used, 2 means "progress messages, most likely
+   suitable for stderr". 1 means "pack data". 3 means "fatal error
+   message, and we're dead now".  No other channels are used or valid.
+
+   For the hex encoding, client and server SHOULD use lowercase, but
+   MUST accept mixed case (do case insensitive parsing of hex4).
+
+4.2.  Git Protocol
+
+   The Git protocol starts off by sending "git-receive-pack 'repo.git'"
+   on the wire using the pkt-line format, followed by a null byte and a
+   hostname paramater, terminated by a null byte.
+
+           0032git-upload-pack /project.git\0host=myserver.com\0
+
+   Currently only 'host' is supported in the extra information.  It's
+
+
+
+Chacon                  Expires December 8, 2009               [Page 11]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   for the git-daemon name based virtual hosting.  See --interpolated-
+   path option to git daemon, with the %H/%CH format characters.
+
+   Basically what the Git client is doing to connect to an 'upload-pack'
+   process on the server side over the Git protocol is this:
+
+     $ echo -e -n \
+       "0039git-upload-pack /schacon/gitbook.git\0host=github.com\0" |
+       nc -v github.com 9418
+
+4.3.  SSH Protocol
+
+   Initiating the upload-pack or receive-pack processes over SSH is
+   simply executing the binary on the server via SSH remote execution.
+   It is basically equivalent to running this:
+
+            $ ssh git.example.com 'git-upload-pack /project.git'
+
+   For a server to support Git pushing and pulling for a given user over
+   SSH, that user needs to be able to execute one or both of those
+   commands via the SSH shell that they are provided on login.  On some
+   systems, that shell access is limited to only being able to run those
+   two commands, or even just one of them.
+
+   In an ssh:// format URI, it's absolute in the URI, so the '/' after
+   the host name (or port number) is sent as an argument, which is then
+   read by the remote git-upload-pack exactly as is, so it's effectively
+   an absolute path in the remote filesystem.
+
+                git clone ssh://user@example.com/project.git
+                                  |
+                                  v
+             ssh user@example.com 'git-upload-pack /project.git'
+
+   In a "user@host:path" format URI, its relative to the user's home
+   directory, because the Git client will run:
+
+                   git clone user@example.com:project.git
+                                    |
+                                    v
+             ssh user@example.com 'git-upload-pack project.git'
+
+
+5.  Fetching Data From a Server
+
+   When one Git repository wants to get all the data that a second
+   repository has, the first can 'fetch' from the second.  This
+   operation determines what data the server has that the client does
+
+
+
+Chacon                  Expires December 8, 2009               [Page 12]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   not then streams that data down to the client in packfile format.
+
+   The server side binary needs to be executable as 'git-upload-pack'
+   for fetching over SSH, since the Git clients will connect to the
+   server and attempt to run that.
+
+   The basic communication structure looks like this:
+
+   # Tell the client current branch heads and the last commit on each
+    S: SHA1 refname
+    S: ...
+    S: SHA1 refname
+    S: # flush -- it's your turn
+    # Tell the server what commits we want, and what we have
+    C: want name
+    C: ..
+    C: want name
+    C: have SHA1
+    C: have SHA1
+    C: ...
+    C: # flush -- occasionally ask "had enough?"
+    S: NAK          # nope, keep sending 'have's
+    C: have SHA1
+    C: ...
+    C: have SHA1
+    S: ACK
+    C: done
+    S: XXXXXXX -- packfile contents.
+
+5.1.  Initial Server Response
+
+   When the client initially connects, whether over the SSH or Git
+   transports, the server will immediately respond with a listing of
+   each reference it has (all branches and tags) along with the commit
+   SHA that each reference currently points to.
+
+   $ echo -e -n \
+     "0039git-upload-pack /schacon/gitbook.git\0host=github.com\0" |
+      nc -v github.com 9418
+   Connection to github.com 9418 port [tcp/*] succeeded!
+   00887217a7c7e582c46cec22a130adf4b9d7d950fba0 HEAD\0multi_ack \
+     thin-pack side-band side-band-64k ofs-delta shallow no-progress \
+     include-tag
+   00441d3fcd5ced445d1abc402225c0b8a1299641f497 refs/heads/integration
+   003f7217a7c7e582c46cec22a130adf4b9d7d950fba0 refs/heads/master
+   003cb88d2441cac0977faf98efc80305012112238d9d refs/tags/v0.9
+   003c525128480b96c89e6418b1e40909bf6c5b2d580f refs/tags/v1.0
+   003fe92df48743b7bc7d26bcaabfddde0a1e20cae47c refs/tags/v1.0^{}
+
+
+
+Chacon                  Expires December 8, 2009               [Page 13]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   0000
+
+   Each line is terminated by a "\n" by convention only, which is
+   included in the 4 byte length declaration.  If a newline does not
+   terminate the line, the client should not complain.
+
+   The exception is the flush line.  A length of "0000" means its a
+   flush packet, which has no data payload.  An "\n" after the "0000"
+   would break the protocol as the server would read that "\n" in a
+   context where it is expecting another pkt-line length declaration.
+   "\n" is not a hex digit, so "0000\n" is horribly horribly broken.
+
+   HEAD is not included if its detached - that is, if HEAD is not a
+   symbolic reference, a pointer to another branch, it is not included
+   in the initial server response.  The client pattern matches the
+   advertisements against the fetch refspec, which is "refs/heads/
+   *:refs/remotes/origin/*" by default.  HEAD doesn't match the LHS, so
+   it doesn't get wanted by the client.
+
+5.2.  Capabilities
+
+   On the very first line of the initial server response, the first
+   reference is followed by a null byte and then a list of space
+   delimited server capabilities.  These allow the server to declare
+   what it can and cannot do to the client.
+
+   Client sends space separated list of capabilities it wants.  It
+   SHOULD send a subset of server capabilities, i.e do not send
+   capabilities served does not advertise.  The client SHOULD NOT ask
+   for capabilities the server did not say it supports.
+
+   Server MUST ignore capabilities it does not understand.  Server MUST
+   NOT ignore capabilities that client requested and server advertised.
+
+5.2.1.  multi-ack
+
+   The 'multi-ack' capability allows the server to return "ACK $SHA1
+   continue" as soon as it finds a commit that it can use as a common
+   base, between the client's wants and the client's have set.
+
+   By sending this early, the server can potentially head off the client
+   from walking any further down that particular branch of the client's
+   repository history.  The client may still need to walk down other
+   branches, sending have lines for those, until the server has a
+   complete cut across the DAG, or the client has said "done".
+
+   Without multi_ack, a client sends have lines in --date-order until
+   the server has found a common base.  That means the client will send
+
+
+
+Chacon                  Expires December 8, 2009               [Page 14]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   have lines that are already known by the server to be common, because
+   they overlap in time with another branch that the server hasn't found
+   a common base on yet.
+
+     The client has things in caps that the server doesn't; server has
+                           things in lower case.
+
+                         +---- u ---------------------- x
+                        /             +----- y
+                       /             /
+                      a -- b -- c -- d -- E -- F
+                       \
+                        +--- Q -- R -- S
+
+   If the client wants x,y and starts out by saying have F,S, the server
+   doesn't know what F,S is.  Eventually the client says "have d" and
+   the server sends "ACK d continue" to let the client know to stop
+   walking down that line (so don't send c-b-a), but its not done yet,
+   it needs a base for X. The client keeps going with S-R-Q, until a
+   gets reached, at which point the server has a clear base and it all
+   ends.
+
+   Without multi_ack the client would have sent that c-b-a chain anyway,
+   interleaved with S-R-Q.
+
+5.2.2.  thin-pack
+
+   Server can send thin packs, i.e. packs which do not contain base
+   elements, if those base elements are available on clients side.
+   Client has thin-pack capability when it understand how to "thicken"
+   them adding required delta bases making them independent.
+
+   Of course it doesn't make sense for client to use (request) this
+   capability for git-clone.
+
+5.2.3.  side-band, side-band-64k
+
+   This means that server can send, and client understand multiplexed
+   (muxed) progress reports and error info interleaved with the packfile
+   itself.
+
+   These two options are mutually exclusive.  A client should ask for
+   only one of them, and a modern client always favors side-band-64k.
+
+   The 'side-band' capability allows up to 1000 bytes per packet.  But
+   the packet length field is 4 bytes, in hex, so 16 bits worth of
+   information space.  Limiting it to only 1000 bytes for a large 800
+   MiB binary pack file on initial clone is really quite poor usage of
+
+
+
+Chacon                  Expires December 8, 2009               [Page 15]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   the data stream space.
+
+   The "side-band-64k" capability came about as a way for newer clients
+   that can handle much larger packets to request packets that are
+   actually crammed nearly full (65520 bytes), while maintaining
+   backward compatibility for the older clients.
+
+   The client MUST send only maximum of one of "side-band" and "side-
+   band-64k".  Server MUST favor side-band-64k if client requests both.
+
+5.2.4.  ofs-delta
+
+   Server can send, and client understand PACKv2 with delta refering to
+   its base by position in pack rather than by SHA-1.  Its that they can
+   send/read OBJ_OFS_DELTA, aka type 6 in a pack file.
+
+5.2.5.  shallow
+
+   Server can send shallow clone (git clone --depth ...).
+
+5.2.6.  no-progress
+
+   The client was started with "git clone -q" or something, and doesn't
+   want that side brand 2.  Basically the client just says "I do not
+   wish to receive stream 2 on sideband, so do not send it to me, and if
+   you did, I will drop it on the floor anyway".  However, the sideband
+   channel 3 is still used for error responses.
+
+5.2.7.  include-tag
+
+   The 'include-tag' capability is about sending tags if we are sending
+   objects they point to.  If we pack an object to the client, and a tag
+   points exactly at that object, we pack the tag too.  In general this
+   allows a client to get all new tags when it fetches a branch, in a
+   single network connection.
+
+   Clients MAY always send include-tag, hardcoding it into a request.
+   The decision for a client to request include-tag only has to do with
+   the client's desires for tag data, whether or not a server had
+   advertised objects in the refs/tags/* namespace.
+
+   Clients SHOULD NOT send include-tag if remote.name.tagopt was set to
+   --no-tags, as the client doesn't want tag data.
+
+   Servers MUST accept include-tag without error or warning, even if the
+   server does not understand or support the option.
+
+   Servers SHOULD pack the tags if their referrant is packed and the
+
+
+
+Chacon                  Expires December 8, 2009               [Page 16]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   client has requested include-tag.
+
+   Clients MUST be prepared for the case where a server has ignored
+   include-tag and has not actually sent tags in the pack.  In such
+   cases the client SHOULD issue a subsequent fetch to acquire the tags
+   that include-tag would have otherwise given the client.
+
+   The server SHOULD send include-tag, if it supports it, irregardless
+   of whether or not there are tags available.
+
+5.3.  Client Response
+
+   Once the client has the initial list of references that the server
+   has, as well as the list of capabilities, it will begin telling the
+   server what objects it wants and what objects it has, so the server
+   can make a packfile that only has the objects that the client needs.
+   The client will also send a list of the capabilities it supports out
+   of what the server said it could do.
+
+   C: 0054want 74730d410fcb6603ace96f1dc55ea6196122532d\0multi_ack \
+     side-band-64k ofs-delta\n
+   C: 0032want 7d1665144a3a975c05f1f43902ddaf084e784dbe\n
+   C: 0032want 5a3f6be755bbb7deae50065988cbfa1ffa9ab68a\n
+   C: 0032want 7e47fe2bd8d01d481f44d7af0531bd93d3b21c01\n
+   C: 0032want 74730d410fcb6603ace96f1dc55ea6196122532d\n
+   C: 0000
+   C: 0009done\n
+
+   S: 0008NAK\n
+   S: 0023\002Counting objects: 2797, done.\n
+   [...]
+   S: 2004\001PACK\000\000\000\002 [...]
+
+   It means the server is answering a prior flush from the client, and
+   is saying "I still can't serve you, keep tell me more have".
+
+   I have thought that after sending "0000" flush line client can wait
+   for NAK or ACK server response... but it is not the case.  When I
+   tried to read from server after "0000" flush and before "0009done\n",
+   my client (or netcat instance) deadlocked (hung) waiting for server
+   response.  I either did a mistake in my fake client, or I don't
+   understand git pack protocol correctly.  Should client wait for NAK
+   or ACK from server _only_ after sending maximum number of want/have
+   lines (256 if I remember correctly?)?  Yes. It means the client will
+   not issue any more "have" lines, as it has nothing further in its
+   history, so the server just has to give up and start generating a
+   pack based on what it knows.  After the client receives a "ACK" or
+   "NAK" for the number of outstanding flushes it still has, *after* it
+
+
+
+Chacon                  Expires December 8, 2009               [Page 17]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   has sent "done".  This also varies based on whether or not multi_ack
+   was enabled.  Its ugly.  But basically you keep a running counter of
+   each "flush" sent, and then you send a "done" out, and then you wait
+   until you have the right number of ACK/NAK answers back, and then the
+   stream changes format.
+
+   > Should commands such as "have", "want", "done" use lower case or >
+   be case insensitive?  These MUST be lowercase. > Should status
+   indicators "ACK" and "NAK" be upper case, These MUST be uppercase.
+   Though "ACK %s continue" MUST be mixed case, as I just wrote it. >
+   Should capabilities be case sensitive, and should they be > compared
+   case sensitive or not?  No, they are case sensitive.
+
+   One thing that I did not see mentioned in this thread is that the
+   implementation is allowed to buffer non-flush packets and send
+   multiple of them out with a single write(2).  In other words,
+   packet_write() could buffer instead of directly calling safe_write(),
+   while packet_flush() must do safe_write() and make sure it drains. -
+   junio That's one reason why in JGit I call the flush packet of "0000"
+   end(), and flush() triggers the drain.  JGit buffers everything its
+   writing, but only by one standard "have" window IIRC.  JGit server
+   code triggers a flush() after side-band channel 2 packet ends, but
+   not an end(), because we only want to drain to the network, not
+   inject a bad "0000" packet in the stream.
+
+   0023\\002Counting objects: 2797, done.\n
+   002b\\002Compressing objects:   0% (1/1177)   \r
+   002c\\002Compressing objects:   1% (12/1177)   \r
+   002c\\002Compressing objects:   2% (24/1177)   \r
+   0053\\002Compressing objects:   7% (83/1177)   \r \
+           Compressing objects:   8% (95/1177)   \r
+   2004\\001PACK\\000\\000\\000\\002\\000\\000\n\\355\\225
+       \\017x\\234\\235\\216K\n\\302"...
+   2005\\001\\360\\204{\\225\\376\\330\\345]z\226\273"...
+   ...
+   0037\\002Total 2797 (delta 1799), reused 2360 (delta 1529)\n"
+
+   Buffering.  There are two processes running on the server side, git-
+   pack-objects is producing these messages on its stderr, and the pack
+   data on stdout.  Both are actually a pipe read by git-upload-pack in
+   a select loop.  If pack-objects can write two messages into the pipe
+   buffer before upload-pack is woken to read them out, upload-pack
+   might find two (or more) messages ready to read without blocking.
+   These get bundled into a single packet, because, why not, its easier
+   to code it that way.  Its most common on the end like that, where we
+   dump 100%, and then immediately add the ", done" and start a new
+   progress meter.  Its less likely in the middle, where we try to space
+   out the progress updates to around 1 per second, or 1 per percentage
+
+
+
+Chacon                  Expires December 8, 2009               [Page 18]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   unit.
+
+
+6.  Pushing Data to a Server
+
+   push - determines objects in DAG(C) not in DAG(S) and transfers them
+   via packfile
+
+   send-pack | receive-pack protocol.
+
+   # Tell the pusher what commits we have and what their names are
+   C: SHA1 name
+   C: ...
+   C: SHA1 name
+   C: # flush -- it's your turn
+   # Tell the puller what the pusher has
+   S: old-SHA1 new-SHA1 name
+   S: old-SHA1 new-SHA1 name
+   S: ...
+   S: # flush -- done with the list
+   S: XXXXXXX --- packfile contents.
+
+
+   S: 007c74730d410fcb6603ace96f1dc55ea6196122532d HEAD\0multi_ack \
+     thin-pack side-band side-band-64k ofs-delta shallow no-progress
+   S: 003e7d1665144a3a975c05f1f43902ddaf084e784dbe refs/heads/debug
+   S: 003d5a3f6be755bbb7deae50065988cbfa1ffa9ab68a refs/heads/dist
+   S: 003e7e47fe2bd8d01d481f44d7af0531bd93d3b21c01 refs/heads/local
+   S: 003f74730d410fcb6603ace96f1dc55ea6196122532d refs/heads/master
+   S: 003f74730d410fcb6603ace96f1dc55ea6196122532d refs/tags/v1.0
+   S: 0000
+
+   figures out what needs to be pushed, sends
+
+   C: 003e7d1665144a3a975c05f1f43902ddaf084e784dbe \
+     7d1665144a3a975c05f1f43902ddaf084e784dbe refs/heads/debug
+   C: 003e7d1665144a3a975c05f1f43902ddaf084e784dbe \
+     5a3f6be755bbb7deae50065988cbfa1ffa9ab68a refs/heads/dist
+   C: 0000
+   C: PACKDATA
+
+   S: SHA-1 (20 bytes)
+
+   If the remote receiving repository has alternates, the ".have" refs
+   are the refs of the alternate repositories.  This signals to the
+   client that the server has these objects reachable, but the client
+   isn't permitted to send commands to alter these refs.
+
+
+
+
+Chacon                  Expires December 8, 2009               [Page 19]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+   The ".have" refs say that the server already has everything in that
+   common shared base, so the client doesn't have to re-upload the
+   entire project if the fork started out empty, or had all refs deleted
+   from it.
+
+   Because yea, it only matters for pushing.  Actually, in the case of
+   fetch, we shouldn't advertise what our alternate has, the client
+   should just fetch from the alternate.  In push it matters because the
+   client wants to know what the remote has, so it can trim the pack
+   down to only the new objects, to reduce transfer time.
+
+
+7.  Acknowledgements
+
+   Shawn Pearce, Jakub Narebski, Junio Hamano, Johannes Sixt, Tony Finch
+
+
+8.  IANA Considerations
+
+   This memo includes no request to IANA.
+
+   All drafts are required to have an IANA considerations section (see
+   for a guide).  If the draft does not require IANA to do anything, the
+   section contains an explicit statement that this is the case (as
+   above).  If there are no requirements for IANA, the section will be
+   removed during conversion into an RFC by the RFC Editor.
+
+
+9.  Security Considerations
+
+   All drafts are required to have a security considerations section.
+   See for a guide.
+
+
+Appendix A.  Additional Stuff
+
+   This becomes an Appendix.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chacon                  Expires December 8, 2009               [Page 20]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+Author's Address
+
+   Scott Chacon
+   GitHub
+   Redwood City, CA  94063
+   USA
+
+   Phone: +1 650 454 4539
+   Email: schacon@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chacon                  Expires December 8, 2009               [Page 21]
+
+Internet-Draft             Git Server Protocol                 June 2009
+
+
+Full Copyright Statement
+
+   Copyright (C) The IETF Trust (2009).
+
+   This document is subject to the rights, licenses and restrictions
+   contained in BCP 78, and except as set forth therein, the authors
+   retain all their rights.
+
+   This document and the information contained herein are provided on an
+   "AS IS" basis and THE CONTRIBUTOR, THE ORGANIZATION HE/SHE REPRESENTS
+   OR IS SPONSORED BY (IF ANY), THE INTERNET SOCIETY, THE IETF TRUST AND
+   THE INTERNET ENGINEERING TASK FORCE DISCLAIM ALL WARRANTIES, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF
+   THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED
+   WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+
+Intellectual Property
+
+   The IETF takes no position regarding the validity or scope of any
+   Intellectual Property Rights or other rights that might be claimed to
+   pertain to the implementation or use of the technology described in
+   this document or the extent to which any license under such rights
+   might or might not be available; nor does it represent that it has
+   made any independent effort to identify any such rights.  Information
+   on the procedures with respect to rights in RFC documents can be
+   found in BCP 78 and BCP 79.
+
+   Copies of IPR disclosures made to the IETF Secretariat and any
+   assurances of licenses to be made available, or the result of an
+   attempt made to obtain a general license or permission for the use of
+   such proprietary rights by implementers or users of this
+   specification can be obtained from the IETF on-line IPR repository at
+   http://www.ietf.org/ipr.
+
+   The IETF invites any interested party to bring to its attention any
+   copyrights, patents or patent applications, or other proprietary
+   rights that may cover technology that may be required to implement
+   this standard.  Please address the information to the IETF at
+   ietf-ipr@ietf.org.
+
+
+
+
+
+
+
+
+
+
+
+Chacon                  Expires December 8, 2009               [Page 22]
+
