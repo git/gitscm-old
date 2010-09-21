@@ -9,26 +9,19 @@
     <a href="http://www.kernel.org/pub/software/scm/git/docs/RelNotes-<%= @version %>.txt">release notes</a>
     <small>(<%= @date %>)</small>
   </div>
-	<table><tr><td>
-	  <div class="center">
-		  <img width="60" src="images/tar.png" alt="Tar.Bz2 Download" /><br/>
-		  <a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.bz2">tar.bz2</a>
-		  <a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.bz2.sign">(sign)</a>
-		</div>
-	</td><td>
-	  <div class="center">
-		  <img width="60" src="images/tar.png" alt="Tar.Gz Download" /><br/>
-		  <a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.gz">tar.gz</a>
-		  <a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.gz.sign">(sign)</a>
-		</div>
-<!--
-  </td><td>
-    <div class="center">
-		  <img width="60" src="images/zip.png" alt="Zip Download"><br/>
-		  <a href="/downloads/git-<%= @version %>.zip">zip</a>
-		  <a href="/downloads/git-<%= @version %>.zip.sign">(sign)</a>
-		</div
--->
+	<table><tr><td width="33%">
+	  <div class="center"><a href="http://code.google.com/p/msysgit/downloads/list?can=3"><img src="images/windows_big.png"></a></div>
+  </td><td width="33%">
+	  <div class="center"><a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3"><img src="images/osx_big.png"></a></div>
+	</td><td width="33%">
+    <div class="center"><a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.bz2"><img src="images/tux_big.png"></a></div>
+  </td></tr>
+  <tr><td>
+		  <div class="center"><a href="http://code.google.com/p/msysgit/downloads/list?can=3">Windows</a></div>
+  	</td><td>
+		  <div class="center"><a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">Mac OSX</a></div>
+  	</td><td>
+      <div class="center"><a href="http://kernel.org/pub/software/scm/git/git-<%= @version %>.tar.bz2">Source</a></div>
 	</td></tr></table>
 	<div class="center">
 	  <% if controller.action_name != 'download' %>
@@ -36,7 +29,7 @@
 	  <% else %>
       <a href="http://www.kernel.org/pub/software/scm/git/">Older Releases</a><br/>
 	  <% end %>
-	  <a href="http://git.kernel.org/?p=git/git.git;a=summary">Source and History</a>
+	  <a href="http://git.kernel.org/?p=git/git.git;a=summary">Git Source Repository</a>
 	</div>
 </div>
 </div>
