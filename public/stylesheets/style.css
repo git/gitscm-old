@@ -91,3 +91,8 @@ table.videos { width:100%;}
 table.videos td { width:25%;}
 
 .videos img { border: 1px solid #aaa; padding: 5px; background: #eee; }
+
+#sfc-footer {
+  background: #9AB54F;
+  margin-bottom: 5px;
+}
