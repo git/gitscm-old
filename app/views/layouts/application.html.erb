@@ -50,24 +50,24 @@
     <br/><br/>
   </div>
   
-  <div class="span-17 footer">
-  	<div class="menu">
-  		This page is maintained by Scott Chacon. 
-  		<br/>
-  		Please email me at <a href="mailto:schacon@gmail.com">schacon@gmail.com</a>
-  		with patches, suggestions and comments.
-  		<p>Source for this <a href="http://github.com/schacon/gitscm/tree/master">website</a>
+  <div class="span-4 center" id="sfc-footer">
+    Git is a member of the <a href="/sfc">Software Freedom Conservancy</a>
+    <br/>&nbsp;
+  </div>
+  <div class="span-13 footer">
+    <div class="menu">
+      This page is maintained by Scott Chacon. 
+      <br/>
+      Please email me at <a href="mailto:schacon@gmail.com">schacon@gmail.com</a>
+      with patches, suggestions and comments.
+      <p>Source for this <a href="http://github.com/schacon/gitscm/tree/master">website</a>
       was forked from Petr Baudis's <a href="http://git.or.cz/index.html">git.or.cz</a></p>
-	  </div>
+    </div>
   </div>
   <div class="span-4 last center">
-    <div id="sfc-footer" class="span-4 footer last">
-      Git is a member of the <a href="/sfc">Software Freedom Conservancy</a>
-    </div>
-    <div class="span-4 last center">
-      hosting donated by:
-      <a href="http://github.com"><img src="images/github.png" alt="github logo" /></a>
-    </div>
+    hosting donated by:
+    <a href="http://github.com"><img src="images/github.png" alt="github logo" /></a>
+  </div>
   </div>
   
 </div>
@@ -75,6 +75,7 @@
 <script type="text/javascript">
   $(function() {
     $('.footer').corner();
+    $('#sfc-footer').corner();
   });
 </script>
 

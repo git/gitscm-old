@@ -94,5 +94,8 @@ table.videos td { width:25%;}
 
 #sfc-footer {
   background: #9AB54F;
-  margin-bottom: 5px;
+  padding: 10px;
+}
+#sfc-footer a {
+  color: #350;
 }
