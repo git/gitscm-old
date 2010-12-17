@@ -99,3 +99,20 @@ table.videos td { width:25%;}
 #sfc-footer a {
   color: #350;
 }
+.appeal { 
+  border: 2px solid #350;
+  background: #eee;
+  color: #350;
+  font-size: 30px;
+  font-weight: bold;
+  max-height: 95px;
+  margin-bottom: 30px;
+}
+.humourless {
+  font-size: 10px;
+  background: #eee;
+  color: #777;
+}
+.humourless a {
+  color: #555;
+}
