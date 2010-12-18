@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
     page.about 'download', :action => 'download'
     page.about 'tools', :action => 'tools'
     page.about 'sfc', :action => 'sfc'
-    page.about 'appeal', :action => 'appeal'
+    page.about 'appeal', :action => 'sfc'
   end
 
   map.with_options :controller => 'course' do |page|
