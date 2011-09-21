@@ -3,6 +3,7 @@
 SCRIPT=$(readlink -f $0)
 SCRIPTPATH=$(dirname $SCRIPT)
 authors="$SCRIPTPATH/../config/authors.txt"
+relfile="$SCRIPTPATH/../config/release.txt"
 
 git_dir=
 schacon=/Users/schacon/projects/git/.git
@@ -17,6 +18,7 @@ fi
 
 release=$(git --git-dir="$git_dir" describe origin/maint)
 release=${release%%-*}
+echo $release > $relfile
 git --git-dir="$git_dir" \
     log --pretty=short --no-merges \
     $release \
