@@ -39,6 +39,7 @@ class GitApp < Sinatra::Base
 
   get '/:action' do
     @action = params[:action]
+    @action.gsub!('.html', '')
     get_version if @action == 'download'
     erb :"#{@action}"
   end
