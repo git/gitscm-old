@@ -1,0 +1,131 @@
+<div span="span-21">
+  <div id="announce">
+    <strong>The <a href="https://www.survs.com/survey/VCAGZA8CT5">Git User's Survey 2011</a> is up!</strong>
+    &nbsp;
+    Please devote a few minutes of your time to fill it out, so we can improve Git!
+  </div>
+</div>
+<div class="span-9">
+  <div id="git-is">
+    <h3>Git is...</h3>
+
+    <p>Git is a <strong>free &amp; open source, distributed version control system</strong>
+      designed to handle everything from small to very large projects with 
+      speed and efficiency.</p>
+
+      <p><strong>Every Git clone is a full-fledged repository</strong> with complete history
+        and full revision tracking capabilities, not dependent on network access
+        or a central server. <strong>Branching and merging are fast</strong> and easy to do.</p>
+
+        <p>Git is used for version control of files, much like tools such as
+          <a href="http://mercurial.selenic.com/">Mercurial</a>,
+          <a href="http://bazaar-vcs.org/">Bazaar</a>,
+          <a href="http://subversion.tigris.org/">Subversion</a>,
+          <a href="http://www.nongnu.org/cvs/">CVS</a>,
+          <a href="http://www.perforce.com/">Perforce</a>,
+          and <a href="http://www.microsoft.com/visualstudio/en-us/products/2010-editions/team-foundation-server">Team Foundation Server</a>.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="span-5">
+      <div id="using-git">
+        <h3>Projects using Git</h3>
+        <ul>
+          <li><a href="http://git.kernel.org/?p=git/git.git;a=summary">Git</a></li>
+          <li><a href="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=summary">Linux Kernel</a></li>
+          <li><a href="http://perl5.git.perl.org/perl.git">Perl</a></li>
+          <li><a href="http://git.eclipse.org">Eclipse</a></li>
+          <li><a href="http://git.gnome.org/cgit/">Gnome</a></li>
+          <li><a href="http://gitweb.kde.org/">KDE</a></li>
+          <li><a href="http://qt.gitorious.org">Qt</a></li>
+          <li><a href="http://github.com/rails/rails/tree/master">Ruby on Rails</a></li>
+          <li><a href="http://android.git.kernel.org">Android</a></li>
+          <li><a href="http://git.postgresql.org/gitweb">PostgreSQL</a></li>
+          <li><a href="http://git.debian.org/">Debian</a></li>
+          <li><a href="http://www.x.org/wiki/Development/git">X.org</a></li>
+        </ul>     
+
+      </div>
+    </div>
+
+    <div class="span-7 last">
+      <%= erb :download_box %>
+    </div>
+
+    <div class="span-21">
+      <h2 class="section-start">Git Quick Start</h2>
+    </div>
+
+    <div class="span-11">
+      <div class="example">
+        <h3>Cloning and Creating a Patch</h3>
+        
+<pre>$ git clone git://github.com/git/hello-world.git
+$ cd hello-world
+$ (edit files)
+$ git add (files)
+$ git commit -m 'Explain what I changed'
+$ git format-patch origin/master
+</pre>
+
+      </div>
+    </div>
+
+    <div class="span-10 last">
+      <div class="example">
+        <h3>Creating and Commiting</h3>
+        
+<pre>$ cd (project-directory)
+$ git init
+$ (add some files)
+$ git add .
+$ git commit -m 'Initial commit'
+</pre>
+
+      </div>
+    </div>
+
+    <br style="clear:both;" />
+    <br style="clear:both;" />
+    
+    <div class="span-21">
+      <h2 class="section-start">Got a Question?</h2>
+    </div>
+
+    <div class="span-7">
+      <h3 class="title">Chat</h3>
+      <p>If you are curious about something, feel free to ask
+        on the IRC channel dedicated to Git -
+        <a href="irc://irc.freenode.net/git">#git on freenode</a>.</p>
+    </div>
+    
+    <div class="span-7">
+      <h3 class="title">FAQ</h3>
+      <p>
+        If you have a question that you think might be common, you can 
+        quickly check the 
+        <a href="http://git.wiki.kernel.org/index.php/GitFaq">Git FAQ</a> page.
+      </p>
+    </div>
+    
+    <div class="span-7 last">
+      <h3 class="title">Email</h3>
+        <p>You can also ask the Git community directly at our
+          <a href="http://dir.gmane.org/gmane.comp.version-control.git">git@vger.kernel.org mailing list</a>. Bug reports should be sent to this list.</p>
+    </div>
+    
+    <div class="span-21">
+      <div id="tip">
+        To learn more about how to use Git, move along to the <a href="/documentation">Documentation</a>
+      </div>
+    </div>
+
+
+        <script  type="text/javascript">
+        $(function() {
+          $('#git-is').corner();
+          $('.example').corner();
+        });
+        </script>

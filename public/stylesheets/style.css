@@ -1,0 +1,119 @@
+/* COLOR SCHEME
+ base:   #FFE9B7 
+ darker: #E3D185
+ green:  #9AB54F
+ red:    #6E212E
+ lred:   #B5463F
+*/
+
+body { 
+    background:#fff;
+    color: #333; 
+}
+a { color: #6E212E; }
+.center { text-align: center; }
+.pad { padding: 5px; }
+
+#toc { padding: 10px; font-size: 120%; }
+#toc ul { display: inline; }
+#toc ul li { display: inline; margin-left: 20px; margin-right: 20px;}
+#toc ul li a { color: #240; }
+
+ul.a-index li#m-index a, ul.a-about li#m-about a, 
+ul.a-documentation li#m-documentation a, ul.a-download li#m-download a, 
+ul.a-tools li#m-tools a { font-weight: bold; color: #fff; text-decoration: none;}
+
+ul#about-list li { padding: 5px; }
+ul#about-list li strong { color: #6E212E; }
+
+.header h1 { text-align: center; }
+.navbar { text-align: center; background: #9AB54F;}
+.footer { text-align: center; background: #E3D185;}
+.menu { padding: 10px; }
+#header { min-height: 106px;}
+
+h2.section-start { text-align:center; background: #9AB54F; color: #240; }
+h3.title { background: #eee; padding: 5px;}
+
+.inner { background: #FFE9B7; padding-bottom: 10px;}
+.example { background: #eee; padding: 10px; }
+img.book { border: 1px solid #666; }
+
+#current-release #ver { font-size: 200%; color: #630; font-weight: bold; }
+#current-release small { font-size: 80% !important; color: #888;}
+#tip { text-align:center; padding: 20px 10px; font-size: 200%;}
+
+#git-is { padding: 10px; margin-bottom: 15px; background: #FFE9B7;}
+#git-is h3 { color: #630; font-size: 200%; font-weight: bold;}
+
+#download-source { padding: 10px; padding-bottom:15px; background: #B5463F; }
+#download-source h3 { color: #fff; font-weight: bold; text-align: center;}
+#download-source h3 small { color: #eee; font-weight: normal; font-size: 70%;}
+
+#using-git h3 { color: #6E212E; font-weight: bold;}
+#using-git ul { font-size: 120%; color: #6E212E;}
+
+#git-book { padding: 10px; text-align:center; color: #fff; font-size: 120%; background: #681;}
+#git-book a { color: #E3D185; font-weight: bold; }
+
+table tr td { vertical-align: top;}
+
+table.data-table tr td { vertical-align: top;}
+table.data-table tr td h3 { background: #B5463F; color: #fff; padding: 5px; }
+
+table.data-table.hosting td { width:33%; }
+table.data-table.software td { width:50%;}
+
+table#authors tr td { font-size: 120%; }                                                                                 
+
+table.bugmail td { border-bottom: 1px solid #f1f1f1; }
+table.bugmail th { vertical-align: top; border-bottom: 1px solid #f1f1f1; }
+
+#announce { text-align: center; padding: 5px; padding-bottom:15px; }
+
+.doc-section { margin-top: 10px; }
+.doc-section h2 { border-bottom: 1px solid #aaa; margin-bottom: 10px; 
+  color: #141; background-color:#9AB54F; padding: 3px;}
+.doc-section h3 { margin-bottom: 5px; margin-top: 8px; background: #eee; padding: 5px;}
+
+.doc-toc { background: #eee; text-align: center; padding: 10px; margin-bottom: 10px; }
+.doc-toc ul { margin: 0; display: inline; }
+.doc-toc ul li { display: inline; padding: 0; margin: 0; margin-left: 5px; margin-right: 5px;}
+.doc-toc ul li a { color: #240; }
+
+table.ccmd td	{ border: 1px; padding-left: 2em; padding-right: 2em; }
+table.ccmd	{ width: 99%; border: 1px solid #000; }
+table.ccmd, code.g { font-family: monospace; }
+table.ccmd td.g	{ width: 33%; }
+table.ccmd td.g, code.g { font-weight: bold; }
+table.ccmd td.g		{ background: #e9e8e1; color: #124; }
+
+table.videos { width:100%;}
+table.videos td { width:25%;}
+
+.videos img { border: 1px solid #aaa; padding: 5px; background: #eee; }
+
+#sfc-footer {
+  background: #9AB54F;
+  padding: 10px;
+}
+#sfc-footer a {
+  color: #350;
+}
+.appeal { 
+  border: 2px solid #350;
+  background: #eee;
+  color: #350;
+  font-size: 30px;
+  font-weight: bold;
+  max-height: 95px;
+  margin-bottom: 30px;
+}
+.humourless {
+  font-size: 10px;
+  background: #eee;
+  color: #777;
+}
+.humourless a {
+  color: #555;
+}

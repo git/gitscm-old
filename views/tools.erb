@@ -1,0 +1,151 @@
+
+<h2 id="tools">Interface Tools</h2>
+
+<p>Git is a true UNIX tool in the sense that it consists of many commands
+that do one thing well. It has been designed from the start to be easily
+wrapped in other tools and frontends. Currently, there are several
+interfaces offering more comfortable Git usage, and also graphical
+interfaces for browsing the history and more.</p>
+
+<p>Traditionally, the low-level part of Git is called <em>plumbing</em>
+and the interfaces and frontends are called <em>porcelains</em>.
+Git itself comes with a default porcelain bundled and that is actually
+what you will normally mean when you say you use Git. However, there
+are several alternative porcelains which might offer considerably more
+user friendly interface or extend Git to perform some specialized tasks.</p>
+
+<p>Below, the most widely used tools are listed. Please refer to
+<a href="http://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools">the corresponding wiki page</a>
+for a full list.</p>
+
+<table class="data-table software">
+<tr valign="top">
+
+<td>
+<h3 class="title">Graphical User Interfaces</h3>
+
+<dl>
+  <dt id="gitextensions">Git Extensions (Windows)</dt>
+  <dd><a href="http://sourceforge.net/projects/gitextensions/">Git Extensions</a>
+  is a small toolset to make working with Git under Windows a 
+  little more intuitive. The shell extension will intergrate in Windows Explorer 
+  and presents a nice context menu on files.</dd>
+
+  <dt id="tortoisegit">TortoiseGit (Windows)</dt>
+  <dd><a href="http://code.google.com/p/tortoisegit/">TortoiseGit</a>
+  is a port of the popular TortoiseSVN project to Git.
+  TortoiseGit is very complete, able to commit, show the history log, diff two versions, 
+  create branches and tags, create patches and more.</dd>
+
+  <dt id="gitx">GitX (Mac OS X)</dt>
+  <dd><a href="http://gitx.frim.nl">GitX</a>
+  is a git GUI specifically for Mac OS X. It currently features a history viewer
+  much like gitk and a commit GUI like git gui. But then in silky smooth OS X style!</dd>
+
+  <dt id="qgit">qgit (Qt)</dt>
+  <dd><a href="http://sourceforge.net/projects/qgit">qgit</a> is a Qt
+  GUI for browsing history of Git repositories, similar to <em>gitk</em>
+  but with more features.</dd>
+
+  <dt id="tig">Tig</dt>
+  <dd><a href="http://jonas.nitro.dk/tig/">tig</a>
+  is a text-mode interface for Git. It acts as a repository browser
+  that can also act as a pager for various Git commands
+  and manage your index (on diff chunk level).</dd>
+
+</dl>
+
+</td>
+<td>
+<h3>Version Control Interface layers</h3>
+
+<dl>
+
+  <dt id="stgit">StGIT</dt>
+  <dd><a href="http://www.procode.org/stgit/">Stacked Git</a> provides
+  a <em>Quilt</em>-like patch management functionality in the Git environment.
+  You can easily manage your patches in the scope of Git until they get
+  merged upstream.</dd>
+
+  <dt id="guilt">Guilt</dt>
+  <dd><a href="http://www.kernel.org/pub/linux/kernel/people/jsipek/guilt/">Guilt</a>
+  is another patch management tool, closer to the spirit of <em>Quilt</em>
+  than StGIT.</dd>
+
+  <dt id="cogito">TopGit</dt>
+  <dd><a href="http://repo.or.cz/w/topgit.git">TopGit</a>
+  aims to make handling of large amount of interdependent topic branches easier. 
+  TopGit achieves that by keeping a separate topic branch 
+  for each patch and providing few tools to maintain the branches.</dd>
+
+</dl>
+</td>
+</tr>
+</table>
+
+
+<h2 id="hosting">Git Hosting</h2>
+
+<p>Several Git hosting sites are available and open for anyone
+to host their projects publicly or privately, serving personal open source
+projects up to large professional endeavors:</p>
+
+<table class="data-table hosting">
+<tr>
+
+<td>
+
+<h3>Public Only Hosting</h3>
+
+<dl>
+<dt id="repo">repo.or.cz</dt>
+<dd><a href="http://repo.or.cz/">repo.or.cz</a> is the oldest hosting site,
+accomodating many hundreds of projects, with open-sourced infrastructure
+and aimed at open source software. It provides full push features as well
+as simple mirroring mode and gitweb interface with various enhancements.</dd>
+
+<dt id="gitorious">Gitorious</dt>
+<dd><a href="http://gitorious.org/">Gitorious</a> is another free hosting
+site with a custom web interface, supporting multiple repositories per project,
+local installations and with open source code.</dd>
+</dl>
+
+</td>
+<td>
+
+  <h3>Public and Private Hosting</h3>
+
+<dl>
+  <dt id="github">GitHub</dt>
+  <dd><a href="http://github.com/">GitHub</a> is the largest hosting site with over
+  1,000,000 public repositories and 
+  provides both free hosting for public projects and paid options for private 
+  projects. It uses a custom web interface including git-backed wiki hosting,
+  git-backed static site hosting and ticketing.  GitHub puts emphasis
+  on social networking of project developers.</dd>
+</dl>
+</td>
+<td>
+
+  <h3>Private Only Hosting</h3>
+
+  <dl>
+    <dt id="unfuddle">Unfuddle</dt>
+    <dd>
+      <a href="http://unfuddle.com/">Unfuddle</a> is a secure, hosted project 
+      management solution for software development teams.
+      Offers secure code repositories, ticketing systems and 
+      project management tools.
+    </dd>
+
+    <dt id="codebase">codebase</dt>
+    <dd>
+      <a href="http://www.codebasehq.com/">codebase</a> offers
+      source control, issue/ticket management &amp; deployment tracking. 
+    </dd>
+  </dl>
+</td>
+</tr>
+</table>
+
+<p style="text-align: right; font-size: small"><a href="http://git.wiki.kernel.org/index.php/GitHosting">more sites</a></p>

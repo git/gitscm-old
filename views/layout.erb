@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Git - Fast Version Control System</title>
+  <meta name="description" content="Home of the Git Version Control System and Friends" />
+  <meta name="authors" content="Petr Baudis, Scott Chacon" />
+  <meta http-equiv="reply-to" content="schacon@gmail.com" />
+  <meta http-equiv="content-language" content="en" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="blueprint/print.css" type="text/css" media="print" />
+  <!--[if IE]><link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+  <link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="screen, projection" />
+  <script type="text/javascript" src="javascripts/jquery-1.2.6.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.corner.js"></script>
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/GitReleases" />
+</head>
+
+<body>
+
+<div class="container showgrids">
+
+  <div class="span-21 header">
+    <a href="/"><img alt="Git - the fast version control system" src="/images/header.gif" /></a>
+  </div>
+
+  <div class="span-21 navbar">
+    <div id="toc">
+      <ul class="a-<%= @action %>">
+        <li id="m-index"><a href="/">Home</a></li>
+        <li id="m-about"><a href="/about">About Git</a></li>
+        <li id="m-documentation"><a href="/documentation">Documentation</a></li>
+        <li id="m-download"><a href="/download">Download</a></li>
+        <li id="m-tools"><a href="/tools">Tools &amp; Hosting</a></li>
+        <!-- <li id="m-wiki"><a href="http://git.wiki.kernel.org/index.php/Main_Page">Wiki</a></li> -->
+      </ul>
+    </div>
+  </div>
+  
+  <div class="span-21">
+    <br/>
+  </div>
+  
+  <%= yield %>
+
+  <div class="span-21">
+    <br/><br/>
+  </div>
+  
+  <div class="span-4 center" id="sfc-footer">
+    Git is a member of the <a href="/sfc">Software Freedom Conservancy</a>
+    <br/>&nbsp;
+  </div>
+  <div class="span-13 footer">
+    <div class="menu">
+      This page is maintained by Scott Chacon. 
+      <br/>
+      Please email me at <a href="mailto:schacon@gmail.com">schacon@gmail.com</a>
+      with patches, suggestions and comments.
+      <p>Source for this <a href="http://github.com/schacon/gitscm/tree/master">website</a>
+      was forked from Petr Baudis's <a href="http://git.or.cz/index.html">git.or.cz</a></p>
+    </div>
+  </div>
+  <div class="span-4 last center">
+    hosting donated by:
+    <a href="http://github.com"><img src="images/github.png" alt="github logo" /></a>
+  </div>
+  
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $('.footer').corner();
+    $('#sfc-footer').corner();
+  });
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-82337-12");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<div class="span-14">
+  <h2 id="download">Download</h2>
+
+  <h2 class="section-start">Binaries</h2>
+
+  <p>For people who prefer precompiled packages, these are available:</p>
+
+  <table class="bugmail">
+
+  <tr>
+  <th>RPMs</th>
+  <td></td>
+  <td><a href="http://kernel.org/pub/software/scm/git/RPMS/">http://kernel.org/pub/software/scm/git/RPMS/</a></td>
+  </tr>
+
+  <tr class="odd">
+  <th rowspan="3">Debs</th>
+  <td>Stable</td>
+  <td><a href="http://packages.debian.org/stable/git">http://packages.debian.org/stable/devel/git</a></td>
+  </tr>
+  <tr>
+  <td>Testing</td>
+  <td><a href="http://packages.debian.org/testing/devel/git">http://packages.debian.org/testing/devel/git</a></td>
+  </tr>
+  <tr class="odd">
+  <td>Unstable</td>
+  <td><a href="http://packages.debian.org/unstable/devel/git">http://packages.debian.org/unstable/devel/git</a></td>
+  </tr>
+
+  <tr>
+  <th rowspan="2">Win</th>
+  <td><a href="http://www.cygwin.com/">Cygwin</a></td>
+  <td><a href="http://www.cygwin.com/setup.exe">http://www.cygwin.com/setup.exe</a></td>
+  </tr>
+  <tr class="odd">
+  <td><a href="http://code.google.com/p/msysgit/">msysGit</a></td>
+  <td><a href="http://code.google.com/p/msysgit/downloads/list">http://code.google.com/p/msysgit/downloads/list</a></td>
+  </tr>
+
+  <tr class="odd">
+  <th>OS X</th>
+  <td>Stable</td>
+  <td><a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">http://code.google.com/p/git-osx-installer/downloads/list?can=3</a></td>
+  </tr>
+
+  <tr>
+  <th rowspan="2">Solaris</th>
+  <td>v8&ndash;10</td>
+  <td><a href="http://sunfreeware.com/">http://sunfreeware.com/</a></td>
+  </tr>
+  <tr class="odd">
+  <td><a href="http://opencsw.org/">v9&ndash;10</a></td>
+  <td><a href="http://opencsw.org/packages/git/">http://opencsw.org/packages/git/</a></td>
+  </tr>
+
+  </table>
+
+
+</div>
+
+<div class="span-7 last">
+  <%= erb :download_box %>
+  
+  <br/>
+  
+  <div class="center">
+    <h3 class="title">Development snapshots</h3>
+
+    <p>Daily snapshots of the main Git development branch are available at
+    <a href="http://www.codemonkey.org.uk/projects/git-snapshots/git/">codemonkey.org</a><br/>
+    (thanks to Dave Jones).</p>
+  </div>
+</div>
+
+<div class="span-21">
+
+  <h2 class="section-start">Git via Git</h2>
+
+  <p>If you already have Git installed, you can get the latest
+  development version via Git itself:</p>
+  <pre><strong>git clone git://github.com/gitster/git.git</strong></pre>
+
+  <p>If you have problems connecting (Git uses port 9418),
+  you can try to access the repository over the HTTP protocol:</p>
+  <pre><strong>git clone http://github.com/gitster/git.git</strong></pre>
+  <p>(this method works even behind firewalls and such).</p>
+
+  <p>You can also always browse the current contents
+  of the git repository using either
+  the <a href="http://repo.or.cz/w/git.git">gitweb</a>
+  or <a href="http://github.com/gister/git/tree/master">GitHub</a>
+  web interface.</p>
+
+
+</div>
