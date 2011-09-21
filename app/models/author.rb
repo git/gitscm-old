@@ -2,9 +2,11 @@ class Author
 	
 	def self.all
 		authors =  File.join(RAILS_ROOT, 'config/authors.txt')
+		release = File.join(RAILS_ROOT, 'config/release.txt')
     if File.exists?(authors)
       authors = File.readlines(authors)
-      @authors = {:main => [], :contrib => []}
+      release = File.readlines(release)
+      @authors = {:main => [], :contrib => [], :release => release}
       authors.each do |author|
         data = author.split(' ')
         number = data.pop.gsub('(', '').gsub(')', '').chomp
