@@ -67,6 +67,7 @@ table.data-table.software td { width:50%;}
 table#authors tr td { font-size: 120%; }                                                                                 
 
 table.bugmail td { border-bottom: 1px solid #f1f1f1; }
+table.bugmail th { vertical-align: top; border-bottom: 1px solid #f1f1f1; }
 
 #announce { text-align: center; padding: 5px; padding-bottom:15px; }
 
