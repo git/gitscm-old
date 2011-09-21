@@ -30,9 +30,20 @@ GEM
     do_sqlite3 (0.10.6)
       data_objects (= 0.10.6)
     fastercsv (1.5.4)
+    heroku (2.7.0)
+      launchy (>= 0.3.2)
+      rest-client (~> 1.6.1)
+      rubyzip
+      term-ansicolor (~> 1.0.5)
     json (1.4.6)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
+    mime-types (1.16)
     pg (0.11.0)
     rack (1.3.3)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rubyzip (0.9.4)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.2.6)
@@ -41,6 +52,7 @@ GEM
     sqlite3 (1.3.4)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
+    term-ansicolor (1.0.6)
     tilt (1.3.3)
 
 PLATFORMS
@@ -54,6 +66,7 @@ DEPENDENCIES
   dm-sqlite-adapter
   dm-timestamps
   dm-validations
+  heroku
   pg
   shotgun
   sinatra

@@ -6,7 +6,7 @@ Bundler.require(:runtime)
 
 require './app'
 
-use Rack::Static, :urls => ["/css", "/images", "/js"], :root => "public"
+use Rack::Static, :root => "public"
 
 run GitApp
 

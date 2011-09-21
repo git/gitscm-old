@@ -6,6 +6,7 @@ gem "dm-serializer"
 gem "dm-migrations"
 gem "dm-validations"
 gem "dm-timestamps"
+gem "heroku"
 
 group :production do
   gem "pg"
