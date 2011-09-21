@@ -15,9 +15,11 @@ then
     exit 1
 fi
 
+release=$(git --git-dir="$git_dir" describe origin/maint)
+release=${release%%-*}
 git --git-dir="$git_dir" \
     log --pretty=short --no-merges \
-    origin/maint \
+    $release \
     | git shortlog -n \
     | grep -v -e '^ ' \
     | grep ':' \
