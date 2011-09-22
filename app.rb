@@ -1,29 +1,13 @@
 require 'sinatra'
 
-require 'dm-core'
-require 'dm-serializer/to_json'
-require 'dm-migrations'
-require 'dm-validations'
-require 'dm-timestamps'
-
-## -- DATABASE STUFF --
-
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/local.db")
-
-class Version
-  include DataMapper::Resource
-  property :version,    String
-  property :current,    Boolean, :key => true
-  property :created_at, DateTime
-end
-
-DataMapper.auto_upgrade!
+require './lib/version'
 
 class GitApp < Sinatra::Base
 
   def get_version
-    @version = '1.7.6.1'
-    @date = "2011-08-24"
+    v = Version.first(:order => [:created_at.desc])
+    @version = v.version
+    @date = v.created_at.strftime("%y-%m-%d")
   end
 
   get '/' do
