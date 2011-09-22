@@ -2,6 +2,7 @@ require 'sinatra'
 
 require './lib/version'
 
+
 class GitApp < Sinatra::Base
 
   def get_version
