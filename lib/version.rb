@@ -36,7 +36,11 @@ class Version
           v.version = version
           v.commit_sha = commit['sha']
           v.created_at = commit['commit']['author']['date']
-          v.save
+          if v.save
+            puts "Version #{version} saved"
+          else
+            puts "Version #{version} save failed"
+          end
         end
       end
     end
