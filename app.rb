@@ -6,9 +6,10 @@ require './lib/version'
 class GitApp < Sinatra::Base
 
   def get_version
-    v = Version.first(:order => [:created_at.desc])
-    @version = v.version
-    @date = v.created_at.strftime("%y-%m-%d")
+    if v = Version.first(:order => [:created_at.desc])
+      @version = v.version
+      @date = v.created_at.strftime("%y-%m-%d")
+    end
   end
 
   get '/' do
