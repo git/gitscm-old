@@ -1,7 +1,6 @@
 require 'sinatra'
 
-require './lib/version'
-
+require './lib/db'
 
 class GitApp < Sinatra::Base
 

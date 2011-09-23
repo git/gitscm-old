@@ -1,13 +1,5 @@
 require 'httparty'
 
-require 'dm-core'
-require 'dm-serializer/to_json'
-require 'dm-migrations'
-require 'dm-validations'
-require 'dm-timestamps'
-
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/local.db")
-
 class Version
   include DataMapper::Resource
   include HTTParty
@@ -48,4 +40,3 @@ class Version
 
 end
 
-DataMapper.auto_upgrade!

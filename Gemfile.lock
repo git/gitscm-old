@@ -14,10 +14,6 @@ GEM
     dm-postgres-adapter (1.1.0)
       dm-do-adapter (~> 1.1.0)
       do_postgres (~> 0.10.2)
-    dm-serializer (1.1.0)
-      dm-core (~> 1.1.0)
-      fastercsv (~> 1.5.4)
-      json (~> 1.4.6)
     dm-sqlite-adapter (1.1.0)
       dm-do-adapter (~> 1.1.0)
       do_sqlite3 (~> 0.10.2)
@@ -29,7 +25,6 @@ GEM
       data_objects (= 0.10.6)
     do_sqlite3 (0.10.6)
       data_objects (= 0.10.6)
-    fastercsv (1.5.4)
     heroku (2.7.0)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -38,7 +33,6 @@ GEM
     httparty (0.8.0)
       multi_json
       multi_xml
-    json (1.4.6)
     launchy (2.0.5)
       addressable (~> 2.2.6)
     mime-types (1.16)
@@ -68,7 +62,6 @@ DEPENDENCIES
   dm-core
   dm-migrations
   dm-postgres-adapter
-  dm-serializer
   dm-sqlite-adapter
   dm-timestamps
   dm-validations
