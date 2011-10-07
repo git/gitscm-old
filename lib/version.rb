@@ -28,7 +28,7 @@ class Version
     commits = get("/repos/gitster/git/commits", :query => {:sha => maint_sha}).parsed_response
     commits.each do |commit|
       message = commit['commit']['message'].split("\n").first
-      if m = /^Git (.*?)$/.match(message)
+      if m = /^Git ([0-9.]+)$/.match(message)
         version = m[1]
         p commit['sha']
         if !Version.first(:version => version)
