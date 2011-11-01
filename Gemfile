@@ -9,6 +9,7 @@ gem "dm-validations"
 gem "dm-timestamps"
 gem "heroku"
 gem "httparty"
+gem "fastercsv"
 
 group :production do
   gem "pg"
