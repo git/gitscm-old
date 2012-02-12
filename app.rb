@@ -6,7 +6,7 @@ require './lib/version'
 class GitApp < Sinatra::Base
 
   def get_version
-    if v = Version.first(:order => [:created_at.desc])
+    if v = Version.last(:order => [:version])
       @version = v.version
       @date = v.created_at.strftime("%Y-%m-%d")
     end
