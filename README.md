@@ -1,3 +1,5 @@
+## This repo is deprecated and no longer being maintained, look over at [gitscm-next](https://github.com/github/gitscm-next) for continued development.
+
 ## The Git Website ##
 
 This is the source for the main Git website, found at git-scm.com.
